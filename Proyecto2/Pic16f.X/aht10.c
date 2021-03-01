@@ -1,7 +1,8 @@
 /*
  * File:   aht10.c
- * Author: quema
- *
+ * Author: Allison Chocooj 
+ * me basare en una libreria de arduino como referencia porque no hay mucha 
+ * informacion con la que pueda trabajar concretamente
  * Created on 28 de febrero de 2021, 10:42 PM
  */
 
@@ -46,6 +47,35 @@ boolean AHTClass::begin(unsigned char _AHT10_address){
         return false;
     }
 }
+
+/**********************************************************
+ * GetHumidity
+ *  Gets the current humidity from the sensor.
+ *
+ * @return float - The relative humidity in %RH
+ **********************************************************/
+float AHT10Class::GetHumidity(void)
+{
+    float value = readSensor(GetRHumidityCmd);
+    if (value == 0) {
+        return 0;                       // Some unrealistic value
+    }
+    return value * 100 / 1048576;
+}
+
+/**********************************************************
+ * GetTemperature
+ *  Gets the current temperature from the sensor.
+ *
+ * @return float - The temperature in Deg C
+ **********************************************************/
+float AHT10Class::GetTemperature(void)
+{
+    float value = readSensor(GetTempCmd);
+    return ((200 * value) / 1048576) - 50;
+}
+
+
 
 void main(void) {
     return;
