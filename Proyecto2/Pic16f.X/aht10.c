@@ -94,6 +94,38 @@ float AHT10Class::GetDewPoint(void)
   return dewPoint;
 }
 
+******************************************************************************
+ * Private Functions
+ ******************************************************************************/
+
+unsigned long AHT10Class::readSensor(boolean GetDataCmd)
+{
+    unsigned long result, temp[6];
+
+    Wire.beginTransmission(AHT10_address);
+    Wire.write(eSensorMeasureCmd, 3);
+    Wire.endTransmission();
+    delay(100);
+
+    Wire.requestFrom(AHT10_address, 6);
+
+    for(unsigned char i = 0; Wire.available() > 0; i++)
+    {
+        temp[i] = Wire.read();
+    }   
+
+    if(GetDataCmd)
+    {
+        result = ((temp[1] << 16) | (temp[2] << 8) | temp[3]) >> 4;
+    }
+    else
+    {
+        result = ((temp[3] & 0x0F) << 16) | (temp[4] << 8) | temp[5];
+    }
+
+    return result;
+}
+
 void main(void) {
     return;
 }
