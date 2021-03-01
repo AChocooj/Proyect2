@@ -126,6 +126,19 @@ unsigned long AHT10Class::readSensor(boolean GetDataCmd)
     return result;
 }
 
-void main(void) {
-    return;
+unsigned char AHT10Class::readStatus(void)
+{
+    unsigned char result = 0;
+
+    Wire.requestFrom(AHT10_address, 1);
+    result = Wire.read();
+    return result;
+}
+
+void AHT10Class::Reset(void)
+{
+    Wire.beginTransmission(AHT10_address);
+    Wire.write(eSensorResetCmd);
+    Wire.endTransmission();
+    delay(20);
 }
