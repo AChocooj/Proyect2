@@ -6,13 +6,23 @@ _GIE 5F 0 ABS 0
 __Hintentry 0 0 CODE 0
 __Lintentry 0 0 CODE 0
 _PEIE 5E 0 ABS 0
+_RCIF 65 0 ABS 0
+_BRGH 4C2 0 ABS 0
+_SYNC 4C4 0 ABS 0
+_CREN C4 0 ABS 0
+_SPEN C7 0 ABS 0
+_TXEN 4C5 0 ABS 0
+_TRMT 4C1 0 ABS 0
 _main 7F9 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
 start 0 0 CODE 0
+_RCREG 1A 0 ABS 0
 _SSPIE 463 0 ABS 0
 _SSPIF 63 0 ABS 0
+_TXREG 19 0 ABS 0
 reset_vec 0 0 CODE 0
+_SPBRG 99 0 ABS 0
 wtemp0 7E 0 ABS 0
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
@@ -20,6 +30,8 @@ __Hfunctab 0 0 ENTRY 0
 __Lfunctab 0 0 ENTRY 0
 _TRISC3 43B 0 ABS 0
 _TRISC4 43C 0 ABS 0
+_TRISC6 43E 0 ABS 0
+_TRISC7 43F 0 ABS 0
 __Hcommon 0 0 ABS 0
 __Lcommon 0 0 ABS 0
 __Heeprom_data 0 0 EEDATA 3
@@ -105,12 +117,12 @@ cinit FF8 FFF CODE FF8 0
 maintext FF2 FF7 CODE FF2 0
 %locals
 dist/default/production\Pic16f.X.production.o
-C:\Users\quema\AppData\Local\Temp\scr8.s
-593 7FC 0 CODE 0
-596 7FC 0 CODE 0
-602 7FC 0 CODE 0
-604 7FC 0 CODE 0
-605 7FD 0 CODE 0
+C:\Users\quema\AppData\Local\Temp\sknk.s
+773 7FC 0 CODE 0
+776 7FC 0 CODE 0
+782 7FC 0 CODE 0
+784 7FC 0 CODE 0
+785 7FD 0 CODE 0
 pic16f.c
 11 7F9 0 CODE 0
 12 7F9 0 CODE 0

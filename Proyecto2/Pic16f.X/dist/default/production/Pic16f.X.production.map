@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=D:\MPLAB XC8 compiler\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Pic16f.X.production.sym \
   --cmf=dist/default/production\Pic16f.X.production.cmf -z -Q16F887 \
-  -oC:\Users\quema\AppData\Local\Temp\scr8.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\quema\AppData\Local\Temp\sknk.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Pic16f.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\quema\AppData\Local\Temp\scr8.o \
+  -pfunctab=ENTRY -k C:\Users\quema\AppData\Local\Temp\sknk.o \
   dist/default/production\Pic16f.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\quema\AppData\Local\Temp\scr8.o
+C:\Users\quema\AppData\Local\Temp\sknk.o
                 end_init                              0        0        3        0       0
 dist/default/production\Pic16f.X.production.o
                 cinit                               7FC      7FC        4      FF8       0
@@ -121,8 +121,14 @@ UNUSED ADDRESS RANGES
 
                                   Symbol Table
 
+_BRGH                    (abs)        04C2
+_CREN                    (abs)        00C4
 _GIE                     (abs)        005F
 _PEIE                    (abs)        005E
+_RCIF                    (abs)        0065
+_RCREG                   (abs)        001A
+_SPBRG                   (abs)        0099
+_SPEN                    (abs)        00C7
 _SSPADD                  (abs)        0093
 _SSPBUF                  (abs)        0013
 _SSPCON                  (abs)        0014
@@ -131,9 +137,15 @@ _SSPCON2bits             (abs)        0091
 _SSPIE                   (abs)        0463
 _SSPIF                   (abs)        0063
 _SSPSTAT                 (abs)        0094
+_SYNC                    (abs)        04C4
 _TRISC3                  (abs)        043B
 _TRISC4                  (abs)        043C
+_TRISC6                  (abs)        043E
+_TRISC7                  (abs)        043F
 _TRISCbits               (abs)        0087
+_TRMT                    (abs)        04C1
+_TXEN                    (abs)        04C5
+_TXREG                   (abs)        0019
 __Habs1                  abs1         0000
 __Hbank0                 bank0        0000
 __Hbank1                 bank1        0000

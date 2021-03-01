@@ -5,6 +5,8 @@
 [d frameptr 0 ]
 "5 D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"5 D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
 "10 D:\MPLAB XC8 compiler\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul8_16.c
@@ -17,10 +19,16 @@
 [v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
 "11 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
 [v _main main `(v  1 e 1 0 ]
+"30 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+[v _Write_USART Write_USART `(v  1 e 1 0 ]
 "843 D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+"1133
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1140
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
 [s S31 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
@@ -51,18 +59,38 @@
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
+"2642
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"3695
+[v _BRGH BRGH `VEb  1 e 0 @1218 ]
+"3836
+[v _CREN CREN `VEb  1 e 0 @196 ]
 "3896
 [v _GIE GIE `VEb  1 e 0 @95 ]
 "4040
 [v _PEIE PEIE `VEb  1 e 0 @94 ]
+"4175
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
+"4259
+[v _SPEN SPEN `VEb  1 e 0 @199 ]
 "4274
 [v _SSPIE SSPIE `VEb  1 e 0 @1123 ]
 "4277
 [v _SSPIF SSPIF `VEb  1 e 0 @99 ]
+"4313
+[v _SYNC SYNC `VEb  1 e 0 @1220 ]
 "4457
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4460
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
+"4466
+[v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
+"4469
+[v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
+"4508
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
+"4538
+[v _TXEN TXEN `VEb  1 e 0 @1221 ]
 "11 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
 [v _main main `(v  1 e 1 0 ]
 {

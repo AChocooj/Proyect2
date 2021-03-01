@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\quema\AppData\Local\Temp\scr8.o
+$C:\Users\quema\AppData\Local\Temp\sknk.o
 end_init CODE 0 0 0 3 2
 $dist/default/production\Pic16f.X.production.o
 cinit CODE 0 7FC 7FC 4 2
@@ -63,11 +63,11 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Pic16f.X.production.o
-7FC cinit CODE >593:C:\Users\quema\AppData\Local\Temp\scr8.s
-7FC cinit CODE >596:C:\Users\quema\AppData\Local\Temp\scr8.s
-7FC cinit CODE >602:C:\Users\quema\AppData\Local\Temp\scr8.s
-7FC cinit CODE >604:C:\Users\quema\AppData\Local\Temp\scr8.s
-7FD cinit CODE >605:C:\Users\quema\AppData\Local\Temp\scr8.s
+7FC cinit CODE >773:C:\Users\quema\AppData\Local\Temp\sknk.s
+7FC cinit CODE >776:C:\Users\quema\AppData\Local\Temp\sknk.s
+7FC cinit CODE >782:C:\Users\quema\AppData\Local\Temp\sknk.s
+7FC cinit CODE >784:C:\Users\quema\AppData\Local\Temp\sknk.s
+7FD cinit CODE >785:C:\Users\quema\AppData\Local\Temp\sknk.s
 7F9 maintext CODE >11:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
 7F9 maintext CODE >12:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
 7F9 maintext CODE >13:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
@@ -90,25 +90,32 @@ __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
+_BRGH 4C2 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+_CREN C4 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\scr8.o
+_RCIF 65 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+_SPEN C7 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+_SYNC 4C4 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+_TRMT 4C1 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+_TXEN 4C5 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\sknk.o
 _main FF2 0 CODE 0 maintext dist/default/production\Pic16f.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-start 0 0 CODE 0 init C:\Users\quema\AppData\Local\Temp\scr8.o
+start 0 0 CODE 0 init C:\Users\quema\AppData\Local\Temp\sknk.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\scr8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\scr8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\scr8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\scr8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\scr8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\scr8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sknk.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sknk.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sknk.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sknk.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sknk.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sknk.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\scr8.o
-___stacklo 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\scr8.o
+___stackhi 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\sknk.o
+___stacklo 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\sknk.o
 start_initialization FF8 0 CODE 0 cinit dist/default/production\Pic16f.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _SSPADD 93 0 ABS 0 - dist/default/production\Pic16f.X.production.o
@@ -116,7 +123,9 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\scr8.o
+_TRISC6 43E 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+_TRISC7 43F 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\sknk.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -154,7 +163,7 @@ __S1 0 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\quema\AppData\Local\Temp\scr8.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\quema\AppData\Local\Temp\sknk.o
 __pmaintext FF2 0 CODE 0 maintext dist/default/production\Pic16f.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lspace_0 0 0 ABS 0 - -
@@ -179,8 +188,11 @@ _SSPCON2 91 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __Hend_init 6 0 CODE 0 end_init -
 __end_of_main FF8 0 CODE 0 maintext dist/default/production\Pic16f.X.production.o
+_RCREG 1A 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+_SPBRG 99 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _SSPIE 463 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _SSPIF 63 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+_TXREG 19 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __initialization FF8 0 CODE 0 cinit dist/default/production\Pic16f.X.production.o
