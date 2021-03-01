@@ -75,7 +75,24 @@ float AHT10Class::GetTemperature(void)
     return ((200 * value) / 1048576) - 50;
 }
 
+/**********************************************************
+ * GetDewPoint
+ *  Gets the current dew point based on the current humidity and temperature
+ *
+ * @return float - The dew point in Deg C
+ **********************************************************/
+float AHT10Class::GetDewPoint(void)
+{
+  float humidity = GetHumidity();
+  float temperature = GetTemperature();
 
+  // Calculate the intermediate value 'gamma'
+  float gamma = log(humidity / 100) + WATER_VAPOR * temperature / (BAROMETRIC_PRESSURE + temperature);
+  // Calculate dew point in Celsius
+  float dewPoint = BAROMETRIC_PRESSURE * gamma / (WATER_VAPOR - gamma);
+
+  return dewPoint;
+}
 
 void main(void) {
     return;
