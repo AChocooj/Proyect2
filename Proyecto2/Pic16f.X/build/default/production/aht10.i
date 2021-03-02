@@ -2667,7 +2667,7 @@ extern double round(double);
 
 
 
-Sensor_CMD eSensorCalibrateCmd[3] = {0xE1, 0x08, 0x00};
+Sensor_CMD eSensorCalibrateCmd[3] = {0xE1 , 0x08 , 0x00};
 Sensor_CMD eSensorNormalCmd[3] = {0xA8, 0x00, 0x00};
 Sensor_CMD eSensorMeasureCmd[3] = {0xAC, 0x33, 0x00};
 Sensor_CMD eSensorResetCmd = 0xBA;

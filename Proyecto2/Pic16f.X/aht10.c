@@ -17,10 +17,10 @@
 #define WATER_VAPOR 17.62f
 #define BAROMETRIC_PRESSURE 243.5f
 
-Sensor_CMD eSensorCalibrateCmd[3] = {0xE1, 0x08, 0x00};
+Sensor_CMD eSensorCalibrateCmd[3] = {0xE1/*inicializacion del comando*/, 0x08/*i2c address + write*/, 0x00};
 Sensor_CMD eSensorNormalCmd[3] = {0xA8, 0x00, 0x00};
-Sensor_CMD eSensorMeasureCmd[3] = {0xAC, 0x33, 0x00};
-Sensor_CMD eSensorResetCmd = 0xBA;
+Sensor_CMD eSensorMeasureCmd[3] = {0xAC,/*trigger measurement*/ 0x33,/*DATA0*/ 0x00};
+Sensor_CMD eSensorResetCmd = 0xBA;/*soft reset*/
 boolean GetRHumidityCmd = true; //true = 1
 boolean GetTempCmd = false; //false = 0
 
