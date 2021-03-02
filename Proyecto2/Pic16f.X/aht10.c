@@ -12,7 +12,7 @@
 #include <math.h>
 //#include <Arduino.h>
 //#include <Wire.h>
-#include "Thinary_AHT10.h"
+//#include "Thinary_AHT10.h"
 
 #define WATER_VAPOR 17.62f
 #define BAROMETRIC_PRESSURE 243.5f
