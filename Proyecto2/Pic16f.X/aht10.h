@@ -1,6 +1,8 @@
 #ifndef __aht10_h
 #define __aht10_h
 
+#define boolean
+
 #include <stdint.h>
 
 typedef enum {
