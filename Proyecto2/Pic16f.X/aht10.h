@@ -19,4 +19,10 @@ private:
 public:
     AHT10Class();
     boolean begin(unsigned char _AHT10_address = eAHT10Address_default);
+    float GetHumidity(void);
+    float GetTemperature(void);
+    float GetDewPoint(void);
+    unsigned char readStatus(void);
+    void Reset(void);
 };
+#endif
