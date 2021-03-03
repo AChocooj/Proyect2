@@ -2660,8 +2660,79 @@ extern double trunc(double);
 extern double round(double);
 # 12 "aht10.c" 2
 
+# 1 "./I2C.h" 1
+# 20 "./I2C.h"
+# 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 1 3
+# 20 "./I2C.h" 2
+# 29 "./I2C.h"
+void I2C_Master_Init(const unsigned long c);
 
 
+
+
+
+
+
+void I2C_Master_Wait(void);
+
+
+
+void I2C_Master_Start(void);
+
+
+
+void I2C_Master_RepeatedStart(void);
+
+
+
+void I2C_Master_Stop(void);
+
+
+
+
+
+void I2C_Master_Write(unsigned d);
+
+
+
+
+unsigned short I2C_Master_Read(unsigned short a);
+
+
+
+void I2C_Slave_Init(uint8_t address);
+# 13 "aht10.c" 2
+
+# 1 "./aht10.h" 1
+
+
+
+# 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 1 3
+# 4 "./aht10.h" 2
+
+
+typedef enum {
+    eAHT10Address_default = 0x38,
+            eAHT10Address_Low = 0x38,
+            eAHT10Address_High = 0x39,
+}
+HUM_SENSOR_T;
+
+typedef unsigned char Sensor_CMD;
+
+class AHT10Class {
+private:
+    unsigned long readSensor( GetDataCmd);
+    unsigned char AHT10_address;
+public:
+    AHT10Class();
+            begin(unsigned char _AHT10_address = eAHT10Address_default);
+    float GetHumidity(void);
+    float GetTemperature(void);
+    unsigned char readStatus(void);
+    void Reset(void);
+};
+# 14 "aht10.c" 2
 
 
 
@@ -2671,25 +2742,25 @@ Sensor_CMD eSensorCalibrateCmd[3] = {0xE1 , 0x08 , 0x00};
 Sensor_CMD eSensorNormalCmd[3] = {0xA8, 0x00, 0x00};
 Sensor_CMD eSensorMeasureCmd[3] = {0xAC, 0x33, 0x00};
 Sensor_CMD eSensorResetCmd = 0xBA;
-boolean GetRHumidityCmd = true;
-boolean GetTempCmd = false;
+        GetRHumidityCmd = 1;
+        GetTempCmd = 0;
 
 
 
 
-AHT10Class::AHT10Class(){
+AHT10Class_AHT10Class(){
 }
 
-boolean AHTClass::begin(unsigned char _AHT10_address){
+        AHTClass_begin(unsigned char _AHT10_address){
     AHT10_address = _AHT10_address;
     Serial.begin(9600);
-    Serial.println("\x54\x68\x69\x6E\x61\x72\x79\x20\x45\x6C\x65\x74\x72\x6F\x6E\x69\x63\x20\x41\x48\x54\x31\x30\x20\x4D\x6F\x64\x75\x6C\x65\x2E");
-    Wire.begin(AHT10_address);
-    Wire.beginTransmission(AHT10_address);
-    Wire.write(eSensorCalibrateCmd, 3);
-    Wire.endTransmission();
-    Serial.println("https://thinaryelectronic.aliexpress.com");
-    delay(500);
+
+    I2C_Master_Init(AHT10_address);
+    I2C_Master_Start(AHT10_address);
+    I2C_Master_Write(eSensorCalibrateCmd, 3);
+    I2C_Master_Stop();
+
+    __delay:ms(500);
     if((readStatus()&0x68) == 0x08)
         return true;
     else
@@ -2704,7 +2775,7 @@ boolean AHTClass::begin(unsigned char _AHT10_address){
 
 
 
-float AHT10Class::GetHumidity(void)
+float AHT10Class_GetHumidity(void)
 {
     float value = readSensor(GetRHumidityCmd);
     if (value == 0) {
@@ -2719,7 +2790,7 @@ float AHT10Class::GetHumidity(void)
 
 
 
-float AHT10Class::GetTemperature(void)
+float AHT10Class_GetTemperature(void)
 {
     float value = readSensor(GetTempCmd);
     return ((200 * value) / 1048576) - 50;
@@ -2729,39 +2800,20 @@ float AHT10Class::GetTemperature(void)
 
 
 
-
-
-float AHT10Class::GetDewPoint(void)
-{
-  float humidity = GetHumidity();
-  float temperature = GetTemperature();
-
-
-  float gamma = log(humidity / 100) + 17.62f * temperature / (243.5f + temperature);
-
-  float dewPoint = 243.5f * gamma / (17.62f - gamma);
-
-  return dewPoint;
-}
-
-******************************************************************************
- * Private Functions
- ******************************************************************************/
-
-unsigned long AHT10Class::readSensor(boolean GetDataCmd)
+unsigned long AHT10Class_readSensor( GetDataCmd)
 {
     unsigned long result, temp[6];
 
-    Wire.beginTransmission(AHT10_address);
-    Wire.write(eSensorMeasureCmd, 3);
-    Wire.endTransmission();
-    delay(100);
+    I2C_Master_Start(AHT10_address);
+    I2C_Master_Write(eSensorMeasureCmd, 3);
+    I2C_Master_Stop();
+    _delay((unsigned long)((100)*(8000000/4000.0)));
 
-    Wire.requestFrom(AHT10_address, 6);
+    I2C_Master_Start(AHT10_address, 6);
 
-    for(unsigned char i = 0; Wire.available() > 0; i++)
+    for(unsigned char i = 0; I2C_Master_Start() > 0; i++)
     {
-        temp[i] = Wire.read();
+        temp[i] = I2C_Master_Read();
     }
 
     if(GetDataCmd)
@@ -2776,19 +2828,19 @@ unsigned long AHT10Class::readSensor(boolean GetDataCmd)
     return result;
 }
 
-unsigned char AHT10Class::readStatus(void)
+unsigned char AHT10Class_readStatus(void)
 {
     unsigned char result = 0;
 
-    Wire.requestFrom(AHT10_address, 1);
-    result = Wire.read();
+    I2C_Master_Start(AHT10_address, 1);
+    result = I2C_Master_Read();
     return result;
 }
 
-void AHT10Class::Reset(void)
+void AHT10Class_reset(void)
 {
-    Wire.beginTransmission(AHT10_address);
-    Wire.write(eSensorResetCmd);
-    Wire.endTransmission();
-    delay(20);
+    I2C_Master_Start(AHT10_address);
+    I2C_Master_Write(eSensorResetCmd);
+    I2C_Master_Stop();
+    _delay((unsigned long)((20)*(8000000/4000.0)));
 }

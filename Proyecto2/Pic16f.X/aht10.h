@@ -1,8 +1,6 @@
 #ifndef __aht10_h
 #define __aht10_h
-
 #define boolean
-
 #include <stdint.h>
 
 typedef enum {
@@ -23,7 +21,6 @@ public:
     boolean begin(unsigned char _AHT10_address = eAHT10Address_default);
     float GetHumidity(void);
     float GetTemperature(void);
-    float GetDewPoint(void);
     unsigned char readStatus(void);
     void Reset(void);
 };
