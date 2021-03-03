@@ -5,8 +5,6 @@
  * informacion con la que pueda trabajar concretamente
  * Created on 28 de febrero de 2021, 10:42 PM
  */
-
-
 #include <xc.h>
 #include <stdint.h>
 #include <math.h>
