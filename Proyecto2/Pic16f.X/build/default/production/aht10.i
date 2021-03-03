@@ -2711,61 +2711,45 @@ void I2C_Slave_Init(uint8_t address);
 # 4 "./aht10.h" 2
 
 
-typedef enum {
-    eAHT10Address_default = 0x38,
-            eAHT10Address_Low = 0x38,
-            eAHT10Address_High = 0x39,
-}
-HUM_SENSOR_T;
+int eAHT10Address_default = 0x38;
+int eAHT10Address_Low = 0x38;
+int eAHT10Address_High = 0x39;
 
+int HUM_SENSOR_T;
+unsigned long aht_readSensor(int GetDataCmd);
+unsigned char AHT10_address;
+int aht_begin(unsigned char _AHT10_address = eAHT10Address_default);
+float aht_GetHumidity(void);
+float aht_GetTemperature(void);
+unsigned char aht_readStatus(void);
+void aht_Reset(void);
 typedef unsigned char Sensor_CMD;
-
-class AHT10Class {
-private:
-    unsigned long readSensor( GetDataCmd);
-    unsigned char AHT10_address;
-public:
-    AHT10Class();
-            begin(unsigned char _AHT10_address = eAHT10Address_default);
-    float GetHumidity(void);
-    float GetTemperature(void);
-    unsigned char readStatus(void);
-    void Reset(void);
-};
 # 14 "aht10.c" 2
 
 
-
-
-
-Sensor_CMD eSensorCalibrateCmd[3] = {0xE1 , 0x08 , 0x00};
-Sensor_CMD eSensorNormalCmd[3] = {0xA8, 0x00, 0x00};
-Sensor_CMD eSensorMeasureCmd[3] = {0xAC, 0x33, 0x00};
+Sensor_CMD eSensorCalibrateCmd[3] = {0xE1,0x08,0x00};
+Sensor_CMD eSensorNormalCmd[3] = {0xA8, 0x00,0x00};
+Sensor_CMD eSensorMeasureCmd[3] = {0xAC,0x33,0x00};
 Sensor_CMD eSensorResetCmd = 0xBA;
-        GetRHumidityCmd = 1;
-        GetTempCmd = 0;
+int GetRHumidityCmd = 1;
+int GetTempCmd = 0;
 
 
 
 
-AHT10Class_AHT10Class(){
-}
 
-        AHTClass_begin(unsigned char _AHT10_address){
+int aht_begin(unsigned char _AHT10_address){
     AHT10_address = _AHT10_address;
-    Serial.begin(9600);
-
     I2C_Master_Init(AHT10_address);
     I2C_Master_Start(AHT10_address);
     I2C_Master_Write(eSensorCalibrateCmd, 3);
     I2C_Master_Stop();
-
-    __delay:ms(500);
-    if((readStatus()&0x68) == 0x08)
-        return true;
+    _delay((unsigned long)((500)*(8000000/4000.0)));
+    if((aht_readStatus()&0x68) == 0x08)
+        return 1;
     else
     {
-        return false;
+        return 0;
     }
 }
 
@@ -2775,9 +2759,9 @@ AHT10Class_AHT10Class(){
 
 
 
-float AHT10Class_GetHumidity(void)
+float aht_GetHumidity(void)
 {
-    float value = readSensor(GetRHumidityCmd);
+    float value = aht_readSensor(GetRHumidityCmd);
     if (value == 0) {
         return 0;
     }
@@ -2790,9 +2774,9 @@ float AHT10Class_GetHumidity(void)
 
 
 
-float AHT10Class_GetTemperature(void)
+float aht_GetTemperature(void)
 {
-    float value = readSensor(GetTempCmd);
+    float value = aht_readSensor(GetTempCmd);
     return ((200 * value) / 1048576) - 50;
 }
 
@@ -2800,7 +2784,7 @@ float AHT10Class_GetTemperature(void)
 
 
 
-unsigned long AHT10Class_readSensor( GetDataCmd)
+unsigned long aht_readSensor(int GetDataCmd)
 {
     unsigned long result, temp[6];
 
@@ -2828,7 +2812,7 @@ unsigned long AHT10Class_readSensor( GetDataCmd)
     return result;
 }
 
-unsigned char AHT10Class_readStatus(void)
+unsigned char aht_readStatus(void)
 {
     unsigned char result = 0;
 
@@ -2837,7 +2821,7 @@ unsigned char AHT10Class_readStatus(void)
     return result;
 }
 
-void AHT10Class_reset(void)
+void aht_Reset(void)
 {
     I2C_Master_Start(AHT10_address);
     I2C_Master_Write(eSensorResetCmd);

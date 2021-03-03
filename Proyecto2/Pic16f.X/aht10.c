@@ -13,37 +13,29 @@
 #include "I2C.h"
 #include "aht10.h"
 
-#define WATER_VAPOR 17.62f
-#define BAROMETRIC_PRESSURE 243.5f
-
-Sensor_CMD eSensorCalibrateCmd[3] = {0xE1/*inicializacion del comando*/, 0x08/*i2c address + write*/, 0x00};
-Sensor_CMD eSensorNormalCmd[3] = {0xA8, 0x00, 0x00};
-Sensor_CMD eSensorMeasureCmd[3] = {0xAC,/*trigger measurement*/ 0x33,/*DATA0*/ 0x00};
+Sensor_CMD eSensorCalibrateCmd[3] = {0xE1,0x08,0x00};/*inicializacion del comando*//*i2c address + write*/
+Sensor_CMD eSensorNormalCmd[3] = {0xA8, 0x00,0x00};
+Sensor_CMD eSensorMeasureCmd[3] = {0xAC,0x33,0x00};/*trigger measurement*//*DATA0*/
 Sensor_CMD eSensorResetCmd = 0xBA;/*soft reset*/
-boolean GetRHumidityCmd = 1; //true = 1
-boolean GetTempCmd = 0; //false = 0
+int GetRHumidityCmd = 1; //true = 1
+int GetTempCmd = 0; //false = 0
 
 //**************************************************
 //Funciones Globales
 //**************************************************
-AHT10Class_AHT10Class(){
-}
 
-boolean AHTClass_begin(unsigned char _AHT10_address){
+int aht_begin(unsigned char _AHT10_address){
     AHT10_address = _AHT10_address;
-    Serial.begin(9600);
-    //Serial.println("\x54\x68\x69\x6E\x61\x72\x79\x20\x45\x6C\x65\x74\x72\x6F\x6E\x69\x63\x20\x41\x48\x54\x31\x30\x20\x4D\x6F\x64\x75\x6C\x65\x2E");
     I2C_Master_Init(AHT10_address);
     I2C_Master_Start(AHT10_address);
     I2C_Master_Write(eSensorCalibrateCmd, 3);
     I2C_Master_Stop();
-    //Serial.println("https://thinaryelectronic.aliexpress.com");
-    __delay:ms(500);
-    if((readStatus()&0x68) == 0x08)
-        return true;
+    __delay_ms(500);
+    if((aht_readStatus()&0x68) == 0x08)
+        return 1;
     else
     {
-        return false;
+        return 0;
     }
 }
 
@@ -53,9 +45,9 @@ boolean AHTClass_begin(unsigned char _AHT10_address){
  *
  * @return float - The relative humidity in %RH
  **********************************************************/
-float AHT10Class_GetHumidity(void)
+float aht_GetHumidity(void)
 {
-    float value = readSensor(GetRHumidityCmd);
+    float value = aht_readSensor(GetRHumidityCmd);
     if (value == 0) {
         return 0;                       // Some unrealistic value
     }
@@ -68,9 +60,9 @@ float AHT10Class_GetHumidity(void)
  *
  * @return float - The temperature in Deg C
  **********************************************************/
-float AHT10Class_GetTemperature(void)
+float aht_GetTemperature(void)
 {
-    float value = readSensor(GetTempCmd);
+    float value = aht_readSensor(GetTempCmd);
     return ((200 * value) / 1048576) - 50;
 }
 
@@ -78,7 +70,7 @@ float AHT10Class_GetTemperature(void)
  * Private Functions
  ******************************************************************************/
 
-unsigned long AHT10Class_readSensor(boolean GetDataCmd)
+unsigned long aht_readSensor(int GetDataCmd)
 {
     unsigned long result, temp[6];
 
@@ -106,7 +98,7 @@ unsigned long AHT10Class_readSensor(boolean GetDataCmd)
     return result;
 }
 
-unsigned char AHT10Class_readStatus(void)
+unsigned char aht_readStatus(void)
 {
     unsigned char result = 0;
 
@@ -115,7 +107,7 @@ unsigned char AHT10Class_readStatus(void)
     return result;
 }
 
-void AHT10Class_reset(void)
+void aht_Reset(void)
 {
     I2C_Master_Start(AHT10_address);
     I2C_Master_Write(eSensorResetCmd);
