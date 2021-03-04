@@ -17,6 +17,7 @@ Sensor_CMD eSensorMeasureCmd[3] = {0xAC,0x33,0x00};/*trigger measurement*//*DATA
 Sensor_CMD eSensorResetCmd = 0xBA;/*soft reset*/
 int GetRHumidityCmd = 1; //true = 1
 int GetTempCmd = 0; //false = 0
+unsigned char AHT10_address = 0x38;
 
 //**************************************************
 //Funciones Globales
@@ -25,8 +26,8 @@ int GetTempCmd = 0; //false = 0
 int aht_begin(unsigned char _AHT10_address){
     AHT10_address = _AHT10_address;
     I2C_Master_Init(AHT10_address);
-    I2C_Master_Start(AHT10_address);
-    I2C_Master_Write(eSensorCalibrateCmd, 3);
+    I2C_Master_Start();
+    I2C_Master_Write(eSensorCalibrateCmd[2]);
     I2C_Master_Stop();
     __delay_ms(500);
     if((aht_readStatus()&0x68) == 0x08)
@@ -72,16 +73,16 @@ unsigned long aht_readSensor(int GetDataCmd)
 {
     unsigned long result, temp[6];
 
-    I2C_Master_Start(AHT10_address);
-    I2C_Master_Write(eSensorMeasureCmd, 3);
+    I2C_Master_Start();
+    I2C_Master_Write(eSensorMeasureCmd[2]);
     I2C_Master_Stop();
     __delay_ms(100);
 
-    I2C_Master_Start(AHT10_address, 6);
+    I2C_Master_Start();
 
-    for(unsigned char i = 0; I2C_Master_Start() > 0; i++)
+    for(unsigned char i = 0; I2C_Master_Read(1) > 0; i++)
     {
-        temp[i] = I2C_Master_Read();
+        temp[i] = I2C_Master_Read(1);
     }   
 
     if(GetDataCmd)
@@ -100,14 +101,14 @@ unsigned char aht_readStatus(void)
 {
     unsigned char result = 0;
 
-    I2C_Master_Start(AHT10_address, 1);
-    result = I2C_Master_Read();
+    I2C_Master_Start();
+    result = I2C_Master_Read(1);
     return result;
 }
 
 void aht_Reset(void)
 {
-    I2C_Master_Start(AHT10_address);
+    I2C_Master_Start();
     I2C_Master_Write(eSensorResetCmd);
     I2C_Master_Stop();
     __delay_ms(20);

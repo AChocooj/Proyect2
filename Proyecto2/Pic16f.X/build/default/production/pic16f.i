@@ -14,6 +14,24 @@
 
 
 
+#pragma config FOSC = INTRC_NOCLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = OFF
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+
+
+
+
 
 # 1 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
@@ -2495,7 +2513,224 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 9 "pic16f.c" 2
+# 26 "pic16f.c" 2
+
+# 1 "./I2C.h" 1
+# 20 "./I2C.h"
+# 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 1 3
+# 13 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int8_t;
+
+
+
+
+
+
+typedef signed int int16_t;
+
+
+
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+
+
+
+typedef signed long int int32_t;
+# 52 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint8_t;
+
+
+
+
+
+typedef unsigned int uint16_t;
+
+
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+
+
+typedef unsigned long int uint32_t;
+# 88 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int_least8_t;
+
+
+
+
+
+
+
+typedef signed int int_least16_t;
+# 109 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
+typedef __int24 int_least24_t;
+# 118 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
+typedef signed long int int_least32_t;
+# 136 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint_least8_t;
+
+
+
+
+
+
+typedef unsigned int uint_least16_t;
+# 154 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
+typedef __uint24 uint_least24_t;
+
+
+
+
+
+
+
+typedef unsigned long int uint_least32_t;
+# 181 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int_fast8_t;
+
+
+
+
+
+
+typedef signed int int_fast16_t;
+# 200 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
+typedef __int24 int_fast24_t;
+
+
+
+
+
+
+
+typedef signed long int int_fast32_t;
+# 224 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint_fast8_t;
+
+
+
+
+
+typedef unsigned int uint_fast16_t;
+# 240 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
+typedef __uint24 uint_fast24_t;
+
+
+
+
+
+
+typedef unsigned long int uint_fast32_t;
+# 268 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
+typedef int32_t intmax_t;
+# 282 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
+typedef uint32_t uintmax_t;
+
+
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+# 20 "./I2C.h" 2
+# 29 "./I2C.h"
+void I2C_Master_Init(const unsigned long c);
+
+
+
+
+
+
+
+void I2C_Master_Wait(void);
+
+
+
+void I2C_Master_Start(void);
+
+
+
+void I2C_Master_RepeatedStart(void);
+
+
+
+void I2C_Master_Stop(void);
+
+
+
+
+
+void I2C_Master_Write(unsigned d);
+
+
+
+
+unsigned short I2C_Master_Read(unsigned short a);
+
+
+
+void I2C_Slave_Init(uint8_t address);
+# 27 "pic16f.c" 2
+
+# 1 "./USART.h" 1
+
+
+
+
+# 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 1 3
+# 5 "./USART.h" 2
+
+
+char USART_Init(const long int baudrate);
+void Write_USART(uint8_t a);
+void Write_USART_String(char *a);
+char UART_Init(const long int baudrate);
+uint8_t Read_USART(void);
+void Read_USART_String(char *Output, unsigned int length);
+# 28 "pic16f.c" 2
+
+# 1 "./aht10.h" 1
+
+
+
+# 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 1 3
+# 4 "./aht10.h" 2
+
+
+
+int AHT10Address_Low = 0x38;
+int AHT10Address_High = 0x39;
+
+
+unsigned long aht_readSensor(int GetDataCmd);
+
+int aht_begin(unsigned char AHT10_address);
+float aht_GetHumidity(void);
+float aht_GetTemperature(void);
+unsigned char aht_readStatus(void);
+void aht_Reset(void);
+typedef unsigned char Sensor_CMD;
+# 29 "pic16f.c" 2
+
+
 
 
 void main(void) {

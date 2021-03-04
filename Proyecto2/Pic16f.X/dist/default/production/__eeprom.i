@@ -1,4 +1,4 @@
-# 1 "aht10.c"
+# 1 "D:\\MPLAB XC8 compiler\\pic\\sources\\c90\\pic\\__eeprom.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,14 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "aht10.c" 2
-
-
-
-
-
-
-
+# 1 "D:\\MPLAB XC8 compiler\\pic\\sources\\c90\\pic\\__eeprom.c" 2
 # 1 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2494,344 +2487,176 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 8 "aht10.c" 2
+# 1 "D:\\MPLAB XC8 compiler\\pic\\sources\\c90\\pic\\__eeprom.c" 2
 
-# 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 1 3
-# 13 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int8_t;
 
 
 
+void
+__eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
+{
+ volatile unsigned char *cp = to;
 
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)from;
+ while(size--) {
+  while (EECON1bits.WR) continue;
 
+  EECON1 &= 0x7F;
 
-typedef signed int int16_t;
-
-
-
-
-
-
-
-typedef __int24 int24_t;
-
-
-
-
-
-
-
-typedef signed long int int32_t;
-# 52 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint8_t;
-
-
-
-
-
-typedef unsigned int uint16_t;
-
-
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-
-
-typedef unsigned long int uint32_t;
-# 88 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_least8_t;
-
-
-
-
-
-
-
-typedef signed int int_least16_t;
-# 109 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_least24_t;
-# 118 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
-typedef signed long int int_least32_t;
-# 136 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_least8_t;
-
-
-
-
-
-
-typedef unsigned int uint_least16_t;
-# 154 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_least24_t;
-
-
-
-
-
-
-
-typedef unsigned long int uint_least32_t;
-# 181 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_fast8_t;
-
-
-
-
-
-
-typedef signed int int_fast16_t;
-# 200 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_fast24_t;
-
-
-
-
-
-
-
-typedef signed long int int_fast32_t;
-# 224 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_fast8_t;
-
-
-
-
-
-typedef unsigned int uint_fast16_t;
-# 240 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_fast24_t;
-
-
-
-
-
-
-typedef unsigned long int uint_fast32_t;
-# 268 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
-typedef int32_t intmax_t;
-# 282 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
-typedef uint32_t uintmax_t;
-
-
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-# 9 "aht10.c" 2
-
-# 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\math.h" 1 3
-
-
-
-# 1 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__unsupported.h" 1 3
-# 4 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\math.h" 2 3
-# 30 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\math.h" 3
-extern double fabs(double);
-extern double floor(double);
-extern double ceil(double);
-extern double modf(double, double *);
-extern double sqrt(double);
-extern double atof(const char *);
-extern double sin(double) ;
-extern double cos(double) ;
-extern double tan(double) ;
-extern double asin(double) ;
-extern double acos(double) ;
-extern double atan(double);
-extern double atan2(double, double) ;
-extern double log(double);
-extern double log10(double);
-extern double pow(double, double) ;
-extern double exp(double) ;
-extern double sinh(double) ;
-extern double cosh(double) ;
-extern double tanh(double);
-extern double eval_poly(double, const double *, int);
-extern double frexp(double, int *);
-extern double ldexp(double, int);
-extern double fmod(double, double);
-extern double trunc(double);
-extern double round(double);
-# 10 "aht10.c" 2
-
-# 1 "./I2C.h" 1
-# 20 "./I2C.h"
-# 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 1 3
-# 20 "./I2C.h" 2
-# 29 "./I2C.h"
-void I2C_Master_Init(const unsigned long c);
-
-
-
-
-
-
-
-void I2C_Master_Wait(void);
-
-
-
-void I2C_Master_Start(void);
-
-
-
-void I2C_Master_RepeatedStart(void);
-
-
-
-void I2C_Master_Stop(void);
-
-
-
-
-
-void I2C_Master_Write(unsigned d);
-
-
-
-
-unsigned short I2C_Master_Read(unsigned short a);
-
-
-
-void I2C_Slave_Init(uint8_t address);
-# 11 "aht10.c" 2
-
-# 1 "./aht10.h" 1
-
-
-
-# 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 1 3
-# 4 "./aht10.h" 2
-
-
-
-int AHT10Address_Low = 0x38;
-int AHT10Address_High = 0x39;
-
-
-unsigned long aht_readSensor(int GetDataCmd);
-
-int aht_begin(unsigned char AHT10_address);
-float aht_GetHumidity(void);
-float aht_GetTemperature(void);
-unsigned char aht_readStatus(void);
-void aht_Reset(void);
-typedef unsigned char Sensor_CMD;
-# 12 "aht10.c" 2
-
-
-Sensor_CMD eSensorCalibrateCmd[3] = {0xE1,0x08,0x00};
-Sensor_CMD eSensorNormalCmd[3] = {0xA8, 0x00,0x00};
-Sensor_CMD eSensorMeasureCmd[3] = {0xAC,0x33,0x00};
-Sensor_CMD eSensorResetCmd = 0xBA;
-int GetRHumidityCmd = 1;
-int GetTempCmd = 0;
-unsigned char AHT10_address = 0x38;
-
-
-
-
-
-int aht_begin(unsigned char _AHT10_address){
-    AHT10_address = _AHT10_address;
-    I2C_Master_Init(AHT10_address);
-    I2C_Master_Start();
-    I2C_Master_Write(eSensorCalibrateCmd[2]);
-    I2C_Master_Stop();
-    _delay((unsigned long)((500)*(8000000/4000.0)));
-    if((aht_readStatus()&0x68) == 0x08)
-        return 1;
-    else
-    {
-        return 0;
-    }
+  EECON1bits.RD = 1;
+  *cp++ = EEDATA;
+  ++EEADR;
+ }
+# 36 "D:\\MPLAB XC8 compiler\\pic\\sources\\c90\\pic\\__eeprom.c"
 }
 
-
-
-
-
-
-
-float aht_GetHumidity(void)
+void
+__memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
 {
-    float value = aht_readSensor(GetRHumidityCmd);
-    if (value == 0) {
-        return 0;
-    }
-    return value * 100 / 1048576;
+ const unsigned char *ptr =from;
+
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)to - 1U;
+
+ EECON1 &= 0x7F;
+
+ while(size--) {
+  while (EECON1bits.WR) {
+   continue;
+  }
+  EEDATA = *ptr++;
+  ++EEADR;
+  STATUSbits.CARRY = 0;
+  if (INTCONbits.GIE) {
+   STATUSbits.CARRY = 1;
+  }
+  INTCONbits.GIE = 0;
+  EECON1bits.WREN = 1;
+  EECON2 = 0x55;
+  EECON2 = 0xAA;
+  EECON1bits.WR = 1;
+  EECON1bits.WREN = 0;
+  if (STATUSbits.CARRY) {
+   INTCONbits.GIE = 1;
+  }
+ }
+# 101 "D:\\MPLAB XC8 compiler\\pic\\sources\\c90\\pic\\__eeprom.c"
 }
 
-
-
-
-
-
-
-float aht_GetTemperature(void)
+unsigned char
+__eetoc(__eeprom void *addr)
 {
-    float value = aht_readSensor(GetTempCmd);
-    return ((200 * value) / 1048576) - 50;
+ unsigned char data;
+ __eecpymem((unsigned char *) &data,addr,1);
+ return data;
 }
 
-
-
-
-
-unsigned long aht_readSensor(int GetDataCmd)
+unsigned int
+__eetoi(__eeprom void *addr)
 {
-    unsigned long result, temp[6];
-
-    I2C_Master_Start();
-    I2C_Master_Write(eSensorMeasureCmd[2]);
-    I2C_Master_Stop();
-    _delay((unsigned long)((100)*(8000000/4000.0)));
-
-    I2C_Master_Start();
-
-    for(unsigned char i = 0; I2C_Master_Read(1) > 0; i++)
-    {
-        temp[i] = I2C_Master_Read(1);
-    }
-
-    if(GetDataCmd)
-    {
-        result = ((temp[1] << 16) | (temp[2] << 8) | temp[3]) >> 4;
-    }
-    else
-    {
-        result = ((temp[3] & 0x0F) << 16) | (temp[4] << 8) | temp[5];
-    }
-
-    return result;
+ unsigned int data;
+ __eecpymem((unsigned char *) &data,addr,2);
+ return data;
 }
 
-unsigned char aht_readStatus(void)
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__eetom(__eeprom void *addr)
 {
-    unsigned char result = 0;
+ __uint24 data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
+}
+#pragma warning pop
 
-    I2C_Master_Start();
-    result = I2C_Master_Read(1);
-    return result;
+unsigned long
+__eetol(__eeprom void *addr)
+{
+ unsigned long data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
 }
 
-void aht_Reset(void)
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__eetoo(__eeprom void *addr)
 {
-    I2C_Master_Start();
-    I2C_Master_Write(eSensorResetCmd);
-    I2C_Master_Stop();
-    _delay((unsigned long)((20)*(8000000/4000.0)));
+ unsigned long long data;
+ __eecpymem((unsigned char *) &data,addr,8);
+ return data;
+}
+#pragma warning pop
+
+unsigned char
+__ctoee(__eeprom void *addr, unsigned char data)
+{
+ __memcpyee(addr,(unsigned char *) &data,1);
+ return data;
+}
+
+unsigned int
+__itoee(__eeprom void *addr, unsigned int data)
+{
+ __memcpyee(addr,(unsigned char *) &data,2);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__mtoee(__eeprom void *addr, __uint24 data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+#pragma warning pop
+
+unsigned long
+__ltoee(__eeprom void *addr, unsigned long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__otoee(__eeprom void *addr, unsigned long long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,8);
+ return data;
+}
+#pragma warning pop
+
+float
+__eetoft(__eeprom void *addr)
+{
+ float data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
+}
+
+double
+__eetofl(__eeprom void *addr)
+{
+ double data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
+}
+
+float
+__fttoee(__eeprom void *addr, float data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+
+double
+__fltoee(__eeprom void *addr, double data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
 }

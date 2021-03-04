@@ -3,14 +3,14 @@
 
 #include <stdint.h>
 
-int eAHT10Address_default = 0x38;
-int eAHT10Address_Low = 0x38;
-int eAHT10Address_High = 0x39;
+//int AHT10Address = 0x38;
+int AHT10Address_Low = 0x38;
+int AHT10Address_High = 0x39;
 
-int HUM_SENSOR_T;
+//int HUM_SENSOR_T;
 unsigned long aht_readSensor(int GetDataCmd);
-unsigned char AHT10_address;
-int aht_begin(unsigned char _AHT10_address = eAHT10Address_default);
+//unsigned char AHT10_address;
+int aht_begin(unsigned char AHT10_address);
 float aht_GetHumidity(void);
 float aht_GetTemperature(void);
 unsigned char aht_readStatus(void);

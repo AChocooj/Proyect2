@@ -1,29 +1,29 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"8 pic16f.c
-[p x FOSC  =  INTRC_NOCLKOUT ]
-"9
-[p x WDTE  =  OFF        ]
-"10
-[p x PWRTE  =  OFF        ]
+"29 ./I2C.h
+[; ;./I2C.h: 29: void I2C_Master_Init(const unsigned long c);
+[v _I2C_Master_Init `(v ~T0 @X0 0 ef1`Cul ]
+"41
+[; ;./I2C.h: 41: void I2C_Master_Start(void);
+[v _I2C_Master_Start `(v ~T0 @X0 0 ef ]
+"55
+[; ;./I2C.h: 55: void I2C_Master_Write(unsigned d);
+[v _I2C_Master_Write `(v ~T0 @X0 0 ef1`ui ]
+"49
+[; ;./I2C.h: 49: void I2C_Master_Stop(void);
+[v _I2C_Master_Stop `(v ~T0 @X0 0 ef ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"16 ./aht10.h
+[; ;./aht10.h: 16: unsigned char aht_readStatus(void);
+[v _aht_readStatus `(uc ~T0 @X0 0 ef ]
 "11
-[p x MCLRE  =  OFF       ]
-"12
-[p x CP  =  OFF          ]
-"13
-[p x CPD  =  OFF         ]
-"14
-[p x BOREN  =  OFF       ]
-"15
-[p x IESO  =  OFF        ]
-"16
-[p x FCMEN  =  OFF       ]
-"17
-[p x LVP  =  OFF         ]
-"20
-[p x BOR4V  =  BOR40V    ]
-"21
-[p x WRT  =  OFF         ]
+[; ;./aht10.h: 11: unsigned long aht_readSensor(int GetDataCmd);
+[v _aht_readSensor `(ul ~T0 @X0 0 ef1`i ]
+"60 ./I2C.h
+[; ;./I2C.h: 60: unsigned short I2C_Master_Read(unsigned short a);
+[v _I2C_Master_Read `(us ~T0 @X0 0 ef1`us ]
 "54 D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -270,17 +270,297 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _AHT10Address_High
 -> 57 `i
 ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"33 pic16f.c
-[; ;pic16f.c: 33: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
+"14 aht10.c
+[; ;aht10.c: 14: Sensor_CMD eSensorCalibrateCmd[3] = {0xE1,0x08,0x00};
+[v _eSensorCalibrateCmd `uc ~T0 @X0 -> 3 `i e ]
+[i _eSensorCalibrateCmd
+:U ..
+-> -> 225 `i `uc
+-> -> 8 `i `uc
+-> -> 0 `i `uc
+..
+]
+"15
+[; ;aht10.c: 15: Sensor_CMD eSensorNormalCmd[3] = {0xA8, 0x00,0x00};
+[v _eSensorNormalCmd `uc ~T0 @X0 -> 3 `i e ]
+[i _eSensorNormalCmd
+:U ..
+-> -> 168 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+]
+"16
+[; ;aht10.c: 16: Sensor_CMD eSensorMeasureCmd[3] = {0xAC,0x33,0x00};
+[v _eSensorMeasureCmd `uc ~T0 @X0 -> 3 `i e ]
+[i _eSensorMeasureCmd
+:U ..
+-> -> 172 `i `uc
+-> -> 51 `i `uc
+-> -> 0 `i `uc
+..
+]
+"17
+[; ;aht10.c: 17: Sensor_CMD eSensorResetCmd = 0xBA;
+[v _eSensorResetCmd `uc ~T0 @X0 1 e ]
+[i _eSensorResetCmd
+-> -> 186 `i `uc
+]
+"18
+[; ;aht10.c: 18: int GetRHumidityCmd = 1;
+[v _GetRHumidityCmd `i ~T0 @X0 1 e ]
+[i _GetRHumidityCmd
+-> 1 `i
+]
+"19
+[; ;aht10.c: 19: int GetTempCmd = 0;
+[v _GetTempCmd `i ~T0 @X0 1 e ]
+[i _GetTempCmd
+-> 0 `i
+]
+"20
+[; ;aht10.c: 20: unsigned char AHT10_address = 0x38;
+[v _AHT10_address `uc ~T0 @X0 1 e ]
+[i _AHT10_address
+-> -> 56 `i `uc
+]
+"26
+[; ;aht10.c: 26: int aht_begin(unsigned char _AHT10_address){
+[v _aht_begin `(i ~T0 @X0 1 ef1`uc ]
 {
-[e :U _main ]
+[e :U _aht_begin ]
+[v __AHT10_address `uc ~T0 @X0 1 r1 ]
 [f ]
+"27
+[; ;aht10.c: 27:     AHT10_address = _AHT10_address;
+[e = _AHT10_address __AHT10_address ]
+"28
+[; ;aht10.c: 28:     I2C_Master_Init(AHT10_address);
+[e ( _I2C_Master_Init (1 -> _AHT10_address `ul ]
+"29
+[; ;aht10.c: 29:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"30
+[; ;aht10.c: 30:     I2C_Master_Write(eSensorCalibrateCmd[2]);
+[e ( _I2C_Master_Write (1 -> *U + &U _eSensorCalibrateCmd * -> -> -> 2 `i `ui `ux -> -> # *U &U _eSensorCalibrateCmd `ui `ux `ui ]
+"31
+[; ;aht10.c: 31:     I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"32
+[; ;aht10.c: 32:     _delay((unsigned long)((500)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"33
+[; ;aht10.c: 33:     if((aht_readStatus()&0x68) == 0x08)
+[e $ ! == & -> ( _aht_readStatus ..  `i -> 104 `i -> 8 `i 139  ]
 "34
-[; ;pic16f.c: 34:     return;
+[; ;aht10.c: 34:         return 1;
+[e ) -> 1 `i ]
 [e $UE 138  ]
+[e $U 140  ]
 "35
-[; ;pic16f.c: 35: }
+[; ;aht10.c: 35:     else
+[e :U 139 ]
+"36
+[; ;aht10.c: 36:     {
+{
+"37
+[; ;aht10.c: 37:         return 0;
+[e ) -> 0 `i ]
+[e $UE 138  ]
+"38
+[; ;aht10.c: 38:     }
+}
+[e :U 140 ]
+"39
+[; ;aht10.c: 39: }
 [e :UE 138 ]
+}
+"47
+[; ;aht10.c: 47: float aht_GetHumidity(void)
+[v _aht_GetHumidity `(f ~T0 @X0 1 ef ]
+"48
+[; ;aht10.c: 48: {
+{
+[e :U _aht_GetHumidity ]
+[f ]
+"49
+[; ;aht10.c: 49:     float value = aht_readSensor(GetRHumidityCmd);
+[v _value `f ~T0 @X0 1 a ]
+[e = _value -> ( _aht_readSensor (1 _GetRHumidityCmd `f ]
+"50
+[; ;aht10.c: 50:     if (value == 0) {
+[e $ ! == _value -> -> 0 `i `f 142  ]
+{
+"51
+[; ;aht10.c: 51:         return 0;
+[e ) -> -> 0 `i `f ]
+[e $UE 141  ]
+"52
+[; ;aht10.c: 52:     }
+}
+[e :U 142 ]
+"53
+[; ;aht10.c: 53:     return value * 100 / 1048576;
+[e ) / * _value -> -> 100 `i `f -> -> 1048576 `l `f ]
+[e $UE 141  ]
+"54
+[; ;aht10.c: 54: }
+[e :UE 141 ]
+}
+"62
+[; ;aht10.c: 62: float aht_GetTemperature(void)
+[v _aht_GetTemperature `(f ~T0 @X0 1 ef ]
+"63
+[; ;aht10.c: 63: {
+{
+[e :U _aht_GetTemperature ]
+[f ]
+"64
+[; ;aht10.c: 64:     float value = aht_readSensor(GetTempCmd);
+[v _value `f ~T0 @X0 1 a ]
+[e = _value -> ( _aht_readSensor (1 _GetTempCmd `f ]
+"65
+[; ;aht10.c: 65:     return ((200 * value) / 1048576) - 50;
+[e ) - / * -> -> 200 `i `f _value -> -> 1048576 `l `f -> -> 50 `i `f ]
+[e $UE 143  ]
+"66
+[; ;aht10.c: 66: }
+[e :UE 143 ]
+}
+"72
+[; ;aht10.c: 72: unsigned long aht_readSensor(int GetDataCmd)
+[v _aht_readSensor `(ul ~T0 @X0 1 ef1`i ]
+"73
+[; ;aht10.c: 73: {
+{
+[e :U _aht_readSensor ]
+"72
+[; ;aht10.c: 72: unsigned long aht_readSensor(int GetDataCmd)
+[v _GetDataCmd `i ~T0 @X0 1 r1 ]
+"73
+[; ;aht10.c: 73: {
+[f ]
+"74
+[; ;aht10.c: 74:     unsigned long result, temp[6];
+[v _result `ul ~T0 @X0 1 a ]
+[v _temp `ul ~T0 @X0 -> 6 `i a ]
+"76
+[; ;aht10.c: 76:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"77
+[; ;aht10.c: 77:     I2C_Master_Write(eSensorMeasureCmd[2]);
+[e ( _I2C_Master_Write (1 -> *U + &U _eSensorMeasureCmd * -> -> -> 2 `i `ui `ux -> -> # *U &U _eSensorMeasureCmd `ui `ux `ui ]
+"78
+[; ;aht10.c: 78:     I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"79
+[; ;aht10.c: 79:     _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"81
+[; ;aht10.c: 81:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"83
+[; ;aht10.c: 83:     for(unsigned char i = 0; I2C_Master_Read(1) > 0; i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 148  ]
+[e :U 145 ]
+"84
+[; ;aht10.c: 84:     {
+{
+"85
+[; ;aht10.c: 85:         temp[i] = I2C_Master_Read(1);
+[e = *U + &U _temp * -> _i `ux -> -> # *U &U _temp `ui `ux -> ( _I2C_Master_Read (1 -> -> 1 `i `us `ul ]
+"86
+[; ;aht10.c: 86:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 148 ]
+[e $ > -> ( _I2C_Master_Read (1 -> -> 1 `i `us `ui -> -> 0 `i `ui 145  ]
+[e :U 146 ]
+}
+"88
+[; ;aht10.c: 88:     if(GetDataCmd)
+[e $ ! != _GetDataCmd -> 0 `i 149  ]
+"89
+[; ;aht10.c: 89:     {
+{
+"90
+[; ;aht10.c: 90:         result = ((temp[1] << 16) | (temp[2] << 8) | temp[3]) >> 4;
+[e = _result >> | | << *U + &U _temp * -> -> -> 1 `i `ui `ux -> -> # *U &U _temp `ui `ux -> 16 `i << *U + &U _temp * -> -> -> 2 `i `ui `ux -> -> # *U &U _temp `ui `ux -> 8 `i *U + &U _temp * -> -> -> 3 `i `ui `ux -> -> # *U &U _temp `ui `ux -> 4 `i ]
+"91
+[; ;aht10.c: 91:     }
+}
+[e $U 150  ]
+"92
+[; ;aht10.c: 92:     else
+[e :U 149 ]
+"93
+[; ;aht10.c: 93:     {
+{
+"94
+[; ;aht10.c: 94:         result = ((temp[3] & 0x0F) << 16) | (temp[4] << 8) | temp[5];
+[e = _result | | << & *U + &U _temp * -> -> -> 3 `i `ui `ux -> -> # *U &U _temp `ui `ux -> -> -> 15 `i `l `ul -> 16 `i << *U + &U _temp * -> -> -> 4 `i `ui `ux -> -> # *U &U _temp `ui `ux -> 8 `i *U + &U _temp * -> -> -> 5 `i `ui `ux -> -> # *U &U _temp `ui `ux ]
+"95
+[; ;aht10.c: 95:     }
+}
+[e :U 150 ]
+"97
+[; ;aht10.c: 97:     return result;
+[e ) _result ]
+[e $UE 144  ]
+"98
+[; ;aht10.c: 98: }
+[e :UE 144 ]
+}
+"100
+[; ;aht10.c: 100: unsigned char aht_readStatus(void)
+[v _aht_readStatus `(uc ~T0 @X0 1 ef ]
+"101
+[; ;aht10.c: 101: {
+{
+[e :U _aht_readStatus ]
+[f ]
+"102
+[; ;aht10.c: 102:     unsigned char result = 0;
+[v _result `uc ~T0 @X0 1 a ]
+[e = _result -> -> 0 `i `uc ]
+"104
+[; ;aht10.c: 104:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"105
+[; ;aht10.c: 105:     result = I2C_Master_Read(1);
+[e = _result -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
+"106
+[; ;aht10.c: 106:     return result;
+[e ) _result ]
+[e $UE 151  ]
+"107
+[; ;aht10.c: 107: }
+[e :UE 151 ]
+}
+"109
+[; ;aht10.c: 109: void aht_Reset(void)
+[v _aht_Reset `(v ~T0 @X0 1 ef ]
+"110
+[; ;aht10.c: 110: {
+{
+[e :U _aht_Reset ]
+[f ]
+"111
+[; ;aht10.c: 111:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"112
+[; ;aht10.c: 112:     I2C_Master_Write(eSensorResetCmd);
+[e ( _I2C_Master_Write (1 -> _eSensorResetCmd `ui ]
+"113
+[; ;aht10.c: 113:     I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"114
+[; ;aht10.c: 114:     _delay((unsigned long)((20)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"115
+[; ;aht10.c: 115: }
+[e :UE 152 ]
 }
