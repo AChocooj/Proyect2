@@ -7,7 +7,13 @@
 # 1 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "aht10.c" 2
-# 10 "aht10.c"
+
+
+
+
+
+
+
 # 1 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2488,7 +2494,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 10 "aht10.c" 2
+# 8 "aht10.c" 2
 
 # 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
@@ -2623,7 +2629,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 11 "aht10.c" 2
+# 9 "aht10.c" 2
 
 # 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\math.h" 1 3
 
@@ -2658,7 +2664,7 @@ extern double ldexp(double, int);
 extern double fmod(double, double);
 extern double trunc(double);
 extern double round(double);
-# 12 "aht10.c" 2
+# 10 "aht10.c" 2
 
 # 1 "./I2C.h" 1
 # 20 "./I2C.h"
@@ -2701,7 +2707,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 13 "aht10.c" 2
+# 11 "aht10.c" 2
 
 # 1 "./aht10.h" 1
 
@@ -2724,7 +2730,7 @@ float aht_GetTemperature(void);
 unsigned char aht_readStatus(void);
 void aht_Reset(void);
 typedef unsigned char Sensor_CMD;
-# 14 "aht10.c" 2
+# 12 "aht10.c" 2
 
 
 Sensor_CMD eSensorCalibrateCmd[3] = {0xE1,0x08,0x00};
