@@ -28,8 +28,15 @@
 #include "USART.h"
 #include "aht10.h"
 
- 
-
 void main(void) {
+    USART_Init(9600);
+    I2C_Master_Init(100000);
+    
+    while(1){
+        Write_USART_String(aht_GetHumidity);
+        Write_USART_String(aht_GetTemperature);
+    
+    
+    }
     return;
 }
