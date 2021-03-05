@@ -22,7 +22,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "10
 [p x PWRTE  =  OFF        ]
 "11
-[p x MCLRE  =  OFF       ]
+[p x MCLRE  =  ON       ]
 "12
 [p x CP  =  OFF          ]
 "13

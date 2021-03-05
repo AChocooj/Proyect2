@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Thu Mar 04 19:14:31 2021
+                                                                                               Thu Mar 04 19:31:34 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -1793,7 +1793,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1776                           ;	Power-up Timer Enable bit
   1777                           ;	PWRTE = OFF, PWRT disabled
   1778                           ;	RE3/MCLR pin function select bit
-  1779                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
+  1779                           ;	MCLRE = ON, RE3/MCLR pin function is MCLR
   1780                           ;	Code Protection bit
   1781                           ;	CP = OFF, Program memory code protection is disabled
   1782                           ;	Data Code Protection bit
@@ -1809,7 +1809,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1792                           ;	In-Circuit Debugger Mode bit
   1793                           ;	DEBUG = 0x1, unprogrammed default
   1794  2007                     	org	8199
-  1795  2007  30D4               	dw	12500
+  1795  2007  30F4               	dw	12532
   1796                           
   1797                           ;Config register CONFIG2 @ 0x2008
   1798                           ;	Brown-out Reset Selection bit
@@ -1938,7 +1938,7 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Thu Mar 04 19:14:31 2021
+Symbol Table                                                                                   Thu Mar 04 19:31:34 2021
 
                           pc 0002                           l51 060E                           u30 0562  
                          u31 0561                           fsr 0004         __size_of_Write_USART 000C  

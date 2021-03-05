@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\quema\AppData\Local\Temp\sohg.o
+$C:\Users\quema\AppData\Local\Temp\snt8.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\Pic16f.X.production.o
@@ -76,33 +76,33 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Pic16f.X.production.o
-7EC cinit CODE >1006:C:\Users\quema\AppData\Local\Temp\sohg.s
-7EC cinit CODE >1009:C:\Users\quema\AppData\Local\Temp\sohg.s
-7EC cinit CODE >1098:C:\Users\quema\AppData\Local\Temp\sohg.s
-7ED cinit CODE >1099:C:\Users\quema\AppData\Local\Temp\sohg.s
-7EE cinit CODE >1100:C:\Users\quema\AppData\Local\Temp\sohg.s
-7EF cinit CODE >1101:C:\Users\quema\AppData\Local\Temp\sohg.s
-7F0 cinit CODE >1102:C:\Users\quema\AppData\Local\Temp\sohg.s
-7F1 cinit CODE >1103:C:\Users\quema\AppData\Local\Temp\sohg.s
-7F2 cinit CODE >1104:C:\Users\quema\AppData\Local\Temp\sohg.s
-7F3 cinit CODE >1105:C:\Users\quema\AppData\Local\Temp\sohg.s
-7F4 cinit CODE >1106:C:\Users\quema\AppData\Local\Temp\sohg.s
-7F5 cinit CODE >1107:C:\Users\quema\AppData\Local\Temp\sohg.s
-7FA cinit CODE >1111:C:\Users\quema\AppData\Local\Temp\sohg.s
-7FB cinit CODE >1112:C:\Users\quema\AppData\Local\Temp\sohg.s
-7FC cinit CODE >1118:C:\Users\quema\AppData\Local\Temp\sohg.s
-7FC cinit CODE >1120:C:\Users\quema\AppData\Local\Temp\sohg.s
-7FD cinit CODE >1121:C:\Users\quema\AppData\Local\Temp\sohg.s
-3 functab ENTRY >2572:C:\Users\quema\AppData\Local\Temp\sohg.s
-3 functab ENTRY >2574:C:\Users\quema\AppData\Local\Temp\sohg.s
-3 functab ENTRY >2575:C:\Users\quema\AppData\Local\Temp\sohg.s
-3 functab ENTRY >2576:C:\Users\quema\AppData\Local\Temp\sohg.s
-4 functab ENTRY >2577:C:\Users\quema\AppData\Local\Temp\sohg.s
-5 functab ENTRY >2578:C:\Users\quema\AppData\Local\Temp\sohg.s
-6 functab ENTRY >2579:C:\Users\quema\AppData\Local\Temp\sohg.s
-7 functab ENTRY >2580:C:\Users\quema\AppData\Local\Temp\sohg.s
-8 functab ENTRY >2582:C:\Users\quema\AppData\Local\Temp\sohg.s
-8 functab ENTRY >2583:C:\Users\quema\AppData\Local\Temp\sohg.s
+7EC cinit CODE >1006:C:\Users\quema\AppData\Local\Temp\snt8.s
+7EC cinit CODE >1009:C:\Users\quema\AppData\Local\Temp\snt8.s
+7EC cinit CODE >1098:C:\Users\quema\AppData\Local\Temp\snt8.s
+7ED cinit CODE >1099:C:\Users\quema\AppData\Local\Temp\snt8.s
+7EE cinit CODE >1100:C:\Users\quema\AppData\Local\Temp\snt8.s
+7EF cinit CODE >1101:C:\Users\quema\AppData\Local\Temp\snt8.s
+7F0 cinit CODE >1102:C:\Users\quema\AppData\Local\Temp\snt8.s
+7F1 cinit CODE >1103:C:\Users\quema\AppData\Local\Temp\snt8.s
+7F2 cinit CODE >1104:C:\Users\quema\AppData\Local\Temp\snt8.s
+7F3 cinit CODE >1105:C:\Users\quema\AppData\Local\Temp\snt8.s
+7F4 cinit CODE >1106:C:\Users\quema\AppData\Local\Temp\snt8.s
+7F5 cinit CODE >1107:C:\Users\quema\AppData\Local\Temp\snt8.s
+7FA cinit CODE >1111:C:\Users\quema\AppData\Local\Temp\snt8.s
+7FB cinit CODE >1112:C:\Users\quema\AppData\Local\Temp\snt8.s
+7FC cinit CODE >1118:C:\Users\quema\AppData\Local\Temp\snt8.s
+7FC cinit CODE >1120:C:\Users\quema\AppData\Local\Temp\snt8.s
+7FD cinit CODE >1121:C:\Users\quema\AppData\Local\Temp\snt8.s
+3 functab ENTRY >2572:C:\Users\quema\AppData\Local\Temp\snt8.s
+3 functab ENTRY >2574:C:\Users\quema\AppData\Local\Temp\snt8.s
+3 functab ENTRY >2575:C:\Users\quema\AppData\Local\Temp\snt8.s
+3 functab ENTRY >2576:C:\Users\quema\AppData\Local\Temp\snt8.s
+4 functab ENTRY >2577:C:\Users\quema\AppData\Local\Temp\snt8.s
+5 functab ENTRY >2578:C:\Users\quema\AppData\Local\Temp\snt8.s
+6 functab ENTRY >2579:C:\Users\quema\AppData\Local\Temp\snt8.s
+7 functab ENTRY >2580:C:\Users\quema\AppData\Local\Temp\snt8.s
+8 functab ENTRY >2582:C:\Users\quema\AppData\Local\Temp\snt8.s
+8 functab ENTRY >2583:C:\Users\quema\AppData\Local\Temp\snt8.s
 60F text6 CODE >5:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
 60F text6 CODE >13:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
 617 text6 CODE >14:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
@@ -181,23 +181,23 @@ $dist/default/production\Pic16f.X.production.o
 5B8 maintext CODE >33:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
 5C7 maintext CODE >36:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
 5CD maintext CODE >37:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-578 inittext CODE >1072:C:\Users\quema\AppData\Local\Temp\sohg.s
-578 inittext CODE >1073:C:\Users\quema\AppData\Local\Temp\sohg.s
-579 inittext CODE >1074:C:\Users\quema\AppData\Local\Temp\sohg.s
-57A inittext CODE >1075:C:\Users\quema\AppData\Local\Temp\sohg.s
-57B inittext CODE >1076:C:\Users\quema\AppData\Local\Temp\sohg.s
-57C inittext CODE >1083:C:\Users\quema\AppData\Local\Temp\sohg.s
-57C inittext CODE >1084:C:\Users\quema\AppData\Local\Temp\sohg.s
-581 inittext CODE >1085:C:\Users\quema\AppData\Local\Temp\sohg.s
-582 inittext CODE >1086:C:\Users\quema\AppData\Local\Temp\sohg.s
-583 inittext CODE >1087:C:\Users\quema\AppData\Local\Temp\sohg.s
-584 inittext CODE >1088:C:\Users\quema\AppData\Local\Temp\sohg.s
-585 inittext CODE >1089:C:\Users\quema\AppData\Local\Temp\sohg.s
-586 inittext CODE >1090:C:\Users\quema\AppData\Local\Temp\sohg.s
-587 inittext CODE >1091:C:\Users\quema\AppData\Local\Temp\sohg.s
-588 inittext CODE >1092:C:\Users\quema\AppData\Local\Temp\sohg.s
-589 inittext CODE >1093:C:\Users\quema\AppData\Local\Temp\sohg.s
-58A inittext CODE >1094:C:\Users\quema\AppData\Local\Temp\sohg.s
+578 inittext CODE >1072:C:\Users\quema\AppData\Local\Temp\snt8.s
+578 inittext CODE >1073:C:\Users\quema\AppData\Local\Temp\snt8.s
+579 inittext CODE >1074:C:\Users\quema\AppData\Local\Temp\snt8.s
+57A inittext CODE >1075:C:\Users\quema\AppData\Local\Temp\snt8.s
+57B inittext CODE >1076:C:\Users\quema\AppData\Local\Temp\snt8.s
+57C inittext CODE >1083:C:\Users\quema\AppData\Local\Temp\snt8.s
+57C inittext CODE >1084:C:\Users\quema\AppData\Local\Temp\snt8.s
+581 inittext CODE >1085:C:\Users\quema\AppData\Local\Temp\snt8.s
+582 inittext CODE >1086:C:\Users\quema\AppData\Local\Temp\snt8.s
+583 inittext CODE >1087:C:\Users\quema\AppData\Local\Temp\snt8.s
+584 inittext CODE >1088:C:\Users\quema\AppData\Local\Temp\snt8.s
+585 inittext CODE >1089:C:\Users\quema\AppData\Local\Temp\snt8.s
+586 inittext CODE >1090:C:\Users\quema\AppData\Local\Temp\snt8.s
+587 inittext CODE >1091:C:\Users\quema\AppData\Local\Temp\snt8.s
+588 inittext CODE >1092:C:\Users\quema\AppData\Local\Temp\snt8.s
+589 inittext CODE >1093:C:\Users\quema\AppData\Local\Temp\snt8.s
+58A inittext CODE >1094:C:\Users\quema\AppData\Local\Temp\snt8.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -232,10 +232,10 @@ _SPEN C7 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _SYNC 4C4 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _TRMT 4C1 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _TXEN 4C5 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\sohg.o
+___sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\snt8.o
 _main B52 0 CODE 0 maintext dist/default/production\Pic16f.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-start 0 0 CODE 0 init C:\Users\quema\AppData\Local\Temp\sohg.o
+start 0 0 CODE 0 init C:\Users\quema\AppData\Local\Temp\snt8.o
 __size_of___aldiv 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __pfunctab 6 0 ENTRY 0 functab dist/default/production\Pic16f.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
@@ -245,12 +245,12 @@ __LidataBANK0 12 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
 _AHT10_address 45 0 BANK0 1 dataBANK0 dist/default/production\Pic16f.X.production.o
 __end_of_Write_USART ACE 0 CODE 0 text2 dist/default/production\Pic16f.X.production.o
-intlevel0 6 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sohg.o
-intlevel1 6 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sohg.o
-intlevel2 6 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sohg.o
-intlevel3 6 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sohg.o
-intlevel4 6 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sohg.o
-intlevel5 6 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sohg.o
+intlevel0 6 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\snt8.o
+intlevel1 6 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\snt8.o
+intlevel2 6 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\snt8.o
+intlevel3 6 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\snt8.o
+intlevel4 6 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\snt8.o
+intlevel5 6 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\snt8.o
 _eSensorMeasureCmd 36 0 BANK0 1 dataBANK0 dist/default/production\Pic16f.X.production.o
 ___aldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Pic16f.X.production.o
@@ -260,8 +260,8 @@ __Hclrtext 12 0 ABS 0 clrtext -
 __Lmaintext 12 0 ABS 0 maintext -
 __end_of___aldiv E24 0 CODE 0 text4 dist/default/production\Pic16f.X.production.o
 __end_of___lldiv CEA 0 CODE 0 text6 dist/default/production\Pic16f.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\sohg.o
-___stacklo 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\sohg.o
+___stackhi 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\snt8.o
+___stacklo 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\snt8.o
 ___lldiv@counter 7D 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
 start_initialization FD8 0 CODE 0 cinit dist/default/production\Pic16f.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\Pic16f.X.production.o
@@ -278,7 +278,7 @@ _TRISC6 43E 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _TRISC7 43F 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __size_of_Write_USART 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __size_of_USART_Init 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\sohg.o
+___int_sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\snt8.o
 _eSensorCalibrateCmd 3C 0 BANK0 1 dataBANK0 dist/default/production\Pic16f.X.production.o
 __Hbank0 12 0 ABS 0 bank0 -
 __Hbank1 12 0 ABS 0 bank1 -
@@ -323,7 +323,7 @@ __S3 0 0 ABS 0 - -
 _aht_GetTemperature 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
 ___lldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\quema\AppData\Local\Temp\sohg.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\quema\AppData\Local\Temp\snt8.o
 __fptable 6 0 ENTRY 0 functab dist/default/production\Pic16f.X.production.o
 __pdataBANK0 36 0 BANK0 1 dataBANK0 dist/default/production\Pic16f.X.production.o
 __LbssBANK0 12 0 ABS 0 bssBANK0 -
