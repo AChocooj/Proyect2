@@ -33,10 +33,9 @@ void main(void) {
     I2C_Master_Init(100000);
     
     while(1){
+        Write_USART("a");
         Write_USART_String(aht_GetHumidity);
         Write_USART_String(aht_GetTemperature);
-    
-    
     }
     return;
 }
