@@ -201,7 +201,7 @@ idataBANK0 ACE AEF CODE ACE 0
 text2 AB6 ACD CODE AB6 0
 %locals
 dist/default/production\Pic16f.X.production.o
-C:\Users\quema\AppData\Local\Temp\s3q8.s
+C:\Users\quema\AppData\Local\Temp\sohg.s
 1006 7EC 0 CODE 0
 1009 7EC 0 CODE 0
 1098 7EC 0 CODE 0
@@ -319,7 +319,7 @@ D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
 27 666 0 CODE 0
 29 66C 0 CODE 0
 30 674 0 CODE 0
-C:\Users\quema\AppData\Local\Temp\s3q8.s
+C:\Users\quema\AppData\Local\Temp\sohg.s
 2572 3 0 ENTRY 0
 2574 3 0 ENTRY 0
 2575 3 0 ENTRY 0

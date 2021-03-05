@@ -23,7 +23,7 @@
 #pragma config BOREN = OFF
 #pragma config IESO = OFF
 #pragma config FCMEN = OFF
-#pragma config LVP = OFF
+#pragma config LVP = ON
 
 
 #pragma config BOR4V = BOR40V

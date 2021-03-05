@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Wed Mar 03 20:37:03 2021
+                                                                                               Thu Mar 04 19:14:31 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -1805,11 +1805,11 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1788                           ;	Fail-Safe Clock Monitor Enabled bit
   1789                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
   1790                           ;	Low Voltage Programming Enable bit
-  1791                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
+  1791                           ;	LVP = ON, RB3/PGM pin has PGM function, low voltage programming enabled
   1792                           ;	In-Circuit Debugger Mode bit
   1793                           ;	DEBUG = 0x1, unprogrammed default
   1794  2007                     	org	8199
-  1795  2007  20D4               	dw	8404
+  1795  2007  30D4               	dw	12500
   1796                           
   1797                           ;Config register CONFIG2 @ 0x2008
   1798                           ;	Brown-out Reset Selection bit
@@ -1938,7 +1938,7 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Wed Mar 03 20:37:03 2021
+Symbol Table                                                                                   Thu Mar 04 19:14:31 2021
 
                           pc 0002                           l51 060E                           u30 0562  
                          u31 0561                           fsr 0004         __size_of_Write_USART 000C  
