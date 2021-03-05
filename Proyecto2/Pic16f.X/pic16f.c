@@ -27,15 +27,17 @@
 #include "I2C.h"
 #include "USART.h"
 #include "aht10.h"
+#define _XTAL_FREQ 8000000
 
 void main(void) {
     USART_Init(9600);
     I2C_Master_Init(100000);
-    
+   
     while(1){
         Write_USART("a");
         Write_USART_String(aht_GetHumidity);
         Write_USART_String(aht_GetTemperature);
+        __delay_ms(1000);
     }
     return;
 }

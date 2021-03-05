@@ -18,6 +18,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15
 [; ;./aht10.h: 15: float aht_GetTemperature(void);
 [v _aht_GetTemperature `(f ~T0 @X0 0 ef ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
 "8 pic16f.c
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "9
@@ -289,42 +293,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 57 `i
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"31 pic16f.c
-[; ;pic16f.c: 31: void main(void) {
+"32 pic16f.c
+[; ;pic16f.c: 32: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"32
-[; ;pic16f.c: 32:     USART_Init(9600);
-[e ( _USART_Init (1 -> -> 9600 `i `l ]
 "33
-[; ;pic16f.c: 33:     I2C_Master_Init(100000);
+[; ;pic16f.c: 33:     USART_Init(9600);
+[e ( _USART_Init (1 -> -> 9600 `i `l ]
+"34
+[; ;pic16f.c: 34:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"35
-[; ;pic16f.c: 35:     while(1){
+"36
+[; ;pic16f.c: 36:     while(1){
 [e :U 140 ]
 {
-"36
-[; ;pic16f.c: 36:         Write_USART("a");
-[e ( _Write_USART (1 -> :s 1C `uc ]
 "37
-[; ;pic16f.c: 37:         Write_USART_String(aht_GetHumidity);
-[e ( _Write_USART_String (1 -> &U _aht_GetHumidity `*uc ]
+[; ;pic16f.c: 37:         Write_USART("a");
+[e ( _Write_USART (1 -> :s 1C `uc ]
 "38
-[; ;pic16f.c: 38:         Write_USART_String(aht_GetTemperature);
-[e ( _Write_USART_String (1 -> &U _aht_GetTemperature `*uc ]
+[; ;pic16f.c: 38:         Write_USART_String(aht_GetHumidity);
+[e ( _Write_USART_String (1 -> &U _aht_GetHumidity `*uc ]
 "39
-[; ;pic16f.c: 39:     }
+[; ;pic16f.c: 39:         Write_USART_String(aht_GetTemperature);
+[e ( _Write_USART_String (1 -> &U _aht_GetTemperature `*uc ]
+"40
+[; ;pic16f.c: 40:         _delay((unsigned long)((1000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"41
+[; ;pic16f.c: 41:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"40
-[; ;pic16f.c: 40:     return;
+"42
+[; ;pic16f.c: 42:     return;
 [e $UE 138  ]
-"41
-[; ;pic16f.c: 41: }
+"43
+[; ;pic16f.c: 43: }
 [e :UE 138 ]
 }
 [a 1C 97 0 ]

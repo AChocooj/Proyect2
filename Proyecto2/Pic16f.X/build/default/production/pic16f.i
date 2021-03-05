@@ -2731,6 +2731,7 @@ typedef unsigned char Sensor_CMD;
 # 29 "pic16f.c" 2
 
 
+
 void main(void) {
     USART_Init(9600);
     I2C_Master_Init(100000);
@@ -2739,6 +2740,7 @@ void main(void) {
         Write_USART("a");
         Write_USART_String(aht_GetHumidity);
         Write_USART_String(aht_GetTemperature);
+        _delay((unsigned long)((1000)*(8000000/4000.0)));
     }
     return;
 }

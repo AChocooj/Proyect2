@@ -43,7 +43,7 @@
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
 "74
 [v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
-"31 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+"32 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
 [v _main main `(v  1 e 1 0 ]
 "9 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
 [v _USART_Init USART_Init `(uc  1 e 1 0 ]
@@ -65,7 +65,7 @@
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1140
 [v _RCREG RCREG `VEuc  1 e 1 @26 ]
-[s S62 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S68 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -75,11 +75,11 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S71 . 1 `S62 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES71  1 e 1 @135 ]
+[u S77 . 1 `S68 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES77  1 e 1 @135 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S83 . 1 `uc 1 SEN 1 0 :1:0 
+[s S89 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -89,8 +89,8 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S92 . 1 `S83 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES92  1 e 1 @145 ]
+[u S98 . 1 `S89 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES98  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
@@ -127,10 +127,10 @@
 [v _TRMT TRMT `VEb  1 e 0 @1217 ]
 "4538
 [v _TXEN TXEN `VEb  1 e 0 @1221 ]
-"31 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+"32 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
 [v _main main `(v  1 e 1 0 ]
 {
-"41
+"43
 } 0
 "34 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
 [v _Write_USART_String Write_USART_String `(v  1 e 1 0 ]
