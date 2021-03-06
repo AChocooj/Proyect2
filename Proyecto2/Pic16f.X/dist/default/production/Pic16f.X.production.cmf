@@ -11,34 +11,59 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\quema\AppData\Local\Temp\sfio.o
+$C:\Users\quema\AppData\Local\Temp\simk.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\Pic16f.X.production.o
-cinit CODE 0 F F 23 2
-text1 CODE 0 2E1 2E1 13 2
-text2 CODE 0 29A 29A 1E 2
-text3 CODE 0 304 304 C 2
-text4 CODE 0 38 38 DC 2
-text5 CODE 0 114 114 9D 2
-text6 CODE 0 260 260 3A 2
-text7 CODE 0 1B1 1B1 68 2
-text8 CODE 0 2B8 2B8 16 2
-text9 CODE 0 318 318 8 2
-idataCOMMON CODE 0 320 320 1 2
-maintext CODE 0 219 219 47 2
+cinit CODE 0 F F 28 2
+text1 CODE 0 D02 D02 2FE 2
+text2 CODE 0 A47 A47 2BB 2
+text3 CODE 0 11D6 11D6 5B 2
+text4 CODE 0 1299 1299 69 2
+text5 CODE 0 1EF5 1EF5 12 2
+text6 CODE 0 651 651 1A9 2
+text7 CODE 0 10FE 10FE 3C 2
+text8 CODE 0 113A 113A 46 2
+text9 CODE 0 82C 82C E5 2
+text10 CODE 0 10AD 10AD 17 2
+text11 CODE 0 153A 153A BD 2
+text12 CODE 0 16D3 16D3 12D 2
+text13 CODE 0 801 801 2B 2
+text14 CODE 0 1F93 1F93 33 2
+text15 CODE 0 1180 1180 56 2
+text16 CODE 0 1384 1384 8C 2
+text17 CODE 0 1F43 1F43 25 2
+text18 CODE 0 911 911 136 2
+text19 CODE 0 1302 1302 82 2
+text20 CODE 0 1EDC 1EDC A 2
+text21 CODE 0 10C4 10C4 3A 2
+text22 CODE 0 1F07 1F07 13 2
+text23 CODE 0 1F68 1F68 2B 2
+text24 CODE 0 10A1 10A1 C 2
+text25 CODE 0 15F7 15F7 DC 2
+text26 CODE 0 149D 149D 9D 2
+text27 CODE 0 1FC6 1FC6 3A 2
+text28 CODE 0 1231 1231 68 2
+text29 CODE 0 1F2D 1F2D 16 2
+text30 CODE 0 1ECC 1ECC 8 2
+idataCOMMON CODE 0 7FA 7FA 2 2
+maintext CODE 0 1410 1410 8D 2
 cstackCOMMON COMMON 1 70 70 8 1
-cstackBANK0 BANK0 1 20 20 21 1
-inittext CODE 0 2CE 2CE 13 2
+cstackBANK0 BANK0 1 20 20 4D 1
+cstackBANK1 BANK1 1 A0 A0 1E 1
+inittext CODE 0 1F1A 1F1A 13 2
 intentry CODE 0 4 4 8 2
-bssBANK0 BANK0 1 51 51 9 1
-idataBANK0 CODE 0 2F4 2F4 10 2
-strings STRING 0 310 310 8 2
-dataBANK0 BANK0 1 41 41 10 1
-dataCOMMON COMMON 1 7A 7A 1 1
-functab ENTRY 0 32 32 6 2
-bssCOMMON COMMON 1 78 78 2 1
+bssBANK0 BANK0 1 6D 6D 1 1
+bssBANK1 BANK1 1 BE BE 1D 1
+text1_split_1 CODE 0 3D 3D 614 2
+idataBANK1 CODE 0 1EE6 1EE6 F 2
+strings STRING 0 1000 1000 A1 2
+dataBANK1 BANK1 1 DB DB F 1
+dataCOMMON COMMON 1 78 78 2 1
+functab ENTRY 0 37 37 6 2
+clrtext CODE 0 1ED4 1ED4 8 2
+bssCOMMON COMMON 1 7A 7A 1 1
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -46,22 +71,25 @@ config CONFIG 4 2007 2007 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 5A-6F 1
-RAM A0-EF 1
+RAM 6E-6F 1
+RAM EA-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK0 5A-6F 1
-BANK1 A0-EF 1
+BANK0 6E-6F 1
+BANK1 EA-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 321-1FFF 2
+CONST 7FC-800 2
+CONST 1800-1ECB 2
 ENTRY 3-3 2
-ENTRY 321-1FFF 2
+ENTRY 7FC-800 2
+ENTRY 1800-1ECB 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 321-1FFF 2
+CODE 7FC-800 2
+CODE 1800-1ECB 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -69,9 +97,11 @@ SFR3 180-18F 1
 COMMON 7B-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 321-1FFF 2
+STRCODE 7FC-800 2
+STRCODE 1800-1ECB 2
 STRING 3-3 2
-STRING 321-1FFF 2
+STRING 7FC-800 2
+STRING 1800-1ECB 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -86,162 +116,624 @@ STRING 321-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Pic16f.X.production.o
-F cinit CODE >1054:C:\Users\quema\AppData\Local\Temp\sfio.s
-F cinit CODE >1057:C:\Users\quema\AppData\Local\Temp\sfio.s
-F cinit CODE >1166:C:\Users\quema\AppData\Local\Temp\sfio.s
-10 cinit CODE >1167:C:\Users\quema\AppData\Local\Temp\sfio.s
-11 cinit CODE >1168:C:\Users\quema\AppData\Local\Temp\sfio.s
-12 cinit CODE >1169:C:\Users\quema\AppData\Local\Temp\sfio.s
-13 cinit CODE >1170:C:\Users\quema\AppData\Local\Temp\sfio.s
-14 cinit CODE >1171:C:\Users\quema\AppData\Local\Temp\sfio.s
-15 cinit CODE >1172:C:\Users\quema\AppData\Local\Temp\sfio.s
-16 cinit CODE >1173:C:\Users\quema\AppData\Local\Temp\sfio.s
-17 cinit CODE >1174:C:\Users\quema\AppData\Local\Temp\sfio.s
-18 cinit CODE >1175:C:\Users\quema\AppData\Local\Temp\sfio.s
-1D cinit CODE >1179:C:\Users\quema\AppData\Local\Temp\sfio.s
-22 cinit CODE >1180:C:\Users\quema\AppData\Local\Temp\sfio.s
-23 cinit CODE >1184:C:\Users\quema\AppData\Local\Temp\sfio.s
-24 cinit CODE >1185:C:\Users\quema\AppData\Local\Temp\sfio.s
-25 cinit CODE >1186:C:\Users\quema\AppData\Local\Temp\sfio.s
-26 cinit CODE >1187:C:\Users\quema\AppData\Local\Temp\sfio.s
-27 cinit CODE >1188:C:\Users\quema\AppData\Local\Temp\sfio.s
-28 cinit CODE >1189:C:\Users\quema\AppData\Local\Temp\sfio.s
-29 cinit CODE >1190:C:\Users\quema\AppData\Local\Temp\sfio.s
-2A cinit CODE >1191:C:\Users\quema\AppData\Local\Temp\sfio.s
-2B cinit CODE >1192:C:\Users\quema\AppData\Local\Temp\sfio.s
-2C cinit CODE >1195:C:\Users\quema\AppData\Local\Temp\sfio.s
-2D cinit CODE >1196:C:\Users\quema\AppData\Local\Temp\sfio.s
-2E cinit CODE >1202:C:\Users\quema\AppData\Local\Temp\sfio.s
-2E cinit CODE >1204:C:\Users\quema\AppData\Local\Temp\sfio.s
-2F cinit CODE >1205:C:\Users\quema\AppData\Local\Temp\sfio.s
-32 functab ENTRY >3021:C:\Users\quema\AppData\Local\Temp\sfio.s
-32 functab ENTRY >3023:C:\Users\quema\AppData\Local\Temp\sfio.s
-32 functab ENTRY >3024:C:\Users\quema\AppData\Local\Temp\sfio.s
-32 functab ENTRY >3025:C:\Users\quema\AppData\Local\Temp\sfio.s
-33 functab ENTRY >3026:C:\Users\quema\AppData\Local\Temp\sfio.s
-34 functab ENTRY >3027:C:\Users\quema\AppData\Local\Temp\sfio.s
-35 functab ENTRY >3028:C:\Users\quema\AppData\Local\Temp\sfio.s
-36 functab ENTRY >3029:C:\Users\quema\AppData\Local\Temp\sfio.s
-37 functab ENTRY >3031:C:\Users\quema\AppData\Local\Temp\sfio.s
-37 functab ENTRY >3032:C:\Users\quema\AppData\Local\Temp\sfio.s
-4 intentry CODE >56:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-318 text9 CODE >40:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-318 text9 CODE >41:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-31E text9 CODE >42:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-31F text9 CODE >43:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-2B8 text8 CODE >56:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-2B8 text8 CODE >57:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-2BE text8 CODE >58:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-2BF text8 CODE >59:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-2C7 text8 CODE >61:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-1B1 text7 CODE >5:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-1B1 text7 CODE >13:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-1BB text7 CODE >14:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-1C3 text7 CODE >15:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-1C5 text7 CODE >16:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-1C6 text7 CODE >17:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-1CF text7 CODE >18:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-1D3 text7 CODE >16:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-1D7 text7 CODE >21:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-1E0 text7 CODE >22:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-1F2 text7 CODE >23:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-200 text7 CODE >24:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-201 text7 CODE >26:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-20A text7 CODE >27:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-210 text7 CODE >29:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-218 text7 CODE >30:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
-260 text6 CODE >16:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
-260 text6 CODE >18:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
-264 text6 CODE >19:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
-267 text6 CODE >20:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
-296 text6 CODE >21:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
-297 text6 CODE >22:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
-298 text6 CODE >23:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
-299 text6 CODE >24:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
-114 text5 CODE >5:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-114 text5 CODE >13:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-117 text5 CODE >14:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-11B text5 CODE >15:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-126 text5 CODE >16:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-128 text5 CODE >17:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-128 text5 CODE >18:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-12C text5 CODE >19:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-137 text5 CODE >20:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-13B text5 CODE >22:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-143 text5 CODE >23:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-14B text5 CODE >24:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-14D text5 CODE >25:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-14E text5 CODE >26:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-157 text5 CODE >27:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-15B text5 CODE >25:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-15F text5 CODE >30:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-168 text5 CODE >31:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-17A text5 CODE >32:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-188 text5 CODE >33:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-189 text5 CODE >35:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-192 text5 CODE >36:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-198 text5 CODE >38:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-19D text5 CODE >39:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-1A8 text5 CODE >40:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-1B0 text5 CODE >41:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
-38 text4 CODE >9:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-38 text4 CODE >11:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-93 text4 CODE >12:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-9C text4 CODE >14:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-F5 text4 CODE >15:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-F8 text4 CODE >17:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-101 text4 CODE >19:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-105 text4 CODE >20:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-106 text4 CODE >21:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-109 text4 CODE >22:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-10C text4 CODE >23:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-10D text4 CODE >24:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-110 text4 CODE >25:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-113 text4 CODE >29:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-304 text3 CODE >30:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-305 text3 CODE >31:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-30B text3 CODE >32:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-30F text3 CODE >33:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-29A text2 CODE >34:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-29B text2 CODE >36:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-29D text2 CODE >37:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-2A8 text2 CODE >38:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-2B7 text2 CODE >39:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
-2E1 text1 CODE >44:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-2E1 text1 CODE >45:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-2E4 text1 CODE >46:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-2E7 text1 CODE >47:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-2E8 text1 CODE >48:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-2EB text1 CODE >50:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-2EC text1 CODE >51:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-2EF text1 CODE >52:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-2F2 text1 CODE >53:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-2F3 text1 CODE >55:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-219 maintext CODE >63:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-219 maintext CODE >64:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-21E maintext CODE >65:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-22D maintext CODE >66:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-23C maintext CODE >69:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-242 maintext CODE >70:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-248 maintext CODE >71:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-24E maintext CODE >72:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-2CE inittext CODE >1140:C:\Users\quema\AppData\Local\Temp\sfio.s
-2CE inittext CODE >1141:C:\Users\quema\AppData\Local\Temp\sfio.s
-2CF inittext CODE >1142:C:\Users\quema\AppData\Local\Temp\sfio.s
-2D0 inittext CODE >1143:C:\Users\quema\AppData\Local\Temp\sfio.s
-2D1 inittext CODE >1144:C:\Users\quema\AppData\Local\Temp\sfio.s
-2D2 inittext CODE >1151:C:\Users\quema\AppData\Local\Temp\sfio.s
-2D2 inittext CODE >1152:C:\Users\quema\AppData\Local\Temp\sfio.s
-2D7 inittext CODE >1153:C:\Users\quema\AppData\Local\Temp\sfio.s
-2D8 inittext CODE >1154:C:\Users\quema\AppData\Local\Temp\sfio.s
-2D9 inittext CODE >1155:C:\Users\quema\AppData\Local\Temp\sfio.s
-2DA inittext CODE >1156:C:\Users\quema\AppData\Local\Temp\sfio.s
-2DB inittext CODE >1157:C:\Users\quema\AppData\Local\Temp\sfio.s
-2DC inittext CODE >1158:C:\Users\quema\AppData\Local\Temp\sfio.s
-2DD inittext CODE >1159:C:\Users\quema\AppData\Local\Temp\sfio.s
-2DE inittext CODE >1160:C:\Users\quema\AppData\Local\Temp\sfio.s
-2DF inittext CODE >1161:C:\Users\quema\AppData\Local\Temp\sfio.s
-2E0 inittext CODE >1162:C:\Users\quema\AppData\Local\Temp\sfio.s
+F cinit CODE >1300:C:\Users\quema\AppData\Local\Temp\simk.s
+F cinit CODE >1303:C:\Users\quema\AppData\Local\Temp\simk.s
+F cinit CODE >1418:C:\Users\quema\AppData\Local\Temp\simk.s
+10 cinit CODE >1419:C:\Users\quema\AppData\Local\Temp\simk.s
+11 cinit CODE >1420:C:\Users\quema\AppData\Local\Temp\simk.s
+12 cinit CODE >1421:C:\Users\quema\AppData\Local\Temp\simk.s
+13 cinit CODE >1422:C:\Users\quema\AppData\Local\Temp\simk.s
+14 cinit CODE >1423:C:\Users\quema\AppData\Local\Temp\simk.s
+15 cinit CODE >1424:C:\Users\quema\AppData\Local\Temp\simk.s
+16 cinit CODE >1425:C:\Users\quema\AppData\Local\Temp\simk.s
+17 cinit CODE >1426:C:\Users\quema\AppData\Local\Temp\simk.s
+18 cinit CODE >1427:C:\Users\quema\AppData\Local\Temp\simk.s
+1D cinit CODE >1431:C:\Users\quema\AppData\Local\Temp\simk.s
+22 cinit CODE >1432:C:\Users\quema\AppData\Local\Temp\simk.s
+23 cinit CODE >1433:C:\Users\quema\AppData\Local\Temp\simk.s
+28 cinit CODE >1434:C:\Users\quema\AppData\Local\Temp\simk.s
+29 cinit CODE >1453:C:\Users\quema\AppData\Local\Temp\simk.s
+2A cinit CODE >1454:C:\Users\quema\AppData\Local\Temp\simk.s
+2B cinit CODE >1455:C:\Users\quema\AppData\Local\Temp\simk.s
+2C cinit CODE >1456:C:\Users\quema\AppData\Local\Temp\simk.s
+31 cinit CODE >1459:C:\Users\quema\AppData\Local\Temp\simk.s
+32 cinit CODE >1462:C:\Users\quema\AppData\Local\Temp\simk.s
+33 cinit CODE >1468:C:\Users\quema\AppData\Local\Temp\simk.s
+33 cinit CODE >1470:C:\Users\quema\AppData\Local\Temp\simk.s
+34 cinit CODE >1471:C:\Users\quema\AppData\Local\Temp\simk.s
+37 functab ENTRY >11686:C:\Users\quema\AppData\Local\Temp\simk.s
+37 functab ENTRY >11688:C:\Users\quema\AppData\Local\Temp\simk.s
+37 functab ENTRY >11689:C:\Users\quema\AppData\Local\Temp\simk.s
+37 functab ENTRY >11690:C:\Users\quema\AppData\Local\Temp\simk.s
+38 functab ENTRY >11691:C:\Users\quema\AppData\Local\Temp\simk.s
+39 functab ENTRY >11692:C:\Users\quema\AppData\Local\Temp\simk.s
+3A functab ENTRY >11693:C:\Users\quema\AppData\Local\Temp\simk.s
+3B functab ENTRY >11694:C:\Users\quema\AppData\Local\Temp\simk.s
+3C functab ENTRY >11696:C:\Users\quema\AppData\Local\Temp\simk.s
+3C functab ENTRY >11697:C:\Users\quema\AppData\Local\Temp\simk.s
+4 intentry CODE >57:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+3D text1_split_1 CODE >1142:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+74 text1_split_1 CODE >1146:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+95 text1_split_1 CODE >1147:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+9D text1_split_1 CODE >1148:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+9E text1_split_1 CODE >1149:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+A6 text1_split_1 CODE >1151:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+BE text1_split_1 CODE >1152:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+FD text1_split_1 CODE >1155:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+103 text1_split_1 CODE >1156:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+104 text1_split_1 CODE >1157:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+133 text1_split_1 CODE >1158:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+17F text1_split_1 CODE >1159:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+181 text1_split_1 CODE >1162:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+183 text1_split_1 CODE >1163:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+1CA text1_split_1 CODE >1164:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+1D8 text1_split_1 CODE >1168:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+201 text1_split_1 CODE >1169:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+207 text1_split_1 CODE >1174:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+20D text1_split_1 CODE >1175:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+21F text1_split_1 CODE >1176:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+228 text1_split_1 CODE >1207:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+23C text1_split_1 CODE >1206:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+24B text1_split_1 CODE >1214:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+25F text1_split_1 CODE >1216:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+271 text1_split_1 CODE >1227:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+2CC text1_split_1 CODE >1228:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+30B text1_split_1 CODE >1229:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+31F text1_split_1 CODE >1222:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+31F text1_split_1 CODE >1232:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+329 text1_split_1 CODE >1234:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+33C text1_split_1 CODE >1235:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+342 text1_split_1 CODE >1233:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+34F text1_split_1 CODE >1237:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+35E text1_split_1 CODE >1238:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+367 text1_split_1 CODE >1240:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+371 text1_split_1 CODE >1241:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+382 text1_split_1 CODE >1245:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+387 text1_split_1 CODE >1247:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+39A text1_split_1 CODE >1253:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+3FE text1_split_1 CODE >1254:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+3FF text1_split_1 CODE >1255:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+45A text1_split_1 CODE >1256:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+499 text1_split_1 CODE >1257:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+4AD text1_split_1 CODE >1258:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+508 text1_split_1 CODE >1254:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+510 text1_split_1 CODE >1262:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+523 text1_split_1 CODE >1263:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+529 text1_split_1 CODE >1261:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+530 text1_split_1 CODE >1316:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+540 text1_split_1 CODE >1317:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+546 text1_split_1 CODE >1365:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+551 text1_split_1 CODE >1366:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+55C text1_split_1 CODE >1367:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+56F text1_split_1 CODE >1368:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+580 text1_split_1 CODE >1371:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+59A text1_split_1 CODE >1372:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+5A2 text1_split_1 CODE >1374:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+5A8 text1_split_1 CODE >1375:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+5BE text1_split_1 CODE >1376:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+5C7 text1_split_1 CODE >1378:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+5CB text1_split_1 CODE >1407:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+5D6 text1_split_1 CODE >1408:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+5EA text1_split_1 CODE >1410:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+5EE text1_split_1 CODE >1450:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+5F4 text1_split_1 CODE >1456:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+613 text1_split_1 CODE >1464:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+625 text1_split_1 CODE >1465:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+633 text1_split_1 CODE >553:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+64A text1_split_1 CODE >1564:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+650 text1_split_1 CODE >1567:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+1ECC text30 CODE >40:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+1ECC text30 CODE >41:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+1ED2 text30 CODE >42:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+1ED3 text30 CODE >43:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+1F2D text29 CODE >57:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1F2D text29 CODE >58:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1F33 text29 CODE >59:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1F34 text29 CODE >60:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1F3C text29 CODE >62:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1231 text28 CODE >5:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+1231 text28 CODE >13:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+123B text28 CODE >14:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+1243 text28 CODE >15:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+1245 text28 CODE >16:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+1246 text28 CODE >17:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+124F text28 CODE >18:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+1253 text28 CODE >16:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+1257 text28 CODE >21:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+1260 text28 CODE >22:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+1272 text28 CODE >23:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+1280 text28 CODE >24:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+1281 text28 CODE >26:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+128A text28 CODE >27:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+1290 text28 CODE >29:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+1298 text28 CODE >30:D:\MPLAB XC8 compiler\pic\sources\c90\common\__lldiv.c
+1FC6 text27 CODE >16:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
+1FC6 text27 CODE >18:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
+1FCA text27 CODE >19:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
+1FCD text27 CODE >20:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
+1FFC text27 CODE >21:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
+1FFD text27 CODE >22:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
+1FFE text27 CODE >23:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
+1FFF text27 CODE >24:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\I2C.c
+149D text26 CODE >5:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+149D text26 CODE >13:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14A0 text26 CODE >14:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14A4 text26 CODE >15:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14AF text26 CODE >16:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14B1 text26 CODE >17:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14B1 text26 CODE >18:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14B5 text26 CODE >19:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14C0 text26 CODE >20:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14C4 text26 CODE >22:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14CC text26 CODE >23:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14D4 text26 CODE >24:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14D6 text26 CODE >25:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14D7 text26 CODE >26:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14E0 text26 CODE >27:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14E4 text26 CODE >25:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14E8 text26 CODE >30:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+14F1 text26 CODE >31:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+1503 text26 CODE >32:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+1511 text26 CODE >33:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+1512 text26 CODE >35:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+151B text26 CODE >36:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+1521 text26 CODE >38:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+1526 text26 CODE >39:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+1531 text26 CODE >40:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+1539 text26 CODE >41:D:\MPLAB XC8 compiler\pic\sources\c90\common\aldiv.c
+15F7 text25 CODE >9:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+15F7 text25 CODE >11:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+1652 text25 CODE >12:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+165B text25 CODE >14:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+16B4 text25 CODE >15:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+16B7 text25 CODE >17:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+16C0 text25 CODE >19:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+16C4 text25 CODE >20:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+16C5 text25 CODE >21:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+16C8 text25 CODE >22:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+16CB text25 CODE >23:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+16CC text25 CODE >24:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+16CF text25 CODE >25:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+16D2 text25 CODE >29:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+10A1 text24 CODE >30:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+10A2 text24 CODE >31:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+10A8 text24 CODE >32:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+10AC text24 CODE >33:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+1F68 text23 CODE >34:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+1F68 text23 CODE >36:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+1F6A text23 CODE >37:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+1F7B text23 CODE >38:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+1F92 text23 CODE >39:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+1F07 text22 CODE >45:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1F07 text22 CODE >46:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1F0A text22 CODE >47:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1F0D text22 CODE >48:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1F0E text22 CODE >49:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1F11 text22 CODE >51:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1F12 text22 CODE >52:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1F15 text22 CODE >53:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1F18 text22 CODE >54:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1F19 text22 CODE >56:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+10C4 text21 CODE >4:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftge.c
+10C4 text21 CODE >6:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftge.c
+10CA text21 CODE >7:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftge.c
+10D7 text21 CODE >8:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftge.c
+10DB text21 CODE >9:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftge.c
+10E8 text21 CODE >10:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftge.c
+10EA text21 CODE >11:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftge.c
+10EC text21 CODE >12:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftge.c
+10FD text21 CODE >13:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftge.c
+1EDC text20 CODE >15:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftneg.c
+1EDC text20 CODE >17:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftneg.c
+1EE3 text20 CODE >18:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftneg.c
+1EE5 text20 CODE >19:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftneg.c
+1EE5 text20 CODE >20:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftneg.c
+1302 text19 CODE >62:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+1302 text19 CODE >64:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+130E text19 CODE >65:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+1315 text19 CODE >67:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+131B text19 CODE >68:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+1323 text19 CODE >66:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+132A text19 CODE >71:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+1330 text19 CODE >72:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+133A text19 CODE >73:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+1342 text19 CODE >70:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+1342 text19 CODE >74:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+1349 text19 CODE >76:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+134B text19 CODE >77:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+1353 text19 CODE >75:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+135D text19 CODE >79:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+1361 text19 CODE >80:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+1367 text19 CODE >81:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+1369 text19 CODE >82:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+137D text19 CODE >83:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+1382 text19 CODE >84:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+1383 text19 CODE >86:D:\MPLAB XC8 compiler\pic\sources\c90\common\float.c
+911 text18 CODE >86:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+911 text18 CODE >90:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+91F text18 CODE >91:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+92B text18 CODE >92:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+940 text18 CODE >93:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+947 text18 CODE >94:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+95C text18 CODE >95:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+95D text18 CODE >96:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+961 text18 CODE >97:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+965 text18 CODE >98:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+966 text18 CODE >99:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+96A text18 CODE >100:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+96B text18 CODE >101:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+96C text18 CODE >102:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+972 text18 CODE >103:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+973 text18 CODE >104:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+979 text18 CODE >106:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+97F text18 CODE >110:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+987 text18 CODE >111:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+989 text18 CODE >112:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+998 text18 CODE >114:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9A0 text18 CODE >115:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9A4 text18 CODE >113:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9AB text18 CODE >117:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9B1 text18 CODE >121:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9B9 text18 CODE >122:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9BB text18 CODE >123:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9CA text18 CODE >125:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9D2 text18 CODE >126:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9D6 text18 CODE >124:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9DC text18 CODE >129:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9E0 text18 CODE >131:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9E6 text18 CODE >132:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9F0 text18 CODE >134:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9F4 text18 CODE >136:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+9FA text18 CODE >137:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+A04 text18 CODE >139:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+A05 text18 CODE >140:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+A15 text18 CODE >141:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+A19 text18 CODE >142:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+A1F text18 CODE >143:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+A29 text18 CODE >144:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+A2B text18 CODE >146:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+A46 text18 CODE >148:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftadd.c
+1F43 text17 CODE >17:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftsub.c
+1F43 text17 CODE >22:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftsub.c
+1F4C text17 CODE >23:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftsub.c
+1F4E text17 CODE >25:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftsub.c
+1F67 text17 CODE >26:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftsub.c
+1384 text16 CODE >44:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+1384 text16 CODE >49:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+1397 text16 CODE >50:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13A0 text16 CODE >51:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13B2 text16 CODE >52:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13B3 text16 CODE >53:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13B9 text16 CODE >54:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13C0 text16 CODE >55:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13C2 text16 CODE >56:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13C6 text16 CODE >57:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13CE text16 CODE >60:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13D7 text16 CODE >61:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13E0 text16 CODE >63:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13E7 text16 CODE >66:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13F0 text16 CODE >67:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13F2 text16 CODE >65:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13F2 text16 CODE >68:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13F7 text16 CODE >70:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+13FC text16 CODE >71:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+1407 text16 CODE >72:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+140F text16 CODE >73:D:\MPLAB XC8 compiler\pic\sources\c90\common\fttol.c
+1180 text15 CODE >5:D:\MPLAB XC8 compiler\pic\sources\c90\common\llmod.c
+1180 text15 CODE >12:D:\MPLAB XC8 compiler\pic\sources\c90\common\llmod.c
+118A text15 CODE >13:D:\MPLAB XC8 compiler\pic\sources\c90\common\llmod.c
+118C text15 CODE >14:D:\MPLAB XC8 compiler\pic\sources\c90\common\llmod.c
+118D text15 CODE >15:D:\MPLAB XC8 compiler\pic\sources\c90\common\llmod.c
+1196 text15 CODE >16:D:\MPLAB XC8 compiler\pic\sources\c90\common\llmod.c
+119A text15 CODE >14:D:\MPLAB XC8 compiler\pic\sources\c90\common\llmod.c
+119E text15 CODE >19:D:\MPLAB XC8 compiler\pic\sources\c90\common\llmod.c
+11B0 text15 CODE >20:D:\MPLAB XC8 compiler\pic\sources\c90\common\llmod.c
+11BE text15 CODE >21:D:\MPLAB XC8 compiler\pic\sources\c90\common\llmod.c
+11C7 text15 CODE >22:D:\MPLAB XC8 compiler\pic\sources\c90\common\llmod.c
+11CD text15 CODE >24:D:\MPLAB XC8 compiler\pic\sources\c90\common\llmod.c
+11D5 text15 CODE >25:D:\MPLAB XC8 compiler\pic\sources\c90\common\llmod.c
+1F93 text14 CODE >35:D:\MPLAB XC8 compiler\pic\sources\c90\common\lltoft.c
+1F93 text14 CODE >38:D:\MPLAB XC8 compiler\pic\sources\c90\common\lltoft.c
+1F99 text14 CODE >41:D:\MPLAB XC8 compiler\pic\sources\c90\common\lltoft.c
+1F9A text14 CODE >42:D:\MPLAB XC8 compiler\pic\sources\c90\common\lltoft.c
+1FA3 text14 CODE >43:D:\MPLAB XC8 compiler\pic\sources\c90\common\lltoft.c
+1FA7 text14 CODE >41:D:\MPLAB XC8 compiler\pic\sources\c90\common\lltoft.c
+1FAD text14 CODE >45:D:\MPLAB XC8 compiler\pic\sources\c90\common\lltoft.c
+1FC5 text14 CODE >46:D:\MPLAB XC8 compiler\pic\sources\c90\common\lltoft.c
+801 text13 CODE >15:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul16.c
+801 text13 CODE >43:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul16.c
+805 text13 CODE >45:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul16.c
+809 text13 CODE >46:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul16.c
+811 text13 CODE >47:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul16.c
+818 text13 CODE >48:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul16.c
+81F text13 CODE >49:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul16.c
+825 text13 CODE >52:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul16.c
+82B text13 CODE >53:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul16.c
+16D3 text12 CODE >60:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+16D3 text12 CODE >66:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+16EE text12 CODE >67:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+16F7 text12 CODE >68:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+1710 text12 CODE >70:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+171D text12 CODE >71:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+172A text12 CODE >72:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+1737 text12 CODE >73:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+1744 text12 CODE >74:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+174C text12 CODE >75:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+174E text12 CODE >76:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+1753 text12 CODE >77:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+1757 text12 CODE >79:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+1760 text12 CODE >80:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+178C text12 CODE >81:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17AE text12 CODE >82:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17AF text12 CODE >83:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17AF text12 CODE >84:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17BC text12 CODE >85:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17C2 text12 CODE >86:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17C6 text12 CODE >87:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17CE text12 CODE >90:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17D7 text12 CODE >91:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17E0 text12 CODE >93:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17E7 text12 CODE >96:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17F0 text12 CODE >97:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17F2 text12 CODE >95:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17F2 text12 CODE >98:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17F7 text12 CODE >100:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+17FF text12 CODE >101:D:\MPLAB XC8 compiler\pic\sources\c90\common\fldivl.c
+153A text11 CODE >60:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+153A text11 CODE >66:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+154D text11 CODE >67:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+1556 text11 CODE >68:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+1568 text11 CODE >69:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+1568 text11 CODE >70:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+1569 text11 CODE >71:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+156F text11 CODE >72:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+1570 text11 CODE >73:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+1576 text11 CODE >74:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+157E text11 CODE >75:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+1580 text11 CODE >76:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+1585 text11 CODE >77:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+1589 text11 CODE >79:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+1592 text11 CODE >80:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15A0 text11 CODE >81:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15AA text11 CODE >82:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15AB text11 CODE >84:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15B3 text11 CODE >85:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15B9 text11 CODE >86:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15BD text11 CODE >87:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15C5 text11 CODE >90:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15CE text11 CODE >91:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15D7 text11 CODE >93:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15DE text11 CODE >96:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15E7 text11 CODE >97:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15E9 text11 CODE >95:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15E9 text11 CODE >98:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15EE text11 CODE >100:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+15F6 text11 CODE >101:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftdivl.c
+10AD text10 CODE >4:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul8.c
+10B0 text10 CODE >6:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul8.c
+10B1 text10 CODE >43:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul8.c
+10B5 text10 CODE >44:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul8.c
+10B9 text10 CODE >45:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul8.c
+10BB text10 CODE >46:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul8.c
+10BD text10 CODE >47:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul8.c
+10C2 text10 CODE >50:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul8.c
+10C3 text10 CODE >51:D:\MPLAB XC8 compiler\pic\sources\c90\common\Umul8.c
+82C text9 CODE >62:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+82C text9 CODE >67:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+83F text9 CODE >68:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+846 text9 CODE >69:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+857 text9 CODE >70:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+85E text9 CODE >71:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+863 text9 CODE >72:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+875 text9 CODE >73:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+887 text9 CODE >74:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+88B text9 CODE >75:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+88C text9 CODE >77:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+88D text9 CODE >78:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+893 text9 CODE >79:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+899 text9 CODE >134:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+89D text9 CODE >136:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+8A1 text9 CODE >137:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+8B1 text9 CODE >138:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+8B9 text9 CODE >139:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+8C1 text9 CODE >140:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+8C7 text9 CODE >143:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+8CB text9 CODE >145:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+8CF text9 CODE >146:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+8DF text9 CODE >147:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+8E7 text9 CODE >148:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+8EF text9 CODE >149:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+8F5 text9 CODE >156:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+910 text9 CODE >157:D:\MPLAB XC8 compiler\pic\sources\c90\common\ftmul.c
+113A text8 CODE >5:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+113A text8 CODE >13:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+113E text8 CODE >14:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+1144 text8 CODE >15:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+1146 text8 CODE >16:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+1147 text8 CODE >17:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+114E text8 CODE >18:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+1152 text8 CODE >16:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+1156 text8 CODE >21:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+115D text8 CODE >22:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+1167 text8 CODE >23:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+116D text8 CODE >24:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+116E text8 CODE >26:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+1175 text8 CODE >27:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+117B text8 CODE >29:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+117F text8 CODE >30:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwdiv.c
+10FE text7 CODE >5:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwmod.c
+10FE text7 CODE >12:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwmod.c
+1104 text7 CODE >13:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwmod.c
+1108 text7 CODE >14:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwmod.c
+1109 text7 CODE >15:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwmod.c
+1110 text7 CODE >16:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwmod.c
+1114 text7 CODE >14:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwmod.c
+1118 text7 CODE >19:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwmod.c
+1122 text7 CODE >20:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwmod.c
+1128 text7 CODE >21:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwmod.c
+112F text7 CODE >22:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwmod.c
+1135 text7 CODE >24:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwmod.c
+1139 text7 CODE >25:D:\MPLAB XC8 compiler\pic\sources\c90\common\lwmod.c
+651 text6 CODE >417:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+654 text6 CODE >421:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+65A text6 CODE >422:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+737 text6 CODE >423:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+73D text6 CODE >424:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+7C6 text6 CODE >425:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+7F9 text6 CODE >426:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+1EF5 text5 CODE >8:D:\MPLAB XC8 compiler\pic\sources\c90\common\isdigit.c
+1EF6 text5 CODE >14:D:\MPLAB XC8 compiler\pic\sources\c90\common\isdigit.c
+1F06 text5 CODE >15:D:\MPLAB XC8 compiler\pic\sources\c90\common\isdigit.c
+1299 text4 CODE >5:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+1299 text4 CODE >13:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+129C text4 CODE >14:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12A0 text4 CODE >15:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12A5 text4 CODE >16:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12A7 text4 CODE >18:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12AB text4 CODE >19:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12B0 text4 CODE >20:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12B4 text4 CODE >22:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12B6 text4 CODE >23:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12BC text4 CODE >24:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12BE text4 CODE >25:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12BF text4 CODE >26:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12C6 text4 CODE >27:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12CA text4 CODE >25:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12CE text4 CODE >30:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12D5 text4 CODE >31:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12DF text4 CODE >32:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12E5 text4 CODE >33:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12E6 text4 CODE >35:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12ED text4 CODE >36:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12F3 text4 CODE >38:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12F8 text4 CODE >39:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+12FD text4 CODE >40:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+1301 text4 CODE >41:D:\MPLAB XC8 compiler\pic\sources\c90\common\awdiv.c
+11D6 text3 CODE >5:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+11D6 text3 CODE >12:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+11D9 text3 CODE >13:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+11DD text3 CODE >14:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+11E2 text3 CODE >15:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+11E4 text3 CODE >17:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+11E8 text3 CODE >18:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+11ED text3 CODE >19:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+11F3 text3 CODE >20:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+11F5 text3 CODE >21:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+11F6 text3 CODE >22:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+11FD text3 CODE >23:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+1201 text3 CODE >21:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+1205 text3 CODE >26:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+120F text3 CODE >27:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+1215 text3 CODE >28:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+121C text3 CODE >29:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+1222 text3 CODE >31:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+1227 text3 CODE >32:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+122C text3 CODE >33:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+1230 text3 CODE >34:D:\MPLAB XC8 compiler\pic\sources\c90\common\awmod.c
+A47 text2 CODE >433:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+A4A text2 CODE >436:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+A4E text2 CODE >437:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+A50 text2 CODE >438:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+A57 text2 CODE >439:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+B15 text2 CODE >440:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+B1C text2 CODE >441:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+B88 text2 CODE >442:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+BA9 text2 CODE >444:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+BB0 text2 CODE >445:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+C6E text2 CODE >446:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+C75 text2 CODE >447:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+CE1 text2 CODE >448:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D01 text2 CODE >449:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D02 text1 CODE >505:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D05 text1 CODE >550:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D0D text1 CODE >553:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D10 text1 CODE >555:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D16 text1 CODE >558:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D29 text1 CODE >559:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D2A text1 CODE >563:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D2C text1 CODE >565:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D2E text1 CODE >614:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D40 text1 CODE >615:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D44 text1 CODE >617:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D59 text1 CODE >618:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D7A text1 CODE >619:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D8A text1 CODE >628:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D98 text1 CODE >629:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+D9B text1 CODE >630:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+DA1 text1 CODE >645:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+DA5 text1 CODE >646:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+DA6 text1 CODE >647:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+DBB text1 CODE >648:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+DDC text1 CODE >646:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+DEE text1 CODE >652:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+DF2 text1 CODE >654:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+DF4 text1 CODE >688:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+DF4 text1 CODE >689:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+DF7 text1 CODE >690:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+DF8 text1 CODE >848:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+E18 text1 CODE >851:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+E2C text1 CODE >853:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+E32 text1 CODE >855:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+E36 text1 CODE >856:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+E49 text1 CODE >857:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+E68 text1 CODE >858:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+E7D text1 CODE >859:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+E81 text1 CODE >861:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+E85 text1 CODE >862:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+E8C text1 CODE >863:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+EB9 text1 CODE >864:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+EBF text1 CODE >865:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+ED2 text1 CODE >866:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+EF5 text1 CODE >867:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+EF9 text1 CODE >868:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+EFF text1 CODE >872:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+F18 text1 CODE >873:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+F51 text1 CODE >874:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+F70 text1 CODE >875:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+F79 text1 CODE >876:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+F9A text1 CODE >877:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+FA2 text1 CODE >1138:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+FB1 text1 CODE >1139:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+FEA text1 CODE >1142:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
+1410 maintext CODE >64:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1410 maintext CODE >65:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1415 maintext CODE >66:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1424 maintext CODE >67:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1433 maintext CODE >75:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+143B maintext CODE >76:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1441 maintext CODE >79:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+144A maintext CODE >80:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1476 maintext CODE >81:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+147F maintext CODE >82:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1485 maintext CODE >83:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+148B maintext CODE >84:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1ED4 clrtext CODE >1440:C:\Users\quema\AppData\Local\Temp\simk.s
+1ED4 clrtext CODE >1441:C:\Users\quema\AppData\Local\Temp\simk.s
+1ED5 clrtext CODE >1442:C:\Users\quema\AppData\Local\Temp\simk.s
+1ED5 clrtext CODE >1443:C:\Users\quema\AppData\Local\Temp\simk.s
+1ED6 clrtext CODE >1444:C:\Users\quema\AppData\Local\Temp\simk.s
+1ED7 clrtext CODE >1445:C:\Users\quema\AppData\Local\Temp\simk.s
+1ED8 clrtext CODE >1446:C:\Users\quema\AppData\Local\Temp\simk.s
+1ED9 clrtext CODE >1447:C:\Users\quema\AppData\Local\Temp\simk.s
+1EDA clrtext CODE >1448:C:\Users\quema\AppData\Local\Temp\simk.s
+1EDB clrtext CODE >1449:C:\Users\quema\AppData\Local\Temp\simk.s
+1F1A inittext CODE >1392:C:\Users\quema\AppData\Local\Temp\simk.s
+1F1A inittext CODE >1393:C:\Users\quema\AppData\Local\Temp\simk.s
+1F1B inittext CODE >1394:C:\Users\quema\AppData\Local\Temp\simk.s
+1F1C inittext CODE >1395:C:\Users\quema\AppData\Local\Temp\simk.s
+1F1D inittext CODE >1396:C:\Users\quema\AppData\Local\Temp\simk.s
+1F1E inittext CODE >1403:C:\Users\quema\AppData\Local\Temp\simk.s
+1F1E inittext CODE >1404:C:\Users\quema\AppData\Local\Temp\simk.s
+1F23 inittext CODE >1405:C:\Users\quema\AppData\Local\Temp\simk.s
+1F24 inittext CODE >1406:C:\Users\quema\AppData\Local\Temp\simk.s
+1F25 inittext CODE >1407:C:\Users\quema\AppData\Local\Temp\simk.s
+1F26 inittext CODE >1408:C:\Users\quema\AppData\Local\Temp\simk.s
+1F27 inittext CODE >1409:C:\Users\quema\AppData\Local\Temp\simk.s
+1F28 inittext CODE >1410:C:\Users\quema\AppData\Local\Temp\simk.s
+1F29 inittext CODE >1411:C:\Users\quema\AppData\Local\Temp\simk.s
+1F2A inittext CODE >1412:C:\Users\quema\AppData\Local\Temp\simk.s
+1F2B inittext CODE >1413:C:\Users\quema\AppData\Local\Temp\simk.s
+1F2C inittext CODE >1414:C:\Users\quema\AppData\Local\Temp\simk.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -255,19 +747,22 @@ F8 text4 CODE >17:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-__LdataBANK0 70 0 ABS 0 dataBANK0 -
-__Hspace_0 321 0 ABS 0 - -
-__Hspace_1 7B 0 ABS 0 - -
+___awdiv@counter 27 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___lwmod@counter 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__LdataBANK1 7A 0 ABS 0 dataBANK1 -
+__Hspace_0 2000 0 ABS 0 - -
+__Hspace_1 EA 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
-__HidataBANK0 70 0 ABS 0 idataBANK0 -
+__HidataBANK1 7A 0 ABS 0 idataBANK1 -
+__end_of__tdiv_to_l_ 2BEE 0 CODE 0 text11 dist/default/production\Pic16f.X.production.o
 __size_of_Write_USART_String 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 I2C_Master_Init@c 2D 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-Write_USART_String@a 76 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
-Write_USART_String@i 75 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
-__Hstrings 70 0 ABS 0 strings -
+Write_USART_String@a 74 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+Write_USART_String@i 77 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+__Hstrings 7A 0 ABS 0 strings -
 _BRGH 4C2 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _CREN C4 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production\Pic16f.X.production.o
@@ -276,183 +771,367 @@ _SPEN C7 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _SYNC 4C4 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _TRMT 4C1 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _TXEN 4C5 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\sfio.o
-_main 432 0 CODE 0 maintext dist/default/production\Pic16f.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\simk.o
+_main 2820 0 CODE 0 maintext dist/default/production\Pic16f.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-start 18 0 CODE 0 init C:\Users\quema\AppData\Local\Temp\sfio.o
+___ftadd@f1 4F 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___ftadd@f2 52 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+start 18 0 CODE 0 init C:\Users\quema\AppData\Local\Temp\simk.o
 __size_of___aldiv 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-__pfunctab 64 0 ENTRY 0 functab dist/default/production\Pic16f.X.production.o
+__size_of___awdiv 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__size_of___awmod 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__pfunctab 6E 0 ENTRY 0 functab dist/default/production\Pic16f.X.production.o
+__size_of___ftadd 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__size_of___ftmul 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__size_of___ftneg 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__size_of___ftsub 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__size_of___fttol 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __size_of___lldiv 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-__HbssCOMMON 70 0 ABS 0 bssCOMMON -
-__end_of_USART_Init 228 0 CODE 0 text4 dist/default/production\Pic16f.X.production.o
-__LidataBANK0 70 0 ABS 0 idataBANK0 -
+__size_of___llmod 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__size_of___lwdiv 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__size_of___lwmod 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__HbssCOMMON 7A 0 ABS 0 bssCOMMON -
+?___wmul 73 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+__end_of_USART_Init 2DA6 0 CODE 0 text25 dist/default/production\Pic16f.X.production.o
+__LidataBANK1 7A 0 ABS 0 idataBANK1 -
 __Hpowerup 0 0 CODE 0 powerup -
-_AHT10_address 7A 0 COMMON 1 dataCOMMON dist/default/production\Pic16f.X.production.o
-__HdataCOMMON 70 0 ABS 0 dataCOMMON -
-__end_of_Write_USART 620 0 CODE 0 text3 dist/default/production\Pic16f.X.production.o
-intlevel0 64 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sfio.o
-intlevel1 64 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sfio.o
-intlevel2 64 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sfio.o
-intlevel3 64 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sfio.o
-intlevel4 64 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sfio.o
-intlevel5 64 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sfio.o
-_eSensorMeasureCmd 41 0 BANK0 1 dataBANK0 dist/default/production\Pic16f.X.production.o
-__LbssCOMMON 70 0 ABS 0 bssCOMMON -
-_Read_USART 630 0 CODE 0 text9 dist/default/production\Pic16f.X.production.o
+_AHT10_address 78 0 COMMON 1 dataCOMMON dist/default/production\Pic16f.X.production.o
+___awmod@sign 21 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___ftge@ff1 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___ftge@ff2 23 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__end_of__npowers_ 20BC 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
+__HdataCOMMON 7A 0 ABS 0 dataCOMMON -
+__end_of_Write_USART 215A 0 CODE 0 text24 dist/default/production\Pic16f.X.production.o
+_sprintf$960 A0 0 BANK1 1 cstackBANK1 dist/default/production\Pic16f.X.production.o
+intlevel0 6E 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\simk.o
+intlevel1 6E 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\simk.o
+intlevel2 6E 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\simk.o
+intlevel3 6E 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\simk.o
+intlevel4 6E 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\simk.o
+intlevel5 6E 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\simk.o
+_eSensorMeasureCmd DB 0 BANK1 1 dataBANK1 dist/default/production\Pic16f.X.production.o
+__LbssCOMMON 7A 0 ABS 0 bssCOMMON -
+__size_of__div_to_l_ 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+_Read_USART 3D98 0 CODE 0 text30 dist/default/production\Pic16f.X.production.o
+___bmul@multiplicand 2B 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+pnum$text1 11 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 ___aldiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-__Hfunctab 70 0 ENTRY 0 functab -
+___llmod@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__Hfunctab 7A 0 ENTRY 0 functab -
+?_fround 3F 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 ___aldiv@sign 29 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
-__Hclrtext 70 0 ABS 0 clrtext -
-__pidataCOMMON 640 0 CODE 0 idataCOMMON dist/default/production\Pic16f.X.production.o
+?__div_to_l_ 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___awdiv@sign 28 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__Hclrtext 7A 0 ABS 0 clrtext -
+__pidataCOMMON FF4 0 CODE 0 idataCOMMON dist/default/production\Pic16f.X.production.o
+__npowers_ 206E 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
+___ftmul@f1 2F 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___ftmul@f2 32 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___ftneg@f1 73 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+___wmul@multiplicand 75 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-__LdataCOMMON 70 0 ABS 0 dataCOMMON -
-__Lmaintext 70 0 ABS 0 maintext -
-__end_of___aldiv 362 0 CODE 0 text5 dist/default/production\Pic16f.X.production.o
-__end_of___lldiv 432 0 CODE 0 text7 dist/default/production\Pic16f.X.production.o
-__end_of_Read_USART 640 0 CODE 0 text9 dist/default/production\Pic16f.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\sfio.o
-___stacklo 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\sfio.o
-__LidataCOMMON 70 0 ABS 0 idataCOMMON -
+___awdiv@dividend 24 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__LdataCOMMON 7A 0 ABS 0 dataCOMMON -
+__end_of___bmul 2188 0 CODE 0 text10 dist/default/production\Pic16f.X.production.o
+__end_of___ftge 21FC 0 CODE 0 text21 dist/default/production\Pic16f.X.production.o
+__end_of___wmul 1058 0 CODE 0 text13 dist/default/production\Pic16f.X.production.o
+?__tdiv_to_l_ 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___ftsub@f1 5F 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___ftsub@f2 5C 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___fttol@f1 48 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__Lmaintext 7A 0 ABS 0 maintext -
+__size_of_sprintf 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+___bmul@multiplier 2E 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___awdiv@divisor 22 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___lwmod@divisor 73 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+__size_of___ftpack 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__end_of___aldiv 2A74 0 CODE 0 text26 dist/default/production\Pic16f.X.production.o
+__end_of___awdiv 2604 0 CODE 0 text4 dist/default/production\Pic16f.X.production.o
+__end_of___awmod 2462 0 CODE 0 text3 dist/default/production\Pic16f.X.production.o
+__end_of___ftadd 148E 0 CODE 0 text18 dist/default/production\Pic16f.X.production.o
+__end_of___ftmul 1222 0 CODE 0 text9 dist/default/production\Pic16f.X.production.o
+__end_of___ftneg 3DCC 0 CODE 0 text20 dist/default/production\Pic16f.X.production.o
+__end_of___ftsub 3ED0 0 CODE 0 text17 dist/default/production\Pic16f.X.production.o
+__end_of___fttol 2820 0 CODE 0 text16 dist/default/production\Pic16f.X.production.o
+__end_of___lldiv 2532 0 CODE 0 text28 dist/default/production\Pic16f.X.production.o
+__end_of___llmod 23AC 0 CODE 0 text15 dist/default/production\Pic16f.X.production.o
+__end_of___lwdiv 2300 0 CODE 0 text8 dist/default/production\Pic16f.X.production.o
+__end_of___lwmod 2274 0 CODE 0 text7 dist/default/production\Pic16f.X.production.o
+__size_of_isdigit 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__end_of_Read_USART 3DA8 0 CODE 0 text30 dist/default/production\Pic16f.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\simk.o
+___stacklo 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\simk.o
+_dpowers 20BC 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
+__size_of__tdiv_to_l_ 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+pnum$text1_split_1 32 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__end_of_fround FF4 0 CODE 0 text6 dist/default/production\Pic16f.X.production.o
+___lwdiv@quotient 27 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__LidataCOMMON 7A 0 ABS 0 idataCOMMON -
+__size_of_scale 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__size_of___lltoft 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+___lwmod@dividend 75 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
 ___lldiv@counter 2C 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Pic16f.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 ___aldiv@quotient 2A 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 ___lldiv@dividend 24 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+fround@prec 4E 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 _aht_GetHumidity 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+clear_ram0 3DA8 0 CODE 0 clrtext dist/default/production\Pic16f.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/production\Pic16f.X.production.o
 _SSPADD 93 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+___fttol@exp1 55 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___fttol@lval 51 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _TRISC6 43E 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _TRISC7 43F 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+___lltoft@c 23 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___ftpack 2604 0 CODE 0 text19 dist/default/production\Pic16f.X.production.o
+__tdiv_to_l_@f1 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__tdiv_to_l_@f2 23 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___ftpack@arg 73 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+___ftpack@exp 76 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+_isdigit$749 73 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
 __size_of_Write_USART 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __size_of_USART_Init 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\sfio.o
-_eSensorCalibrateCmd 47 0 BANK0 1 dataBANK0 dist/default/production\Pic16f.X.production.o
-__Hbank0 70 0 ABS 0 bank0 -
-__Hbank1 70 0 ABS 0 bank1 -
-__Hbank2 70 0 ABS 0 bank2 -
-__Hbank3 70 0 ABS 0 bank3 -
-__Hcinit 64 0 CODE 0 cinit -
+___int_sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\simk.o
+__end_of___ftpack 2708 0 CODE 0 text19 dist/default/production\Pic16f.X.production.o
+_eSensorCalibrateCmd E1 0 BANK1 1 dataBANK1 dist/default/production\Pic16f.X.production.o
+__Hbank0 7A 0 ABS 0 bank0 -
+__Hbank1 7A 0 ABS 0 bank1 -
+__Hbank2 7A 0 ABS 0 bank2 -
+__Hbank3 7A 0 ABS 0 bank3 -
+__Hcinit 6E 0 CODE 0 cinit -
 __Hstack 0 0 STACK 2 stack -
-__stringbase 62A 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
-__Hmaintext 70 0 ABS 0 maintext -
-__Hcommon 70 0 ABS 0 common -
+__stringbase 201E 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
+___lwdiv@counter 26 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__Hmaintext 7A 0 ABS 0 maintext -
+__end_of_sprintf CA2 0 CODE 0 text1_split_1 dist/default/production\Pic16f.X.production.o
+___lltoft 3F26 0 CODE 0 text14 dist/default/production\Pic16f.X.production.o
+__Hcommon 7A 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
-__Lbank0 70 0 ABS 0 bank0 -
-__Lbank1 70 0 ABS 0 bank1 -
-__Lbank2 70 0 ABS 0 bank2 -
-__Lbank3 70 0 ABS 0 bank3 -
+__Lbank0 7A 0 ABS 0 bank0 -
+__Lbank1 7A 0 ABS 0 bank1 -
+__Lbank2 7A 0 ABS 0 bank2 -
+__Lbank3 7A 0 ABS 0 bank3 -
+__end_of_isdigit 3E0E 0 CODE 0 text5 dist/default/production\Pic16f.X.production.o
 __Lcinit 1E 0 CODE 0 cinit -
+___ftadd@exp1 5B 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___ftadd@exp2 5A 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___ftadd@sign 59 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 __Lstack 0 0 STACK 2 stack -
 __size_of__fptable 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-__Linittext 70 0 ABS 0 inittext -
+__end_of___lltoft 3F8C 0 CODE 0 text14 dist/default/production\Pic16f.X.production.o
+__Linittext 7A 0 ABS 0 inittext -
 _INTCONbits B 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-__Habs1 70 0 ABS 0 abs1 -
-__Hcode 70 0 ABS 0 code -
+__Habs1 7A 0 ABS 0 abs1 -
+__Hcode 7A 0 ABS 0 code -
 __Hinit 18 0 CODE 0 init -
-__Hsfr0 70 0 ABS 0 sfr0 -
-__Hsfr1 70 0 ABS 0 sfr1 -
-__Hsfr2 70 0 ABS 0 sfr2 -
-__Hsfr3 70 0 ABS 0 sfr3 -
-__Htext 70 0 ABS 0 text -
-__Labs1 70 0 ABS 0 abs1 -
-__Lcode 70 0 ABS 0 code -
+__Hsfr0 7A 0 ABS 0 sfr0 -
+__Hsfr1 7A 0 ABS 0 sfr1 -
+__Hsfr2 7A 0 ABS 0 sfr2 -
+__Hsfr3 7A 0 ABS 0 sfr3 -
+__Htext 7A 0 ABS 0 text -
+__Labs1 7A 0 ABS 0 abs1 -
+__Lcode 7A 0 ABS 0 code -
 __Linit 18 0 CODE 0 init -
-__Lsfr0 70 0 ABS 0 sfr0 -
-__Lsfr1 70 0 ABS 0 sfr1 -
-__Lsfr2 70 0 ABS 0 sfr2 -
-__Lsfr3 70 0 ABS 0 sfr3 -
-__Ltext 70 0 ABS 0 text -
-__LcstackBANK0 70 0 ABS 0 cstackBANK0 -
-__HcstackCOMMON 70 0 ABS 0 cstackCOMMON -
+__Lsfr0 7A 0 ABS 0 sfr0 -
+__Lsfr1 7A 0 ABS 0 sfr1 -
+__Lsfr2 7A 0 ABS 0 sfr2 -
+__Lsfr3 7A 0 ABS 0 sfr3 -
+__Ltext 7A 0 ABS 0 text -
+___bmul 215A 0 CODE 0 text10 dist/default/production\Pic16f.X.production.o
+___ftge 2188 0 CODE 0 text21 dist/default/production\Pic16f.X.production.o
+___wmul 1002 0 CODE 0 text13 dist/default/production\Pic16f.X.production.o
+__LcstackBANK0 7A 0 ABS 0 cstackBANK0 -
+__LcstackBANK1 7A 0 ABS 0 cstackBANK1 -
+psplit$0 110032 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__HcstackCOMMON 7A 0 ABS 0 cstackCOMMON -
 _GIE 5F 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-_ISR 570 0 CODE 0 text8 dist/default/production\Pic16f.X.production.o
-__S0 321 0 ABS 0 - -
-__S1 7B 0 ABS 0 - -
+_ISR 3E5A 0 CODE 0 text29 dist/default/production\Pic16f.X.production.o
+__S0 2000 0 ABS 0 - -
+__S1 EA 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 _aht_GetTemperature 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-__HidataCOMMON 70 0 ABS 0 idataCOMMON -
-_LecturaUSART 79 0 COMMON 1 bssCOMMON dist/default/production\Pic16f.X.production.o
-__end_of_ISR 59C 0 CODE 0 text8 dist/default/production\Pic16f.X.production.o
+_humedad C6 0 BANK1 1 bssBANK1 dist/default/production\Pic16f.X.production.o
+__HidataCOMMON 7A 0 ABS 0 idataCOMMON -
+sprintf@val A4 0 BANK1 1 cstackBANK1 dist/default/production\Pic16f.X.production.o
+_LecturaUSART 7A 0 COMMON 1 bssCOMMON dist/default/production\Pic16f.X.production.o
+_fround CA2 0 CODE 0 text6 dist/default/production\Pic16f.X.production.o
+__end_of_ISR 3E86 0 CODE 0 text29 dist/default/production\Pic16f.X.production.o
+_fround$957 4B 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+_fround$958 48 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 ___lldiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
-__stringtab 620 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\quema\AppData\Local\Temp\sfio.o
-__fptable 64 0 ENTRY 0 functab dist/default/production\Pic16f.X.production.o
-__pdataBANK0 41 0 BANK0 1 dataBANK0 dist/default/production\Pic16f.X.production.o
-__LbssBANK0 70 0 ABS 0 bssBANK0 -
-__end_of_Write_USART_String 570 0 CODE 0 text2 dist/default/production\Pic16f.X.production.o
+__stringtab 2000 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\quema\AppData\Local\Temp\simk.o
+__powers_ 2020 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
+__fptable 6E 0 ENTRY 0 functab dist/default/production\Pic16f.X.production.o
+__pdataBANK1 DB 0 BANK1 1 dataBANK1 dist/default/production\Pic16f.X.production.o
+__size_of___bmul 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__size_of___ftge 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__size_of___wmul 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__LbssBANK0 7A 0 ABS 0 bssBANK0 -
+__LbssBANK1 7A 0 ABS 0 bssBANK1 -
+_scale$959 44 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__end_of_Write_USART_String 3F26 0 CODE 0 text23 dist/default/production\Pic16f.X.production.o
 __size_of_Read_USART 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+___awmod@counter 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-__end_of__fptable 70 0 ENTRY 0 functab dist/default/production\Pic16f.X.production.o
-___aldiv 228 0 CODE 0 text5 dist/default/production\Pic16f.X.production.o
-___lldiv 362 0 CODE 0 text7 dist/default/production\Pic16f.X.production.o
-__pmaintext 432 0 CODE 0 maintext dist/default/production\Pic16f.X.production.o
-__Lcommon 70 0 ABS 0 common -
+__end_of__powers_ 206E 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
+__end_of__fptable 7A 0 ENTRY 0 functab dist/default/production\Pic16f.X.production.o
+__tdiv_to_l_@cntr 2A 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__tdiv_to_l_@exp1 2B 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__tdiv_to_l_@quot 26 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+sprintf@eexp B0 0 BANK1 1 cstackBANK1 dist/default/production\Pic16f.X.production.o
+sprintf@flag A8 0 BANK1 1 cstackBANK1 dist/default/production\Pic16f.X.production.o
+sprintf@fval B3 0 BANK1 1 cstackBANK1 dist/default/production\Pic16f.X.production.o
+sprintf@prec B6 0 BANK1 1 cstackBANK1 dist/default/production\Pic16f.X.production.o
+__ptext10 215A 0 CODE 0 text10 dist/default/production\Pic16f.X.production.o
+__ptext11 2A74 0 CODE 0 text11 dist/default/production\Pic16f.X.production.o
+__ptext12 2DA6 0 CODE 0 text12 dist/default/production\Pic16f.X.production.o
+__ptext13 1002 0 CODE 0 text13 dist/default/production\Pic16f.X.production.o
+__ptext14 3F26 0 CODE 0 text14 dist/default/production\Pic16f.X.production.o
+__ptext15 2300 0 CODE 0 text15 dist/default/production\Pic16f.X.production.o
+__ptext16 2708 0 CODE 0 text16 dist/default/production\Pic16f.X.production.o
+__ptext17 3E86 0 CODE 0 text17 dist/default/production\Pic16f.X.production.o
+__ptext18 1222 0 CODE 0 text18 dist/default/production\Pic16f.X.production.o
+__ptext19 2604 0 CODE 0 text19 dist/default/production\Pic16f.X.production.o
+__ptext20 3DB8 0 CODE 0 text20 dist/default/production\Pic16f.X.production.o
+__ptext21 2188 0 CODE 0 text21 dist/default/production\Pic16f.X.production.o
+__ptext22 3E0E 0 CODE 0 text22 dist/default/production\Pic16f.X.production.o
+__ptext23 3ED0 0 CODE 0 text23 dist/default/production\Pic16f.X.production.o
+__ptext24 2142 0 CODE 0 text24 dist/default/production\Pic16f.X.production.o
+__ptext25 2BEE 0 CODE 0 text25 dist/default/production\Pic16f.X.production.o
+__ptext26 293A 0 CODE 0 text26 dist/default/production\Pic16f.X.production.o
+__ptext27 3F8C 0 CODE 0 text27 dist/default/production\Pic16f.X.production.o
+__ptext28 2462 0 CODE 0 text28 dist/default/production\Pic16f.X.production.o
+__ptext29 3E5A 0 CODE 0 text29 dist/default/production\Pic16f.X.production.o
+__ptext30 3D98 0 CODE 0 text30 dist/default/production\Pic16f.X.production.o
+___aldiv 293A 0 CODE 0 text26 dist/default/production\Pic16f.X.production.o
+___awdiv 2532 0 CODE 0 text4 dist/default/production\Pic16f.X.production.o
+___awmod 23AC 0 CODE 0 text3 dist/default/production\Pic16f.X.production.o
+___ftadd 1222 0 CODE 0 text18 dist/default/production\Pic16f.X.production.o
+___ftmul 1058 0 CODE 0 text9 dist/default/production\Pic16f.X.production.o
+___ftneg 3DB8 0 CODE 0 text20 dist/default/production\Pic16f.X.production.o
+___ftsub 3E86 0 CODE 0 text17 dist/default/production\Pic16f.X.production.o
+___fttol 2708 0 CODE 0 text16 dist/default/production\Pic16f.X.production.o
+__tdiv_to_l_ 2A74 0 CODE 0 text11 dist/default/production\Pic16f.X.production.o
+___lldiv 2462 0 CODE 0 text28 dist/default/production\Pic16f.X.production.o
+___llmod 2300 0 CODE 0 text15 dist/default/production\Pic16f.X.production.o
+___lwdiv 2274 0 CODE 0 text8 dist/default/production\Pic16f.X.production.o
+___lwmod 21FC 0 CODE 0 text7 dist/default/production\Pic16f.X.production.o
+__pmaintext 2820 0 CODE 0 maintext dist/default/production\Pic16f.X.production.o
+__Lcommon 7A 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-__Hinittext 70 0 ABS 0 inittext -
-_Write_USART_String 534 0 CODE 0 text2 dist/default/production\Pic16f.X.production.o
-__end_of_I2C_Master_Init 534 0 CODE 0 text6 dist/default/production\Pic16f.X.production.o
-__end_of__stringtab 62C 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
+?___ftpack 73 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+__Hinittext 7A 0 ABS 0 inittext -
+___wmul@multiplier 73 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+__size_of_fround 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+___lwdiv@divisor 21 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+_Write_USART_String 3ED0 0 CODE 0 text23 dist/default/production\Pic16f.X.production.o
+?___lltoft 23 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__end_of_I2C_Master_Init 4000 0 CODE 0 text27 dist/default/production\Pic16f.X.production.o
+__end_of__stringtab 2020 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
 Write_USART@a 73 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+__div_to_l_ 2DA6 0 CODE 0 text12 dist/default/production\Pic16f.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__pbssCOMMON 78 0 COMMON 1 bssCOMMON dist/default/production\Pic16f.X.production.o
-init_fetch0 59C 0 CODE 0 inittext dist/default/production\Pic16f.X.production.o
-__HcstackBANK0 70 0 ABS 0 cstackBANK0 -
+___ftmul@cntr 3D 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__pbssCOMMON 7A 0 COMMON 1 bssCOMMON dist/default/production\Pic16f.X.production.o
+___ftmul@sign 3E 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+init_fetch0 3E34 0 CODE 0 inittext dist/default/production\Pic16f.X.production.o
+__HcstackBANK0 7A 0 ABS 0 cstackBANK0 -
+__HcstackBANK1 7A 0 ABS 0 cstackBANK1 -
 _PIR1bits C 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __Lend_init 18 0 CODE 0 end_init -
-__LcstackCOMMON 70 0 ABS 0 cstackCOMMON -
-_Write_USART 608 0 CODE 0 text3 dist/default/production\Pic16f.X.production.o
-end_of_initialization 5C 0 CODE 0 cinit dist/default/production\Pic16f.X.production.o
+__LcstackCOMMON 7A 0 ABS 0 cstackCOMMON -
+_Write_USART 2142 0 CODE 0 text24 dist/default/production\Pic16f.X.production.o
+__div_to_l_@f1 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__div_to_l_@f2 23 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+end_of_initialization 66 0 CODE 0 cinit dist/default/production\Pic16f.X.production.o
 __Hintentry 18 0 CODE 0 intentry -
-fptable 64 0 ENTRY 0 functab dist/default/production\Pic16f.X.production.o
+fptable 6E 0 ENTRY 0 functab dist/default/production\Pic16f.X.production.o
 fptotal 2 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-__Lstrings 70 0 ABS 0 strings -
+__Lstrings 7A 0 ABS 0 strings -
+___awdiv@quotient 29 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 ?___aldiv 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+?___awdiv 22 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+?___awmod 73 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+___lwdiv@dividend 23 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+?___ftadd 4F 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+?___ftmul 2F 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+?___ftneg 73 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+?___ftsub 5C 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+?___fttol 48 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 ?___lldiv 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+?___llmod 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+?___lwdiv 21 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+?___lwmod 73 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
 __Hreset_vec 6 0 CODE 0 reset_vec -
-__HbssBANK0 70 0 ABS 0 bssBANK0 -
+__HbssBANK0 7A 0 ABS 0 bssBANK0 -
+__HbssBANK1 7A 0 ABS 0 bssBANK1 -
+___awmod@dividend 75 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-__ptext1 5C2 0 CODE 0 text1 dist/default/production\Pic16f.X.production.o
-__ptext2 534 0 CODE 0 text2 dist/default/production\Pic16f.X.production.o
-__ptext3 608 0 CODE 0 text3 dist/default/production\Pic16f.X.production.o
-__ptext4 70 0 CODE 0 text4 dist/default/production\Pic16f.X.production.o
-__ptext5 228 0 CODE 0 text5 dist/default/production\Pic16f.X.production.o
-__ptext6 4C0 0 CODE 0 text6 dist/default/production\Pic16f.X.production.o
-__ptext7 362 0 CODE 0 text7 dist/default/production\Pic16f.X.production.o
-__ptext8 570 0 CODE 0 text8 dist/default/production\Pic16f.X.production.o
-__ptext9 630 0 CODE 0 text9 dist/default/production\Pic16f.X.production.o
+___lltoft@exp 28 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__ptext1 1A04 0 CODE 0 text1 dist/default/production\Pic16f.X.production.o
+__ptext2 148E 0 CODE 0 text2 dist/default/production\Pic16f.X.production.o
+__ptext3 23AC 0 CODE 0 text3 dist/default/production\Pic16f.X.production.o
+__ptext4 2532 0 CODE 0 text4 dist/default/production\Pic16f.X.production.o
+__ptext5 3DEA 0 CODE 0 text5 dist/default/production\Pic16f.X.production.o
+__ptext6 CA2 0 CODE 0 text6 dist/default/production\Pic16f.X.production.o
+__ptext7 21FC 0 CODE 0 text7 dist/default/production\Pic16f.X.production.o
+__ptext8 2274 0 CODE 0 text8 dist/default/production\Pic16f.X.production.o
+__ptext9 1058 0 CODE 0 text9 dist/default/production\Pic16f.X.production.o
 ___aldiv@dividend 24 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+_sprintf 1A04 0 CODE 0 text1 dist/default/production\Pic16f.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-_I2C_Master_Init 4C0 0 CODE 0 text6 dist/default/production\Pic16f.X.production.o
+_I2C_Master_Init 3F8C 0 CODE 0 text27 dist/default/production\Pic16f.X.production.o
+sprintf@ap A3 0 BANK1 1 cstackBANK1 dist/default/production\Pic16f.X.production.o
+sprintf@sp B2 0 BANK1 1 cstackBANK1 dist/default/production\Pic16f.X.production.o
+_isdigit 3DEA 0 CODE 0 text5 dist/default/production\Pic16f.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
+scale@scl 47 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 __size_of_configIO 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-__end_of__initialization 5C 0 CODE 0 cinit dist/default/production\Pic16f.X.production.o
-__Lfunctab 64 0 ENTRY 0 functab -
-__pidataBANK0 5E8 0 CODE 0 idataBANK0 dist/default/production\Pic16f.X.production.o
-__Lclrtext 70 0 ABS 0 clrtext -
+__end_of__div_to_l_ 3000 0 CODE 0 text12 dist/default/production\Pic16f.X.production.o
+___ftmul@exp 39 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__end_of__initialization 66 0 CODE 0 cinit dist/default/production\Pic16f.X.production.o
+___awmod@divisor 73 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+__Lfunctab 6E 0 ENTRY 0 functab -
+__pidataBANK1 3DCC 0 CODE 0 idataBANK1 dist/default/production\Pic16f.X.production.o
+?_scale 3F 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__Lclrtext 7A 0 ABS 0 clrtext -
+___ftpack@sign 77 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+sprintf@tmpval AC 0 BANK1 1 cstackBANK1 dist/default/production\Pic16f.X.production.o
 ___lldiv@quotient 28 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
 _SSPCON2 91 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-init_ram0 5A4 0 CODE 0 inittext dist/default/production\Pic16f.X.production.o
+init_ram0 3E3C 0 CODE 0 inittext dist/default/production\Pic16f.X.production.o
 USART_Init@baudrate 2E 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+___llmod@dividend 24 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 ___aldiv@counter 28 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
-__end_of_main 4C0 0 CODE 0 maintext dist/default/production\Pic16f.X.production.o
+___llmod@counter 74 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
+sprintf@c B8 0 BANK1 1 cstackBANK1 dist/default/production\Pic16f.X.production.o
+sprintf@f 62 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__end_of_main 293A 0 CODE 0 maintext dist/default/production\Pic16f.X.production.o
+isdigit@c 74 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Pic16f.X.production.o
+__end_of_dpowers 210C 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
+?_sprintf 62 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _RCREG 1A 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _SPBRG 99 0 ABS 0 - dist/default/production\Pic16f.X.production.o
@@ -460,22 +1139,35 @@ _SSPIE 463 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _SSPIF 63 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 _TXREG 19 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-__Hram 70 0 ABS 0 ram -
-__Lram 70 0 ABS 0 ram -
+__end_of_scale 1A04 0 CODE 0 text2 dist/default/production\Pic16f.X.production.o
+__Hram 7A 0 ABS 0 ram -
+__Lram 7A 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\Pic16f.X.production.o
+_datos C7 0 BANK1 1 bssBANK1 dist/default/production\Pic16f.X.production.o
+_scale 148E 0 CODE 0 text2 dist/default/production\Pic16f.X.production.o
+_temperatura 6D 0 BANK0 1 bssBANK0 dist/default/production\Pic16f.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\Pic16f.X.production.o
+___fttol@sign1 50 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+sprintf@width AA 0 BANK1 1 cstackBANK1 dist/default/production\Pic16f.X.production.o
 __size_of_ISR 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-__HdataBANK0 70 0 ABS 0 dataBANK0 -
-_configIO 5C2 0 CODE 0 text1 dist/default/production\Pic16f.X.production.o
-_USART_Init 70 0 CODE 0 text4 dist/default/production\Pic16f.X.production.o
+__HdataBANK1 7A 0 ABS 0 dataBANK1 -
+_configIO 3E0E 0 CODE 0 text22 dist/default/production\Pic16f.X.production.o
+_USART_Init 2BEE 0 CODE 0 text25 dist/default/production\Pic16f.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\Pic16f.X.production.o
+___bmul@product 2D 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 USART_Init@x 74 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
-__pbssBANK0 51 0 BANK0 1 bssBANK0 dist/default/production\Pic16f.X.production.o
-__pdataCOMMON 7A 0 COMMON 1 dataCOMMON dist/default/production\Pic16f.X.production.o
-__pstrings 620 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
-__end_of_configIO 5E8 0 CODE 0 text1 dist/default/production\Pic16f.X.production.o
+__pbssBANK0 6D 0 BANK0 1 bssBANK0 dist/default/production\Pic16f.X.production.o
+__pbssBANK1 BE 0 BANK1 1 bssBANK1 dist/default/production\Pic16f.X.production.o
+__pdataCOMMON 78 0 COMMON 1 dataCOMMON dist/default/production\Pic16f.X.production.o
+__pstrings 2000 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
+___wmul@product 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__end_of_configIO 3E34 0 CODE 0 text22 dist/default/production\Pic16f.X.production.o
+__div_to_l_@cntr 32 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__div_to_l_@exp1 33 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
+__div_to_l_@quot 2E 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 __size_of_I2C_Master_Init 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-fpbase 6E 0 ENTRY 0 functab dist/default/production\Pic16f.X.production.o
+fpbase 78 0 ENTRY 0 functab dist/default/production\Pic16f.X.production.o
+___ftmul@f3_as_product 3A 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -484,6 +1176,7 @@ fpbase 6E 0 ENTRY 0 functab dist/default/production\Pic16f.X.production.o
 # split form the top of the parent psect. All splits from a given parent
 # are listed in the order in which they occurred.
 %SPLITSTAB
+text1 text1_split_1
 # %DABS Section
 # This section contains a table of all usuage of the assember
 # directive DABS in the program. Each line has the following format:
@@ -501,14 +1194,47 @@ fpbase 6E 0 ENTRY 0 functab dist/default/production\Pic16f.X.production.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text4 0 38 70 2D8 2
-text9 0 318 630 9 2
+text1 0 D02 1A04 2FE 2
+text2 0 A47 148E 2BB 2
+text3 0 11D6 23AC 5B 2
+text4 0 1299 2532 69 2
+text5 0 1EF5 3DEA 12 2
+text7 0 10FE 21FC 3C 2
+text8 0 113A 2274 46 2
+text9 0 82C 1058 E5 2
+text10 0 10AD 215A 17 2
+text11 0 153A 2A74 BD 2
+text12 0 16D3 2DA6 12D 2
+text13 0 801 1002 2B 2
+text14 0 1F93 3F26 33 2
+text15 0 1180 2300 56 2
+text16 0 1384 2708 8C 2
+text17 0 1F43 3E86 25 2
+text18 0 911 1222 136 2
+text19 0 1302 2604 82 2
+text20 0 1EDC 3DB8 A 2
+text21 0 10C4 2188 3A 2
+text22 0 1F07 3E0E 13 2
+text23 0 1F68 3ED0 2B 2
+text24 0 10A1 2142 C 2
+text25 0 15F7 2BEE DC 2
+text26 0 149D 293A 9D 2
+text27 0 1FC6 3F8C 3A 2
+text28 0 1231 2462 68 2
+text29 0 1F2D 3E5A 16 2
+text30 0 1ECC 3D98 8 2
+maintext 0 1410 2820 8D 2
 cstackCOMMON 1 70 70 B 1
-cstackBANK0 1 20 20 3A 1
-intentry 0 4 8 2E 2
+cstackBANK0 1 20 20 4E 1
+cstackBANK1 1 A0 A0 4A 1
+inittext 0 1F1A 3E34 13 2
+intentry 0 4 8 33 2
 reset_vec 0 0 0 3 2
-strings 0 310 620 8 2
-functab 0 32 64 6 2
+text1_split_1 0 3D 7A 7BF 2
+idataBANK1 0 1EE6 3DCC F 2
+strings 0 1000 2000 A1 2
+functab 0 37 6E 6 2
+clrtext 0 1ED4 3DA8 8 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal
