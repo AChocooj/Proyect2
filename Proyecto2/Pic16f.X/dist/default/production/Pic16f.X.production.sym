@@ -201,7 +201,7 @@ strings 452 461 STRING 452 0
 clrtext 462 483 CODE 462 0
 %locals
 dist/default/production\Pic16f.X.production.o
-C:\Users\quema\AppData\Local\Temp\shcs.s
+C:\Users\quema\AppData\Local\Temp\spj8.s
 1044 F 0 CODE 0
 1047 F 0 CODE 0
 1159 F 0 CODE 0

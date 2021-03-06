@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Fri Mar 05 23:30:38 2021
+                                                                                               Fri Mar 05 23:54:32 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -807,16 +807,16 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    793  01AA  120A  118A  21FA  120A  118A  	fcall	_configIO
    794  01AF                     l1478:
    795                           
-   796                           ;pic16f.c: 66:     USART_Init(9600);
+   796                           ;pic16f.c: 66:     USART_Init(115200);
    797  01AF  3000               	movlw	0
    798  01B0  1283               	bcf	3,5	;RP0=0, select bank0
    799  01B1  1303               	bcf	3,6	;RP1=0, select bank0
    800  01B2  00B1               	movwf	USART_Init@baudrate+3
-   801  01B3  3000               	movlw	0
+   801  01B3  3001               	movlw	1
    802  01B4  00B0               	movwf	USART_Init@baudrate+2
-   803  01B5  3025               	movlw	37
+   803  01B5  30C2               	movlw	194
    804  01B6  00AF               	movwf	USART_Init@baudrate+1
-   805  01B7  3080               	movlw	128
+   805  01B7  3000               	movlw	0
    806  01B8  00AE               	movwf	USART_Init@baudrate
    807  01B9  120A  118A  2031  120A  118A  	fcall	_USART_Init
    808  01BE                     l1480:
@@ -1855,7 +1855,7 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Fri Mar 05 23:30:38 2021
+Symbol Table                                                                                   Fri Mar 05 23:54:32 2021
 
                       pc 0002                       l43 020C                       fsr 0004  
    __size_of_Write_USART 000C                      l141 010C                      l144 021E  

@@ -2866,7 +2866,7 @@ void __attribute__((picinterrupt(("")))) ISR(){
 
 void main(void) {
     configIO();
-    USART_Init(9600);
+    USART_Init(115200);
 
 
     while(1){

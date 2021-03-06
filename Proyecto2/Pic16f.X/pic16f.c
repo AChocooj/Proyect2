@@ -63,7 +63,7 @@ void __interrupt() ISR(){
 
 void main(void) {
     configIO();
-    USART_Init(9600);
+    USART_Init(115200);
     //I2C_Master_Init(100000);
    
     while(1){
