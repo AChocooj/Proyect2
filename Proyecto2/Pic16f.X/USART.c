@@ -7,7 +7,7 @@
 
 
 #include <xc.h>
-#include "UART.h"
+#include "USART.h"
 #define _XTAL_FREQ 4000000
 
 uint8_t uartRC_init(uint16_t baudrate){

@@ -27,7 +27,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "I2C.h"
-#include "UART.h"
+#include "USART.h"
 #include "aht10.h"
 #define _XTAL_FREQ 400000
 
