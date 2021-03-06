@@ -4,7 +4,7 @@
 #include <xc.h>
 #include <stdint.h>
 #include "USART.h"
-#define _XTAL_FREQ 8000000
+#define _XTAL_FREQ 400000
 
 char USART_Init(const long int baudrate){
   unsigned int x;

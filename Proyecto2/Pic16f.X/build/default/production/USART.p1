@@ -280,8 +280,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;USART.c: 10:   unsigned int x;
 [v _x `ui ~T0 @X0 1 a ]
 "11
-[; ;USART.c: 11:   x = (8000000 - baudrate*64)/(baudrate*64);
-[e = _x -> / - -> 8000000 `l * _baudrate -> -> 64 `i `l * _baudrate -> -> 64 `i `l `ui ]
+[; ;USART.c: 11:   x = (400000 - baudrate*64)/(baudrate*64);
+[e = _x -> / - -> 400000 `l * _baudrate -> -> 64 `i `l * _baudrate -> -> 64 `i `l `ui ]
 "12
 [; ;USART.c: 12:   if(x>255)
 [e $ ! > _x -> -> 255 `i `ui 139  ]
@@ -289,8 +289,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;USART.c: 13:   {
 {
 "14
-[; ;USART.c: 14:     x = (8000000 - baudrate*16)/(baudrate*16);
-[e = _x -> / - -> 8000000 `l * _baudrate -> -> 16 `i `l * _baudrate -> -> 16 `i `l `ui ]
+[; ;USART.c: 14:     x = (400000 - baudrate*16)/(baudrate*16);
+[e = _x -> / - -> 400000 `l * _baudrate -> -> 16 `i `l * _baudrate -> -> 16 `i `l `ui ]
 "15
 [; ;USART.c: 15:     BRGH = 1;
 [e = _BRGH -> -> 1 `i `b ]

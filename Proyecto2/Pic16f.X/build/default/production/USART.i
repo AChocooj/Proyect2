@@ -2648,10 +2648,10 @@ void Read_USART_String(char *Output, unsigned int length);
 
 char USART_Init(const long int baudrate){
   unsigned int x;
-  x = (8000000 - baudrate*64)/(baudrate*64);
+  x = (400000 - baudrate*64)/(baudrate*64);
   if(x>255)
   {
-    x = (8000000 - baudrate*16)/(baudrate*16);
+    x = (400000 - baudrate*16)/(baudrate*16);
     BRGH = 1;
   }
   if(x<256)

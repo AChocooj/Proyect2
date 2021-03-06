@@ -29,7 +29,7 @@
 #include "I2C.h"
 #include "USART.h"
 #include "aht10.h"
-#define _XTAL_FREQ 8000000
+#define _XTAL_FREQ 400000
 
 //funciones
 void configIO(void);
@@ -71,17 +71,18 @@ void main(void) {
        // Write_USART_String(aht_GetHumidity);
        // Write_USART_String(aht_GetTemperature);
       //  __delay_ms(1000);
-        
-        temperatura = aht_GetHumidity;
-        humedad = aht_GetTemperature;
-      
+        Write_USART("a");
+        tempera1 = aht_GetHumidity();
+        humeda1 = aht_GetTemperature();
+        //tempera1 = temperatura;
+        //humeda1 = humedad;
         //enviar los datos por USART hacia la pc
         Write_USART_String("T1   H1   \n");//enviar los datos del pic a la compu
-        sprintf(datos, "%2.1d   %2.1d ", temperatura,humedad);//convertir los valores de voltaje y el contador a un string para que los lea bien la compu
+        sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);//convertir los valores de voltaje y el contador a un string para que los lea bien la compu
         Write_USART(datos);//enviar el string con los valores a la pc
         Write_USART(13);//13 y 10 la secuencia es para dar un salto de linea 
         Write_USART(10);
-        __delay_ms(500);
+        __delay_ms(1000);
     }
     return;
 }

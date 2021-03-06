@@ -20,7 +20,7 @@
 #include <stdint.h>
 
 #ifndef _XTAL_FREQ
-#define _XTAL_FREQ 8000000
+#define _XTAL_FREQ 400000
 #endif
 
 //*****************************************************************************

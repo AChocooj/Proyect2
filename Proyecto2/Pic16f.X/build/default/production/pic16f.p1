@@ -63,6 +63,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "29 ./I2C.h
 [; ;./I2C.h: 29: void I2C_Master_Init(const unsigned long c);
 [v _I2C_Master_Init `(v ~T0 @X0 0 ef1`Cul ]
+"8 ./USART.h
+[; ;./USART.h: 8: void Write_USART(uint8_t a);
+[v _Write_USART `(v ~T0 @X0 0 ef1`uc ]
 "14 ./aht10.h
 [; ;./aht10.h: 14: float aht_GetHumidity(void);
 [v _aht_GetHumidity `(f ~T0 @X0 0 ef ]
@@ -74,9 +77,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _Write_USART_String `(v ~T0 @X0 0 ef1`*uc ]
 "194 D:\MPLAB XC8 compiler\pic\include\c90\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"8 ./USART.h
-[; ;./USART.h: 8: void Write_USART(uint8_t a);
-[v _Write_USART `(v ~T0 @X0 0 ef1`uc ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
@@ -463,43 +463,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pic16f.c: 69:     while(1){
 [e :U 144 ]
 {
+"74
+[; ;pic16f.c: 74:         Write_USART("a");
+[e ( _Write_USART (1 -> :s 1C `uc ]
 "75
-[; ;pic16f.c: 75:         temperatura = aht_GetHumidity;
-[e = _temperatura -> &U _aht_GetHumidity `uc ]
+[; ;pic16f.c: 75:         tempera1 = aht_GetHumidity();
+[e = _tempera1 ( _aht_GetHumidity ..  ]
 "76
-[; ;pic16f.c: 76:         humedad = aht_GetTemperature;
-[e = _humedad -> &U _aht_GetTemperature `uc ]
-"79
-[; ;pic16f.c: 79:         Write_USART_String("T1   H1   \n");
-[e ( _Write_USART_String (1 :s 1C ]
+[; ;pic16f.c: 76:         humeda1 = aht_GetTemperature();
+[e = _humeda1 ( _aht_GetTemperature ..  ]
 "80
-[; ;pic16f.c: 80:         sprintf(datos, "%2.1d   %2.1d ", temperatura,humedad);
-[e ( _sprintf (1 , , (. , &U _datos :s 2C -> _temperatura `i -> _humedad `i ]
+[; ;pic16f.c: 80:         Write_USART_String("T1   H1   \n");
+[e ( _Write_USART_String (1 :s 2C ]
 "81
-[; ;pic16f.c: 81:         Write_USART(datos);
-[e ( _Write_USART (1 -> &U _datos `uc ]
+[; ;pic16f.c: 81:         sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);
+[e ( _sprintf (1 , , (. , &U _datos :s 3C -> _tempera1 `d -> _humeda1 `d ]
 "82
-[; ;pic16f.c: 82:         Write_USART(13);
-[e ( _Write_USART (1 -> -> 13 `i `uc ]
+[; ;pic16f.c: 82:         Write_USART(datos);
+[e ( _Write_USART (1 -> &U _datos `uc ]
 "83
-[; ;pic16f.c: 83:         Write_USART(10);
-[e ( _Write_USART (1 -> -> 10 `i `uc ]
+[; ;pic16f.c: 83:         Write_USART(13);
+[e ( _Write_USART (1 -> -> 13 `i `uc ]
 "84
-[; ;pic16f.c: 84:         _delay((unsigned long)((500)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;pic16f.c: 84:         Write_USART(10);
+[e ( _Write_USART (1 -> -> 10 `i `uc ]
 "85
-[; ;pic16f.c: 85:     }
+[; ;pic16f.c: 85:         _delay((unsigned long)((1000)*(400000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 400000 `l `d .4000.0 `ul ]
+"86
+[; ;pic16f.c: 86:     }
 }
 [e :U 143 ]
 [e $U 144  ]
 [e :U 145 ]
-"86
-[; ;pic16f.c: 86:     return;
-[e $UE 142  ]
 "87
-[; ;pic16f.c: 87: }
+[; ;pic16f.c: 87:     return;
+[e $UE 142  ]
+"88
+[; ;pic16f.c: 88: }
 [e :UE 142 ]
 }
-[p f _sprintf 8487040 ]
-[a 2C 37 50 46 49 100 32 32 32 37 50 46 49 100 32 0 ]
-[a 1C 84 49 32 32 32 72 49 32 32 32 10 0 ]
+[p f _sprintf 8495104 ]
+[a 1C 97 0 ]
+[a 3C 37 50 46 49 102 32 32 32 37 50 46 49 102 32 0 ]
+[a 2C 84 49 32 32 32 72 49 32 32 32 10 0 ]

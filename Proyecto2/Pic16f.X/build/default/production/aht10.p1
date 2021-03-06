@@ -347,8 +347,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;aht10.c: 31:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
 "32
-[; ;aht10.c: 32:     _delay((unsigned long)((500)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;aht10.c: 32:     _delay((unsigned long)((500)*(400000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 400000 `l `d .4000.0 `ul ]
 "33
 [; ;aht10.c: 33:     if((aht_readStatus()&0x68) == 0x08)
 [e $ ! == & -> ( _aht_readStatus ..  `i -> 104 `i -> 8 `i 139  ]
@@ -454,8 +454,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;aht10.c: 78:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
 "79
-[; ;aht10.c: 79:     _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;aht10.c: 79:     _delay((unsigned long)((100)*(400000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 400000 `l `d .4000.0 `ul ]
 "81
 [; ;aht10.c: 81:     I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
@@ -558,8 +558,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;aht10.c: 113:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
 "114
-[; ;aht10.c: 114:     _delay((unsigned long)((20)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;aht10.c: 114:     _delay((unsigned long)((20)*(400000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 400000 `l `d .4000.0 `ul ]
 "115
 [; ;aht10.c: 115: }
 [e :UE 152 ]

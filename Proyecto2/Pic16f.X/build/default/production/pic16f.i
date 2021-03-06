@@ -2874,17 +2874,18 @@ void main(void) {
 
 
 
+        Write_USART("a");
+        tempera1 = aht_GetHumidity();
+        humeda1 = aht_GetTemperature();
 
-        temperatura = aht_GetHumidity;
-        humedad = aht_GetTemperature;
 
 
         Write_USART_String("T1   H1   \n");
-        sprintf(datos, "%2.1d   %2.1d ", temperatura,humedad);
+        sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);
         Write_USART(datos);
         Write_USART(13);
         Write_USART(10);
-        _delay((unsigned long)((500)*(8000000/4000.0)));
+        _delay((unsigned long)((1000)*(400000/4000.0)));
     }
     return;
 }
