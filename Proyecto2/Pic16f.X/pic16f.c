@@ -27,7 +27,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "I2C.h"
-#include "USART.h"
+#include "UART.h"
 #include "aht10.h"
 #define _XTAL_FREQ 400000
 
@@ -57,13 +57,13 @@ void configIO(){
 void __interrupt() ISR(){
     if (RCIF==1){
         RCIF=0;
-        LecturaUSART=Read_USART();
+        LecturaUSART=uartRC_Read();
     }
 }
 
 void main(void) {
     configIO();
-    USART_Init(115200);
+    uartRC_init(115200);
     I2C_Master_Init(100000);
    
     while(1){
@@ -71,17 +71,17 @@ void main(void) {
        // Write_USART_String(aht_GetHumidity);
        // Write_USART_String(aht_GetTemperature);
       //  __delay_ms(1000);
-        Write_USART("a");
+        uartTX_Write("a");
         tempera1 = aht_GetHumidity();
         humeda1 = aht_GetTemperature();
         //tempera1 = temperatura;
         //humeda1 = humedad;
         //enviar los datos por USART hacia la pc
-        Write_USART_String("T1   H1   \n");//enviar los datos del pic a la compu
+        uartTX_Write_Str("T1   H1   \n");//enviar los datos del pic a la compu
         sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);//convertir los valores de voltaje y el contador a un string para que los lea bien la compu
-        Write_USART(datos);//enviar el string con los valores a la pc
-        Write_USART(13);//13 y 10 la secuencia es para dar un salto de linea 
-       Write_USART(10);
+        uartTX_Write(datos);//enviar el string con los valores a la pc
+       uartTX_Write(13);//13 y 10 la secuencia es para dar un salto de linea 
+       uartTX_Write(10);
         __delay_ms(1000);
     }
     return;

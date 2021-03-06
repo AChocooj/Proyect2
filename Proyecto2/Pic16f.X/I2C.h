@@ -16,11 +16,10 @@
 #define	__I2C_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
-#include <pic16f887.h>
 #include <stdint.h>
 
 #ifndef _XTAL_FREQ
-#define _XTAL_FREQ 400000
+#define _XTAL_FREQ 4000000
 #endif
 
 //*****************************************************************************
@@ -64,3 +63,4 @@ unsigned short I2C_Master_Read(unsigned short a);
 void I2C_Slave_Init(uint8_t address);
 //*****************************************************************************
 #endif	/* __I2C_H */
+
