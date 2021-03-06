@@ -2846,10 +2846,10 @@ char datos[20];
 
 
 void configIO(){
-    TRISB=0;
+    TRISD=0;
     ANSEL=0;
     ANSELH=0;
-    PORTB=0;
+    PORTD=0;
 
     INTCONbits.PEIE=1;
     PIE1bits.RCIE=1;
@@ -2857,35 +2857,28 @@ void configIO(){
     INTCONbits.GIE=1;
 
 }
-void __attribute__((picinterrupt(("")))) ISR(){
-    if (RCIF==1){
-        RCIF=0;
-        LecturaUSART=uartRC_Read();
-    }
-}
+
+
+
+
+
+
 
 void main(void) {
     configIO();
-    uartRC_init(115200);
+    uartRC_init(9600);
     I2C_Master_Init(100000);
 
     while(1){
+        PORTDbits.RD0=1;
+
 
 
 
 
         uartTX_Write("a");
-        tempera1 = aht_GetHumidity();
-        humeda1 = aht_GetTemperature();
-
-
-
-        uartTX_Write_Str("T1   H1   \n");
-        sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);
-        uartTX_Write(datos);
-       uartTX_Write(13);
-       uartTX_Write(10);
-        _delay((unsigned long)((1000)*(400000/4000.0)));
+# 85 "pic16f.c"
+        _delay((unsigned long)((10)*(4000000/4000.0)));
     }
     return;
 }

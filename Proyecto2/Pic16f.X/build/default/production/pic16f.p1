@@ -1,16 +1,16 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"1478 D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
-[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"1602 D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
 "3387
 [; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
 "3449
 [; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
-"228
-[; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"352
+[; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "465
 [; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 465:     struct {
 [s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -48,35 +48,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 "553
 [; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
 [v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"4175
-[; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4175: extern volatile __bit RCIF __attribute__((address(0x65)));
-[v _RCIF `Vb ~T0 @X0 0 e@101 ]
-"16 ./USART.h
-[; ;./USART.h: 16: char uartRC_Read();
-[v _uartRC_Read `(uc ~T0 @X0 0 e? ]
 [p mainexit ]
-"15
+"15 ./USART.h
 [; ;./USART.h: 15: uint8_t uartRC_init(uint16_t baudrate);
 [v _uartRC_init `(uc ~T0 @X0 0 ef1`ui ]
 "28 ./I2C.h
 [; ;./I2C.h: 28: void I2C_Master_Init(const unsigned long c);
 [v _I2C_Master_Init `(v ~T0 @X0 0 ef1`Cul ]
+"358 D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 358:     struct {
+[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S12 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"357
+[; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 357: typedef union {
+[u S11 `S12 1 ]
+[n S11 . . ]
+"369
+[; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 369: extern volatile PORTDbits_t PORTDbits __attribute__((address(0x008)));
+[v _PORTDbits `VS11 ~T0 @X0 0 e@8 ]
 "17 ./USART.h
 [; ;./USART.h: 17: void uartTX_Write(char dato);
 [v _uartTX_Write `(v ~T0 @X0 0 ef1`uc ]
-"14 ./aht10.h
-[; ;./aht10.h: 14: float aht_GetHumidity(void);
-[v _aht_GetHumidity `(f ~T0 @X0 0 ef ]
-"15
-[; ;./aht10.h: 15: float aht_GetTemperature(void);
-[v _aht_GetTemperature `(f ~T0 @X0 0 ef ]
-"18 ./USART.h
-[; ;./USART.h: 18: void uartTX_Write_Str(char * string);
-[v _uartTX_Write_Str `(v ~T0 @X0 0 ef1`*uc ]
-"194 D:\MPLAB XC8 compiler\pic\include\c90\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
@@ -391,8 +383,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _configIO ]
 [f ]
 "46
-[; ;pic16f.c: 46:     TRISB=0;
-[e = _TRISB -> -> 0 `i `uc ]
+[; ;pic16f.c: 46:     TRISD=0;
+[e = _TRISD -> -> 0 `i `uc ]
 "47
 [; ;pic16f.c: 47:     ANSEL=0;
 [e = _ANSEL -> -> 0 `i `uc ]
@@ -400,8 +392,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pic16f.c: 48:     ANSELH=0;
 [e = _ANSELH -> -> 0 `i `uc ]
 "49
-[; ;pic16f.c: 49:     PORTB=0;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;pic16f.c: 49:     PORTD=0;
+[e = _PORTD -> -> 0 `i `uc ]
 "51
 [; ;pic16f.c: 51:     INTCONbits.PEIE=1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
@@ -418,31 +410,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pic16f.c: 56: }
 [e :UE 139 ]
 }
-[v $root$_ISR `(v ~T0 @X0 0 e ]
-"57
-[; ;pic16f.c: 57: void __attribute__((picinterrupt(("")))) ISR(){
-[v _ISR `(v ~T1 @X0 1 ef ]
-{
-[e :U _ISR ]
-[f ]
-"58
-[; ;pic16f.c: 58:     if (RCIF==1){
-[e $ ! == -> _RCIF `i -> 1 `i 141  ]
-{
-"59
-[; ;pic16f.c: 59:         RCIF=0;
-[e = _RCIF -> -> 0 `i `b ]
-"60
-[; ;pic16f.c: 60:         LecturaUSART=uartRC_Read();
-[e = _LecturaUSART ( _uartRC_Read ..  ]
-"61
-[; ;pic16f.c: 61:     }
-}
-[e :U 141 ]
-"62
-[; ;pic16f.c: 62: }
-[e :UE 140 ]
-}
 [v $root$_main `(v ~T0 @X0 0 e ]
 "64
 [; ;pic16f.c: 64: void main(void) {
@@ -454,56 +421,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pic16f.c: 65:     configIO();
 [e ( _configIO ..  ]
 "66
-[; ;pic16f.c: 66:     uartRC_init(115200);
-[e ( _uartRC_init (1 -> -> 115200 `l `ui ]
+[; ;pic16f.c: 66:     uartRC_init(9600);
+[e ( _uartRC_init (1 -> -> 9600 `i `ui ]
 "67
 [; ;pic16f.c: 67:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
 "69
 [; ;pic16f.c: 69:     while(1){
-[e :U 144 ]
+[e :U 142 ]
 {
-"74
-[; ;pic16f.c: 74:         uartTX_Write("a");
-[e ( _uartTX_Write (1 -> :s 1C `uc ]
-"75
-[; ;pic16f.c: 75:         tempera1 = aht_GetHumidity();
-[e = _tempera1 ( _aht_GetHumidity ..  ]
+"70
+[; ;pic16f.c: 70:         PORTDbits.RD0=1;
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
 "76
-[; ;pic16f.c: 76:         humeda1 = aht_GetTemperature();
-[e = _humeda1 ( _aht_GetTemperature ..  ]
-"80
-[; ;pic16f.c: 80:         uartTX_Write_Str("T1   H1   \n");
-[e ( _uartTX_Write_Str (1 :s 2C ]
-"81
-[; ;pic16f.c: 81:         sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);
-[e ( _sprintf (1 , , (. , &U _datos :s 3C -> _tempera1 `d -> _humeda1 `d ]
-"82
-[; ;pic16f.c: 82:         uartTX_Write(datos);
-[e ( _uartTX_Write (1 -> &U _datos `uc ]
-"83
-[; ;pic16f.c: 83:        uartTX_Write(13);
-[e ( _uartTX_Write (1 -> -> 13 `i `uc ]
-"84
-[; ;pic16f.c: 84:        uartTX_Write(10);
-[e ( _uartTX_Write (1 -> -> 10 `i `uc ]
+[; ;pic16f.c: 76:         uartTX_Write("a");
+[e ( _uartTX_Write (1 -> :s 1C `uc ]
 "85
-[; ;pic16f.c: 85:         _delay((unsigned long)((1000)*(400000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 400000 `l `d .4000.0 `ul ]
+[; ;pic16f.c: 85:         _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "86
 [; ;pic16f.c: 86:     }
 }
+[e :U 141 ]
+[e $U 142  ]
 [e :U 143 ]
-[e $U 144  ]
-[e :U 145 ]
 "87
 [; ;pic16f.c: 87:     return;
-[e $UE 142  ]
+[e $UE 140  ]
 "88
 [; ;pic16f.c: 88: }
-[e :UE 142 ]
+[e :UE 140 ]
 }
-[p f _sprintf 8495104 ]
 [a 1C 97 0 ]
-[a 3C 37 50 46 49 102 32 32 32 37 50 46 49 102 32 0 ]
-[a 2C 84 49 32 32 32 72 49 32 32 32 10 0 ]
