@@ -2867,7 +2867,7 @@ void __attribute__((picinterrupt(("")))) ISR(){
 void main(void) {
     configIO();
     USART_Init(115200);
-
+    I2C_Master_Init(100000);
 
     while(1){
 
@@ -2875,7 +2875,16 @@ void main(void) {
 
 
         Write_USART("a");
-# 85 "pic16f.c"
+        tempera1 = aht_GetHumidity();
+        humeda1 = aht_GetTemperature();
+
+
+
+        Write_USART_String("T1   H1   \n");
+        sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);
+        Write_USART(datos);
+        Write_USART(13);
+       Write_USART(10);
         _delay((unsigned long)((1000)*(400000/4000.0)));
     }
     return;
