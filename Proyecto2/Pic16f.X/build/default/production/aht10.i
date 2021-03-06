@@ -2667,10 +2667,17 @@ extern double round(double);
 # 10 "aht10.c" 2
 
 # 1 "./I2C.h" 1
-# 20 "./I2C.h"
+# 19 "./I2C.h"
 # 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 1 3
 # 20 "./I2C.h" 2
-# 29 "./I2C.h"
+
+
+
+
+
+
+
+
 void I2C_Master_Init(const unsigned long c);
 
 
@@ -2751,7 +2758,7 @@ int aht_begin(unsigned char _AHT10_address){
     I2C_Master_Start();
     I2C_Master_Write(eSensorCalibrateCmd[2]);
     I2C_Master_Stop();
-    _delay((unsigned long)((500)*(400000/4000.0)));
+    _delay((unsigned long)((500)*(4000000/4000.0)));
     if((aht_readStatus()&0x68) == 0x08)
         return 1;
     else
@@ -2798,7 +2805,7 @@ unsigned long aht_readSensor(int GetDataCmd)
     I2C_Master_Start();
     I2C_Master_Write(eSensorMeasureCmd[2]);
     I2C_Master_Stop();
-    _delay((unsigned long)((100)*(400000/4000.0)));
+    _delay((unsigned long)((100)*(4000000/4000.0)));
 
     I2C_Master_Start();
 
@@ -2833,5 +2840,5 @@ void aht_Reset(void)
     I2C_Master_Start();
     I2C_Master_Write(eSensorResetCmd);
     I2C_Master_Stop();
-    _delay((unsigned long)((20)*(400000/4000.0)));
+    _delay((unsigned long)((20)*(4000000/4000.0)));
 }

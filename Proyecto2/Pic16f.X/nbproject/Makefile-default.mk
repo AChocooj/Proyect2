@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=pic16f.c I2C.c aht10.c UART.c
+SOURCEFILES_QUOTED_IF_SPACED=pic16f.c I2C.c aht10.c USART.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/pic16f.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/aht10.p1 ${OBJECTDIR}/UART.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/pic16f.p1.d ${OBJECTDIR}/I2C.p1.d ${OBJECTDIR}/aht10.p1.d ${OBJECTDIR}/UART.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/pic16f.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/aht10.p1 ${OBJECTDIR}/USART.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/pic16f.p1.d ${OBJECTDIR}/I2C.p1.d ${OBJECTDIR}/aht10.p1.d ${OBJECTDIR}/USART.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/pic16f.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/aht10.p1 ${OBJECTDIR}/UART.p1
+OBJECTFILES=${OBJECTDIR}/pic16f.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/aht10.p1 ${OBJECTDIR}/USART.p1
 
 # Source Files
-SOURCEFILES=pic16f.c I2C.c aht10.c UART.c
+SOURCEFILES=pic16f.c I2C.c aht10.c USART.c
 
 
 
@@ -118,13 +118,13 @@ ${OBJECTDIR}/aht10.p1: aht10.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/aht10.d ${OBJECTDIR}/aht10.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/aht10.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/UART.p1: UART.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/USART.p1: USART.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/UART.p1.d 
-	@${RM} ${OBJECTDIR}/UART.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fshort-double -fshort-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/UART.p1 UART.c 
-	@-${MV} ${OBJECTDIR}/UART.d ${OBJECTDIR}/UART.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/UART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/USART.p1.d 
+	@${RM} ${OBJECTDIR}/USART.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fshort-double -fshort-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/USART.p1 USART.c 
+	@-${MV} ${OBJECTDIR}/USART.d ${OBJECTDIR}/USART.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/USART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/pic16f.p1: pic16f.c  nbproject/Makefile-${CND_CONF}.mk
@@ -151,13 +151,13 @@ ${OBJECTDIR}/aht10.p1: aht10.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/aht10.d ${OBJECTDIR}/aht10.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/aht10.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/UART.p1: UART.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/USART.p1: USART.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/UART.p1.d 
-	@${RM} ${OBJECTDIR}/UART.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fshort-double -fshort-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/UART.p1 UART.c 
-	@-${MV} ${OBJECTDIR}/UART.d ${OBJECTDIR}/UART.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/UART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/USART.p1.d 
+	@${RM} ${OBJECTDIR}/USART.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fshort-double -fshort-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/USART.p1 USART.c 
+	@-${MV} ${OBJECTDIR}/USART.d ${OBJECTDIR}/USART.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/USART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
