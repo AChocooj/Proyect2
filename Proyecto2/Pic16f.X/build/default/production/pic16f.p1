@@ -55,20 +55,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28 ./I2C.h
 [; ;./I2C.h: 28: void I2C_Master_Init(const unsigned long c);
 [v _I2C_Master_Init `(v ~T0 @X0 0 ef1`Cul ]
-"358 D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 358:     struct {
-[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S12 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"357
-[; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 357: typedef union {
-[u S11 `S12 1 ]
-[n S11 . . ]
-"369
-[; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 369: extern volatile PORTDbits_t PORTDbits __attribute__((address(0x008)));
-[v _PORTDbits `VS11 ~T0 @X0 0 e@8 ]
-"17 ./USART.h
-[; ;./USART.h: 17: void uartTX_Write(char dato);
-[v _uartTX_Write `(v ~T0 @X0 0 ef1`uc ]
+"18 ./USART.h
+[; ;./USART.h: 18: void uartTX_Write_Str(char * string);
+[v _uartTX_Write_Str `(v ~T0 @X0 0 ef1`*uc ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
@@ -421,8 +410,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pic16f.c: 65:     configIO();
 [e ( _configIO ..  ]
 "66
-[; ;pic16f.c: 66:     uartRC_init(9600);
-[e ( _uartRC_init (1 -> -> 9600 `i `ui ]
+[; ;pic16f.c: 66:     uartRC_init(300);
+[e ( _uartRC_init (1 -> -> 300 `i `ui ]
 "67
 [; ;pic16f.c: 67:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
@@ -430,26 +419,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pic16f.c: 69:     while(1){
 [e :U 142 ]
 {
-"70
-[; ;pic16f.c: 70:         PORTDbits.RD0=1;
-[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
-"76
-[; ;pic16f.c: 76:         uartTX_Write("a");
-[e ( _uartTX_Write (1 -> :s 1C `uc ]
-"85
-[; ;pic16f.c: 85:         _delay((unsigned long)((10)*(4000000/4000.0)));
+"79
+[; ;pic16f.c: 79:         uartTX_Write_Str("20 \n");
+[e ( _uartTX_Write_Str (1 :s 1C ]
+"88
+[; ;pic16f.c: 88:         _delay((unsigned long)((10)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"86
-[; ;pic16f.c: 86:     }
+"89
+[; ;pic16f.c: 89:     }
 }
 [e :U 141 ]
 [e $U 142  ]
 [e :U 143 ]
-"87
-[; ;pic16f.c: 87:     return;
+"90
+[; ;pic16f.c: 90:     return;
 [e $UE 140  ]
-"88
-[; ;pic16f.c: 88: }
+"91
+[; ;pic16f.c: 91: }
 [e :UE 140 ]
 }
-[a 1C 97 0 ]
+[a 1C 50 48 32 10 0 ]

@@ -63,17 +63,20 @@ void configIO(){
 
 void main(void) {
     configIO();
-    uartRC_init(9600);
+    uartRC_init(300);
     I2C_Master_Init(100000);
    
     while(1){
-        PORTDbits.RD0=1;
-        
+       // PORTDbits.RD0=1;
+        //if(PIR1bits.RCIF == 1){
+          //  __delay_ms(50);
+          // PORTD = uartRC_Read();   
+        //}
        // I2C_Master_Start();            // comunicacion con sensor
        // I2C_Master_Write(0x39);
        // I2C_Master_Stop();
        // __delay_ms(10);
-        uartTX_Write("a");
+        uartTX_Write_Str("20 \n");
       //  tempera1 = temperatura;
       //  humeda1 = humedad;
         //enviar los datos por USART hacia la pc

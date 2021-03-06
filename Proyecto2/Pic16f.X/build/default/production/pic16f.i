@@ -2866,18 +2866,13 @@ void configIO(){
 
 void main(void) {
     configIO();
-    uartRC_init(9600);
+    uartRC_init(300);
     I2C_Master_Init(100000);
 
     while(1){
-        PORTDbits.RD0=1;
-
-
-
-
-
-        uartTX_Write("a");
-# 85 "pic16f.c"
+# 79 "pic16f.c"
+        uartTX_Write_Str("20 \n");
+# 88 "pic16f.c"
         _delay((unsigned long)((10)*(4000000/4000.0)));
     }
     return;
