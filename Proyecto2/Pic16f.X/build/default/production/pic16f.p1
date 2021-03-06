@@ -55,13 +55,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28 ./I2C.h
 [; ;./I2C.h: 28: void I2C_Master_Init(const unsigned long c);
 [v _I2C_Master_Init `(v ~T0 @X0 0 ef1`Cul ]
-"18 ./USART.h
-[; ;./USART.h: 18: void uartTX_Write_Str(char * string);
-[v _uartTX_Write_Str `(v ~T0 @X0 0 ef1`*uc ]
+"40
+[; ;./I2C.h: 40: void I2C_Master_Start(void);
+[v _I2C_Master_Start `(v ~T0 @X0 0 ef ]
+"54
+[; ;./I2C.h: 54: void I2C_Master_Write(unsigned d);
+[v _I2C_Master_Write `(v ~T0 @X0 0 ef1`ui ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
+"15 ./aht10.h
+[; ;./aht10.h: 15: float aht_GetTemperature(void);
+[v _aht_GetTemperature `(f ~T0 @X0 0 ef ]
+"14
+[; ;./aht10.h: 14: float aht_GetHumidity(void);
+[v _aht_GetHumidity `(f ~T0 @X0 0 ef ]
+"18 ./USART.h
+[; ;./USART.h: 18: void uartTX_Write_Str(char * string);
+[v _uartTX_Write_Str `(v ~T0 @X0 0 ef1`*uc ]
+"194 D:\MPLAB XC8 compiler\pic\include\c90\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"17 ./USART.h
+[; ;./USART.h: 17: void uartTX_Write(char dato);
+[v _uartTX_Write `(v ~T0 @X0 0 ef1`uc ]
 "8 pic16f.c
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "9
@@ -332,25 +349,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _AHT10Address_High
 -> 57 `i
 ]
-"36 pic16f.c
-[; ;pic16f.c: 36: char LecturaUSART=0;
-[v _LecturaUSART `uc ~T0 @X0 1 e ]
-[i _LecturaUSART
--> -> 0 `i `uc
-]
-"37
-[; ;pic16f.c: 37: uint8_t temperatura=0;
-[v _temperatura `uc ~T0 @X0 1 e ]
-[i _temperatura
--> -> 0 `i `uc
-]
-"38
-[; ;pic16f.c: 38: uint8_t humedad=0;
-[v _humedad `uc ~T0 @X0 1 e ]
-[i _humedad
--> -> 0 `i `uc
-]
-"39
+"39 pic16f.c
 [; ;pic16f.c: 39: float tempera1=0;
 [v _tempera1 `f ~T0 @X0 1 e ]
 [i _tempera1
@@ -410,8 +409,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pic16f.c: 65:     configIO();
 [e ( _configIO ..  ]
 "66
-[; ;pic16f.c: 66:     uartRC_init(300);
-[e ( _uartRC_init (1 -> -> 300 `i `ui ]
+[; ;pic16f.c: 66:     uartRC_init(9600);
+[e ( _uartRC_init (1 -> -> 9600 `i `ui ]
 "67
 [; ;pic16f.c: 67:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
@@ -419,23 +418,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pic16f.c: 69:     while(1){
 [e :U 142 ]
 {
-"79
-[; ;pic16f.c: 79:         uartTX_Write_Str("20 \n");
-[e ( _uartTX_Write_Str (1 :s 1C ]
-"88
-[; ;pic16f.c: 88:         _delay((unsigned long)((10)*(4000000/4000.0)));
+"71
+[; ;pic16f.c: 71:        I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"72
+[; ;pic16f.c: 72:         I2C_Master_Write(0x39);
+[e ( _I2C_Master_Write (1 -> -> 57 `i `ui ]
+"73
+[; ;pic16f.c: 73:        _delay((unsigned long)((10)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"89
-[; ;pic16f.c: 89:     }
+"74
+[; ;pic16f.c: 74:         tempera1 = aht_GetTemperature();
+[e = _tempera1 ( _aht_GetTemperature ..  ]
+"75
+[; ;pic16f.c: 75:         humeda1 = aht_GetHumidity();
+[e = _humeda1 ( _aht_GetHumidity ..  ]
+"77
+[; ;pic16f.c: 77:        uartTX_Write_Str("T1   H1   \n");
+[e ( _uartTX_Write_Str (1 :s 1C ]
+"78
+[; ;pic16f.c: 78:        sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);
+[e ( _sprintf (1 , , (. , &U _datos :s 2C -> _tempera1 `d -> _humeda1 `d ]
+"79
+[; ;pic16f.c: 79:       uartTX_Write(datos);
+[e ( _uartTX_Write (1 -> &U _datos `uc ]
+"80
+[; ;pic16f.c: 80:       uartTX_Write(13);
+[e ( _uartTX_Write (1 -> -> 13 `i `uc ]
+"81
+[; ;pic16f.c: 81:       uartTX_Write(10);
+[e ( _uartTX_Write (1 -> -> 10 `i `uc ]
+"82
+[; ;pic16f.c: 82:         _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"83
+[; ;pic16f.c: 83:     }
 }
 [e :U 141 ]
 [e $U 142  ]
 [e :U 143 ]
-"90
-[; ;pic16f.c: 90:     return;
+"84
+[; ;pic16f.c: 84:     return;
 [e $UE 140  ]
-"91
-[; ;pic16f.c: 91: }
+"85
+[; ;pic16f.c: 85: }
 [e :UE 140 ]
 }
-[a 1C 50 48 32 10 0 ]
+[p f _sprintf 8495104 ]
+[a 2C 37 50 46 49 102 32 32 32 37 50 46 49 102 32 0 ]
+[a 1C 84 49 32 32 32 72 49 32 32 32 10 0 ]

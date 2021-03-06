@@ -319,10 +319,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 "20
-[; ;aht10.c: 20: unsigned char AHT10_address = 0x38;
+[; ;aht10.c: 20: unsigned char AHT10_address = 0x39;
 [v _AHT10_address `uc ~T0 @X0 1 e ]
 [i _AHT10_address
--> -> 56 `i `uc
+-> -> 57 `i `uc
 ]
 "26
 [; ;aht10.c: 26: int aht_begin(unsigned char _AHT10_address){

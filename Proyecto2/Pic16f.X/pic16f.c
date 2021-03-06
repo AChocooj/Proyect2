@@ -33,9 +33,9 @@
 
 //funciones
 void configIO(void);
-char LecturaUSART=0;
-uint8_t temperatura=0;
-uint8_t humedad=0;
+//char LecturaUSART=0;
+//uint8_t temperatura=0;
+//uint8_t humedad=0;
 float tempera1=0;
 float humeda1=0;
 char datos[20];
@@ -63,28 +63,22 @@ void configIO(){
 
 void main(void) {
     configIO();
-    uartRC_init(300);
+    uartRC_init(9600);
     I2C_Master_Init(100000);
    
     while(1){
-       // PORTDbits.RD0=1;
-        //if(PIR1bits.RCIF == 1){
-          //  __delay_ms(50);
-          // PORTD = uartRC_Read();   
-        //}
-       // I2C_Master_Start();            // comunicacion con sensor
-       // I2C_Master_Write(0x39);
-       // I2C_Master_Stop();
-       // __delay_ms(10);
-        uartTX_Write_Str("20 \n");
-      //  tempera1 = temperatura;
-      //  humeda1 = humedad;
+     
+       I2C_Master_Start();            // comunicacion con sensor
+        I2C_Master_Write(0x39); //direccion de la comunicacion 
+       __delay_ms(10);
+        tempera1 = aht_GetTemperature();
+        humeda1 = aht_GetHumidity();
         //enviar los datos por USART hacia la pc
-      //  uartTX_Write_Str("T1   H1   \n");//enviar los datos del pic a la compu
-      //  sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);//convertir los valores de voltaje y el contador a un string para que los lea bien la compu
-      // uartTX_Write(datos);//enviar el string con los valores a la pc
-     //  uartTX_Write(13);//13 y 10 la secuencia es para dar un salto de linea 
-       //uartTX_Write(10);
+       uartTX_Write_Str("T1   H1   \n");//enviar los datos del pic a la compu
+       sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);//convertir los valores de voltaje y el contador a un string para que los lea bien la compu
+      uartTX_Write(datos);//enviar el string con los valores a la pc
+      uartTX_Write(13);//13 y 10 la secuencia es para dar un salto de linea 
+      uartTX_Write(10);
         __delay_ms(10);
     }
     return;

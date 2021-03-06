@@ -17,7 +17,7 @@ Sensor_CMD eSensorMeasureCmd[3] = {0xAC,0x33,0x00};/*trigger measurement*//*DATA
 Sensor_CMD eSensorResetCmd = 0xBA;/*soft reset*/
 int GetRHumidityCmd = 1; //true = 1
 int GetTempCmd = 0; //false = 0
-unsigned char AHT10_address = 0x38;
+unsigned char AHT10_address = 0x39;
 
 //**************************************************
 //Funciones Globales
