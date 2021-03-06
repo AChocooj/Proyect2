@@ -64,7 +64,7 @@ void __interrupt() ISR(){
 void main(void) {
     configIO();
     USART_Init(9600);
-    I2C_Master_Init(100000);
+    //I2C_Master_Init(100000);
    
     while(1){
        // Write_USART("a");
@@ -72,16 +72,16 @@ void main(void) {
        // Write_USART_String(aht_GetTemperature);
       //  __delay_ms(1000);
         Write_USART("a");
-        tempera1 = aht_GetHumidity();
-        humeda1 = aht_GetTemperature();
+      //  tempera1 = aht_GetHumidity();
+       // humeda1 = aht_GetTemperature();
         //tempera1 = temperatura;
         //humeda1 = humedad;
         //enviar los datos por USART hacia la pc
-        Write_USART_String("T1   H1   \n");//enviar los datos del pic a la compu
-        sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);//convertir los valores de voltaje y el contador a un string para que los lea bien la compu
-        Write_USART(datos);//enviar el string con los valores a la pc
-        Write_USART(13);//13 y 10 la secuencia es para dar un salto de linea 
-        Write_USART(10);
+      //  Write_USART_String("T1   H1   \n");//enviar los datos del pic a la compu
+       // sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);//convertir los valores de voltaje y el contador a un string para que los lea bien la compu
+       // Write_USART(datos);//enviar el string con los valores a la pc
+       // Write_USART(13);//13 y 10 la secuencia es para dar un salto de linea 
+       // Write_USART(10);
         __delay_ms(1000);
     }
     return;
