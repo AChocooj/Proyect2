@@ -476,8 +476,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pic16f.c: 80:         sprintf(datos, "%2.1f   %2.1f ", temperatura,humedad);
 [e ( _sprintf (1 , , (. , &U _datos :s 2C -> _temperatura `i -> _humedad `i ]
 "81
-[; ;pic16f.c: 81:         Write_USART_String(datos);
-[e ( _Write_USART_String (1 &U _datos ]
+[; ;pic16f.c: 81:         Write_USART(datos);
+[e ( _Write_USART (1 -> &U _datos `uc ]
 "82
 [; ;pic16f.c: 82:         Write_USART(13);
 [e ( _Write_USART (1 -> -> 13 `i `uc ]

@@ -476,10 +476,13 @@
 "34 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
 [v _Write_USART_String Write_USART_String `(v  1 e 1 0 ]
 {
+[v Write_USART_String@a a `*.24uc  1 a 1 wreg ]
 "35
-[v Write_USART_String@i i `uc  1 a 1 7 ]
+[v Write_USART_String@i i `uc  1 a 1 6 ]
 "34
-[v Write_USART_String@a a `*.26uc  1 p 2 4 ]
+[v Write_USART_String@a a `*.24uc  1 a 1 wreg ]
+"36
+[v Write_USART_String@a a `*.24uc  1 a 1 5 ]
 "39
 } 0
 "30
