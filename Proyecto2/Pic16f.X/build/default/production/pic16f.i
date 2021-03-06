@@ -17,13 +17,13 @@
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
-#pragma config MCLRE = ON
+#pragma config MCLRE = OFF
 #pragma config CP = OFF
 #pragma config CPD = OFF
 #pragma config BOREN = OFF
 #pragma config IESO = OFF
 #pragma config FCMEN = OFF
-#pragma config LVP = ON
+#pragma config LVP = OFF
 
 
 #pragma config BOR4V = BOR40V
@@ -2515,8 +2515,6 @@ extern __bank0 __bit __timeout;
 # 28 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
 # 26 "pic16f.c" 2
 
-# 1 "./I2C.h" 1
-# 20 "./I2C.h"
 # 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 3
 typedef signed char int8_t;
@@ -2650,6 +2648,110 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
+# 27 "pic16f.c" 2
+
+# 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdio.h" 1 3
+
+
+
+# 1 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 4 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdio.h" 2 3
+
+# 1 "D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__null.h" 1 3
+# 5 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+
+
+
+# 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdarg.h" 1 3
+
+
+
+
+
+
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+# 11 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdio.h" 3
+struct __prbuf
+{
+ char * ptr;
+ void (* func)(char);
+};
+# 85 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdio.h" 3
+# 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\errno.h" 1 3
+# 29 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\errno.h" 3
+extern int errno;
+# 8 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\conio.h" 2 3
+
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 85 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+# 180 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdio.h" 3
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+# 28 "pic16f.c" 2
+
+# 1 "./I2C.h" 1
+# 20 "./I2C.h"
+# 1 "D:\\MPLAB XC8 compiler\\pic\\include\\c90\\stdint.h" 1 3
 # 20 "./I2C.h" 2
 # 29 "./I2C.h"
 void I2C_Master_Init(const unsigned long c);
@@ -2688,7 +2790,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 27 "pic16f.c" 2
+# 29 "pic16f.c" 2
 
 # 1 "./USART.h" 1
 
@@ -2705,7 +2807,7 @@ void Write_USART_String(char *a);
 char UART_Init(const long int baudrate);
 uint8_t Read_USART(void);
 void Read_USART_String(char *Output, unsigned int length);
-# 28 "pic16f.c" 2
+# 30 "pic16f.c" 2
 
 # 1 "./aht10.h" 1
 
@@ -2728,11 +2830,41 @@ float aht_GetTemperature(void);
 unsigned char aht_readStatus(void);
 void aht_Reset(void);
 typedef unsigned char Sensor_CMD;
-# 29 "pic16f.c" 2
+# 31 "pic16f.c" 2
 
 
+
+
+void configIO(void);
+char LecturaUSART=0;
+uint8_t temperatura=0;
+uint8_t humedad=0;
+float tempera1=0;
+float humeda1=0;
+
+
+
+void configIO(){
+    TRISB=0;
+    ANSEL=0;
+    ANSELH=0;
+    PORTB=0;
+
+    INTCONbits.PEIE=1;
+    PIE1bits.RCIE=1;
+    PIR1bits.RCIF=0;
+    INTCONbits.GIE=1;
+
+}
+void __attribute__((picinterrupt(("")))) ISR(){
+    if (RCIF==1){
+        RCIF=0;
+        LecturaUSART=Read_USART();
+    }
+}
 
 void main(void) {
+    configIO();
     USART_Init(9600);
     I2C_Master_Init(100000);
 
