@@ -77,12 +77,12 @@ void main(void) {
       
         //enviar los datos por USART hacia la pc
         Write_USART_String("T1   H1   \n");//enviar los datos del pic a la compu
-        sprintf(datos, "%2.1f   %2.1f ", temperatura,humedad);//convertir los valores de voltaje y el contador a un string para que los lea bien la compu
+        sprintf(datos, "%2.1d   %2.1d ", temperatura,humedad);//convertir los valores de voltaje y el contador a un string para que los lea bien la compu
         Write_USART(datos);//enviar el string con los valores a la pc
         Write_USART(13);//13 y 10 la secuencia es para dar un salto de linea 
         Write_USART(10);
         __delay_ms(500);
-        
     }
     return;
 }
+

@@ -2880,12 +2880,11 @@ void main(void) {
 
 
         Write_USART_String("T1   H1   \n");
-        sprintf(datos, "%2.1f   %2.1f ", temperatura,humedad);
+        sprintf(datos, "%2.1d   %2.1d ", temperatura,humedad);
         Write_USART(datos);
         Write_USART(13);
         Write_USART(10);
         _delay((unsigned long)((500)*(8000000/4000.0)));
-
     }
     return;
 }
