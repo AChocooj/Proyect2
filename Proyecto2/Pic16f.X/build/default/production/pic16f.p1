@@ -76,6 +76,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17 ./USART.h
 [; ;./USART.h: 17: void uartTX_Write(char dato);
 [v _uartTX_Write `(v ~T0 @X0 0 ef1`uc ]
+"16
+[; ;./USART.h: 16: char uartRC_Read();
+[v _uartRC_Read `(uc ~T0 @X0 0 e? ]
+"358 D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 358:     struct {
+[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S12 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"357
+[; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 357: typedef union {
+[u S11 `S12 1 ]
+[n S11 . . ]
+"369
+[; ;D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 369: extern volatile PORTDbits_t PORTDbits __attribute__((address(0x008)));
+[v _PORTDbits `VS11 ~T0 @X0 0 e@8 ]
 "8 pic16f.c
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "9
@@ -352,104 +366,154 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _tempera1
 -> -> 0 `i `f
 ]
+"39
+[; ;pic16f.c: 39: int caso;
+[v _caso `i ~T0 @X0 1 e ]
 "40
 [; ;pic16f.c: 40: char datos[20];
 [v _datos `uc ~T0 @X0 -> 20 `i e ]
-"44
-[; ;pic16f.c: 44: void configIO(){
+"43
+[; ;pic16f.c: 43: void configIO(){
 [v _configIO `(v ~T0 @X0 1 ef ]
 {
 [e :U _configIO ]
 [f ]
-"45
-[; ;pic16f.c: 45:     TRISD=0;
+"44
+[; ;pic16f.c: 44:     TRISD=0;
 [e = _TRISD -> -> 0 `i `uc ]
-"46
-[; ;pic16f.c: 46:     ANSEL=0;
+"45
+[; ;pic16f.c: 45:     ANSEL=0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"47
-[; ;pic16f.c: 47:     ANSELH=0;
+"46
+[; ;pic16f.c: 46:     ANSELH=0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"48
-[; ;pic16f.c: 48:     PORTD=0;
+"47
+[; ;pic16f.c: 47:     PORTD=0;
 [e = _PORTD -> -> 0 `i `uc ]
-"50
-[; ;pic16f.c: 50:     INTCONbits.PEIE=1;
+"49
+[; ;pic16f.c: 49:     INTCONbits.PEIE=1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"51
-[; ;pic16f.c: 51:     PIE1bits.RCIE=1;
+"50
+[; ;pic16f.c: 50:     PIE1bits.RCIE=1;
 [e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
-"52
-[; ;pic16f.c: 52:     PIR1bits.RCIF=0;
+"51
+[; ;pic16f.c: 51:     PIR1bits.RCIF=0;
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"53
-[; ;pic16f.c: 53:     INTCONbits.GIE=1;
+"52
+[; ;pic16f.c: 52:     INTCONbits.GIE=1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"55
-[; ;pic16f.c: 55: }
+"54
+[; ;pic16f.c: 54: }
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"57
-[; ;pic16f.c: 57: void main(void) {
+"56
+[; ;pic16f.c: 56: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"58
-[; ;pic16f.c: 58:     configIO();
+"57
+[; ;pic16f.c: 57:     configIO();
 [e ( _configIO ..  ]
-"59
-[; ;pic16f.c: 59:     uartRC_init(9600);
+"58
+[; ;pic16f.c: 58:     uartRC_init(9600);
 [e ( _uartRC_init (1 -> -> 9600 `i `ui ]
-"60
-[; ;pic16f.c: 60:     I2C_Master_Init(100000);
+"59
+[; ;pic16f.c: 59:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"62
-[; ;pic16f.c: 62:     while(1){
+"61
+[; ;pic16f.c: 61:     while(1){
 [e :U 142 ]
 {
-"64
-[; ;pic16f.c: 64:        I2C_Master_Start();
+"63
+[; ;pic16f.c: 63:        I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"65
-[; ;pic16f.c: 65:         I2C_Master_Write(0x39);
+"64
+[; ;pic16f.c: 64:         I2C_Master_Write(0x39);
 [e ( _I2C_Master_Write (1 -> -> 57 `i `ui ]
+"65
+[; ;pic16f.c: 65:        _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "66
-[; ;pic16f.c: 66:        _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"67
-[; ;pic16f.c: 67:         tempera1 = aht_GetTemperature();
+[; ;pic16f.c: 66:         tempera1 = aht_GetTemperature();
 [e = _tempera1 ( _aht_GetTemperature ..  ]
-"69
-[; ;pic16f.c: 69:        uartTX_Write_Str("T1   H1   \n");
+"68
+[; ;pic16f.c: 68:        uartTX_Write_Str("T1   H1   \n");
 [e ( _uartTX_Write_Str (1 :s 1C ]
-"70
-[; ;pic16f.c: 70:        sprintf(datos, "%2.1f   %2.1f ", tempera1);
+"69
+[; ;pic16f.c: 69:        sprintf(datos, "%2.1f   %2.1f ", tempera1);
 [e ( _sprintf (1 , (. , &U _datos :s 2C -> _tempera1 `d ]
-"71
-[; ;pic16f.c: 71:       uartTX_Write(datos);
+"70
+[; ;pic16f.c: 70:       uartTX_Write(datos);
 [e ( _uartTX_Write (1 -> &U _datos `uc ]
-"72
-[; ;pic16f.c: 72:       uartTX_Write(13);
+"71
+[; ;pic16f.c: 71:       uartTX_Write(13);
 [e ( _uartTX_Write (1 -> -> 13 `i `uc ]
-"73
-[; ;pic16f.c: 73:       uartTX_Write(10);
+"72
+[; ;pic16f.c: 72:       uartTX_Write(10);
 [e ( _uartTX_Write (1 -> -> 10 `i `uc ]
-"74
-[; ;pic16f.c: 74:         _delay((unsigned long)((10)*(4000000/4000.0)));
+"73
+[; ;pic16f.c: 73:         _delay((unsigned long)((10)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"74
+[; ;pic16f.c: 74:         caso=uartRC_Read();
+[e = _caso -> ( _uartRC_Read ..  `i ]
 "75
-[; ;pic16f.c: 75:     }
+[; ;pic16f.c: 75:         if (caso == 1){
+[e $ ! == _caso -> 1 `i 144  ]
+{
+"76
+[; ;pic16f.c: 76:             PORTDbits.RD0=1;
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+"77
+[; ;pic16f.c: 77:         }else if (caso == 2){
+}
+[e $U 145  ]
+[e :U 144 ]
+[e $ ! == _caso -> 2 `i 146  ]
+{
+"78
+[; ;pic16f.c: 78:             PORTDbits.RD1 =1;
+[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+"79
+[; ;pic16f.c: 79:         }else if (caso == 3){
+}
+[e $U 147  ]
+[e :U 146 ]
+[e $ ! == _caso -> 3 `i 148  ]
+{
+"80
+[; ;pic16f.c: 80:             PORTDbits.RD0 =0;
+[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
+"81
+[; ;pic16f.c: 81:         }else if (caso == 4){
+}
+[e $U 149  ]
+[e :U 148 ]
+[e $ ! == _caso -> 4 `i 150  ]
+{
+"82
+[; ;pic16f.c: 82:             PORTDbits.RD1 = 0;
+[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
+"83
+[; ;pic16f.c: 83:         }
+}
+[e :U 150 ]
+[e :U 149 ]
+[e :U 147 ]
+[e :U 145 ]
+"88
+[; ;pic16f.c: 88:     }
 }
 [e :U 141 ]
 [e $U 142  ]
 [e :U 143 ]
-"76
-[; ;pic16f.c: 76:     return;
+"89
+[; ;pic16f.c: 89:     return;
 [e $UE 140  ]
-"77
-[; ;pic16f.c: 77: }
+"90
+[; ;pic16f.c: 90: }
 [e :UE 140 ]
 }
 [p f _sprintf 8495104 ]

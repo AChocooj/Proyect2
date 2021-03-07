@@ -2839,9 +2839,8 @@ void configIO(void);
 
 
 float tempera1=0;
-
+int caso;
 char datos[20];
-
 
 
 void configIO(){
@@ -2875,6 +2874,20 @@ void main(void) {
       uartTX_Write(13);
       uartTX_Write(10);
         _delay((unsigned long)((10)*(4000000/4000.0)));
+        caso=uartRC_Read();
+        if (caso == 1){
+            PORTDbits.RD0=1;
+        }else if (caso == 2){
+            PORTDbits.RD1 =1;
+        }else if (caso == 3){
+            PORTDbits.RD0 =0;
+        }else if (caso == 4){
+            PORTDbits.RD1 = 0;
+        }
+
+
+
+
     }
     return;
 }

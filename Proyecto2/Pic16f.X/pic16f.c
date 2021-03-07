@@ -36,9 +36,8 @@ void configIO(void);
 
 //uint8_t temperatura=0;
 float tempera1=0;
-
+int caso;
 char datos[20];
-
 
 //puertos
 void configIO(){
@@ -72,6 +71,20 @@ void main(void) {
       uartTX_Write(13);//13 y 10 la secuencia es para dar un salto de linea 
       uartTX_Write(10);
         __delay_ms(10);
+        caso=uartRC_Read();
+        if (caso == 1){
+            PORTDbits.RD0=1;
+        }else if (caso == 2){
+            PORTDbits.RD1 =1;
+        }else if (caso == 3){
+            PORTDbits.RD0 =0;
+        }else if (caso == 4){
+            PORTDbits.RD1 = 0;
+        }
+        
+        
+        
+        
     }
     return;
 }

@@ -73,12 +73,14 @@
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
 "74
 [v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
-"44 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+"43 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
 [v _configIO configIO `(v  1 e 1 0 ]
-"57
+"56
 [v _main main `(v  1 e 1 0 ]
 "13 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
 [v _uartRC_init uartRC_init `(uc  1 e 1 0 ]
+"31
+[v _uartRC_Read uartRC_Read `(uc  1 e 1 0 ]
 "36
 [v _uartTX_Write uartTX_Write `(v  1 e 1 0 ]
 "43
@@ -91,6 +93,18 @@
 [v _AHT10_address AHT10_address `uc  1 e 1 0 ]
 "352 D:/MPLAB/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S145 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"369
+[u S154 . 1 `S145 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES154  1 e 1 @8 ]
 [s S26 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -123,7 +137,7 @@
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S338 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S372 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -133,23 +147,23 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S347 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S381 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S351 . 1 `uc 1 . 1 0 :6:0 
+[s S385 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S354 . 1 `uc 1 . 1 0 :6:0 
+[s S388 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S357 . 1 `S338 1 . 1 0 `S347 1 . 1 0 `S351 1 . 1 0 `S354 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES357  1 e 1 @24 ]
+[u S391 . 1 `S372 1 . 1 0 `S381 1 . 1 0 `S385 1 . 1 0 `S388 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES391  1 e 1 @24 ]
 "1133
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1140
 [v _RCREG RCREG `VEuc  1 e 1 @26 ]
-[s S180 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S214 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -159,8 +173,8 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S189 . 1 `S180 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES189  1 e 1 @135 ]
+[u S223 . 1 `S214 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES223  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 [s S58 . 1 `uc 1 TMR1IE 1 0 :1:0 
@@ -176,7 +190,7 @@
 [v _PIE1bits PIE1bits `VES66  1 e 1 @140 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S201 . 1 `uc 1 SEN 1 0 :1:0 
+[s S235 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -186,13 +200,13 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S210 . 1 `S201 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES210  1 e 1 @145 ]
+[u S244 . 1 `S235 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES244  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S300 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S334 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -202,15 +216,15 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S309 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S343 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S313 . 1 `uc 1 . 1 0 :6:0 
+[s S347 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S316 . 1 `S300 1 . 1 0 `S309 1 . 1 0 `S313 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES316  1 e 1 @152 ]
+[u S350 . 1 `S334 1 . 1 0 `S343 1 . 1 0 `S347 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES350  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "3387
@@ -237,12 +251,14 @@
 [v __npowers_ _npowers_ `DC[13]d  1 e 39 0 ]
 "38 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
 [v _tempera1 tempera1 `f  1 e 3 0 ]
+"39
+[v _caso caso `i  1 e 2 0 ]
 "40
 [v _datos datos `[20]uc  1 e 20 0 ]
-"57
+"56
 [v _main main `(v  1 e 1 0 ]
 {
-"77
+"90
 } 0
 "43 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
 [v _uartTX_Write_Str uartTX_Write_Str `(v  1 e 1 0 ]
@@ -286,13 +302,18 @@
 [v ___aldiv@dividend dividend `l  1 p 4 4 ]
 "41
 } 0
+"31 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
+[v _uartRC_Read uartRC_Read `(uc  1 e 1 0 ]
+{
+"34
+} 0
 "505 D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 [v sprintf@sp sp `*.4uc  1 a 1 wreg ]
-[u S553 . 4 `ul 1 vd 4 0 `d 1 integ 3 0 ]
+[u S587 . 4 `ul 1 vd 4 0 `d 1 integ 3 0 ]
 "543
-[v sprintf@tmpval tmpval `S553  1 a 4 12 ]
+[v sprintf@tmpval tmpval `S587  1 a 4 12 ]
 "545
 [v sprintf@val val `ul  1 a 4 4 ]
 "533
@@ -480,10 +501,10 @@
 [v ___ftge@ff2 ff2 `f  1 p 3 3 ]
 "13
 } 0
-"44 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+"43 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
 [v _configIO configIO `(v  1 e 1 0 ]
 {
-"55
+"54
 } 0
 "62 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\aht10.c
 [v _aht_GetTemperature aht_GetTemperature `(f  1 e 3 0 ]
