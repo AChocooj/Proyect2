@@ -33,11 +33,10 @@
 
 //funciones
 void configIO(void);
-//char LecturaUSART=0;
+
 //uint8_t temperatura=0;
-//uint8_t humedad=0;
 float tempera1=0;
-float humeda1=0;
+
 char datos[20];
 
 
@@ -54,12 +53,6 @@ void configIO(){
     INTCONbits.GIE=1;
     
 }
-//void __interrupt() ISR(){
-   // if (RCIF==1){
-      //  RCIF=0;
-      //  LecturaUSART=uartRC_Read();
-    //}
-//}
 
 void main(void) {
     configIO();
@@ -72,10 +65,9 @@ void main(void) {
         I2C_Master_Write(0x39); //direccion de la comunicacion 
        __delay_ms(10);
         tempera1 = aht_GetTemperature();
-        humeda1 = aht_GetHumidity();
         //enviar los datos por USART hacia la pc
        uartTX_Write_Str("T1   H1   \n");//enviar los datos del pic a la compu
-       sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);//convertir los valores de voltaje y el contador a un string para que los lea bien la compu
+       sprintf(datos, "%2.1f   %2.1f ", tempera1);//convertir los valores de voltaje y el contador a un string para que los lea bien la compu
       uartTX_Write(datos);//enviar el string con los valores a la pc
       uartTX_Write(13);//13 y 10 la secuencia es para dar un salto de linea 
       uartTX_Write(10);

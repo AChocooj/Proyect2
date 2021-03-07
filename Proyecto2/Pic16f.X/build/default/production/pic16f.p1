@@ -68,9 +68,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15 ./aht10.h
 [; ;./aht10.h: 15: float aht_GetTemperature(void);
 [v _aht_GetTemperature `(f ~T0 @X0 0 ef ]
-"14
-[; ;./aht10.h: 14: float aht_GetHumidity(void);
-[v _aht_GetHumidity `(f ~T0 @X0 0 ef ]
 "18 ./USART.h
 [; ;./USART.h: 18: void uartTX_Write_Str(char * string);
 [v _uartTX_Write_Str `(v ~T0 @X0 0 ef1`*uc ]
@@ -349,119 +346,110 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _AHT10Address_High
 -> 57 `i
 ]
-"39 pic16f.c
-[; ;pic16f.c: 39: float tempera1=0;
+"38 pic16f.c
+[; ;pic16f.c: 38: float tempera1=0;
 [v _tempera1 `f ~T0 @X0 1 e ]
 [i _tempera1
 -> -> 0 `i `f
 ]
 "40
-[; ;pic16f.c: 40: float humeda1=0;
-[v _humeda1 `f ~T0 @X0 1 e ]
-[i _humeda1
--> -> 0 `i `f
-]
-"41
-[; ;pic16f.c: 41: char datos[20];
+[; ;pic16f.c: 40: char datos[20];
 [v _datos `uc ~T0 @X0 -> 20 `i e ]
-"45
-[; ;pic16f.c: 45: void configIO(){
+"44
+[; ;pic16f.c: 44: void configIO(){
 [v _configIO `(v ~T0 @X0 1 ef ]
 {
 [e :U _configIO ]
 [f ]
-"46
-[; ;pic16f.c: 46:     TRISD=0;
+"45
+[; ;pic16f.c: 45:     TRISD=0;
 [e = _TRISD -> -> 0 `i `uc ]
-"47
-[; ;pic16f.c: 47:     ANSEL=0;
+"46
+[; ;pic16f.c: 46:     ANSEL=0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"48
-[; ;pic16f.c: 48:     ANSELH=0;
+"47
+[; ;pic16f.c: 47:     ANSELH=0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"49
-[; ;pic16f.c: 49:     PORTD=0;
+"48
+[; ;pic16f.c: 48:     PORTD=0;
 [e = _PORTD -> -> 0 `i `uc ]
-"51
-[; ;pic16f.c: 51:     INTCONbits.PEIE=1;
+"50
+[; ;pic16f.c: 50:     INTCONbits.PEIE=1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"52
-[; ;pic16f.c: 52:     PIE1bits.RCIE=1;
+"51
+[; ;pic16f.c: 51:     PIE1bits.RCIE=1;
 [e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
-"53
-[; ;pic16f.c: 53:     PIR1bits.RCIF=0;
+"52
+[; ;pic16f.c: 52:     PIR1bits.RCIF=0;
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"54
-[; ;pic16f.c: 54:     INTCONbits.GIE=1;
+"53
+[; ;pic16f.c: 53:     INTCONbits.GIE=1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"56
-[; ;pic16f.c: 56: }
+"55
+[; ;pic16f.c: 55: }
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"64
-[; ;pic16f.c: 64: void main(void) {
+"57
+[; ;pic16f.c: 57: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"65
-[; ;pic16f.c: 65:     configIO();
+"58
+[; ;pic16f.c: 58:     configIO();
 [e ( _configIO ..  ]
-"66
-[; ;pic16f.c: 66:     uartRC_init(9600);
+"59
+[; ;pic16f.c: 59:     uartRC_init(9600);
 [e ( _uartRC_init (1 -> -> 9600 `i `ui ]
-"67
-[; ;pic16f.c: 67:     I2C_Master_Init(100000);
+"60
+[; ;pic16f.c: 60:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"69
-[; ;pic16f.c: 69:     while(1){
+"62
+[; ;pic16f.c: 62:     while(1){
 [e :U 142 ]
 {
-"71
-[; ;pic16f.c: 71:        I2C_Master_Start();
+"64
+[; ;pic16f.c: 64:        I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"72
-[; ;pic16f.c: 72:         I2C_Master_Write(0x39);
+"65
+[; ;pic16f.c: 65:         I2C_Master_Write(0x39);
 [e ( _I2C_Master_Write (1 -> -> 57 `i `ui ]
-"73
-[; ;pic16f.c: 73:        _delay((unsigned long)((10)*(4000000/4000.0)));
+"66
+[; ;pic16f.c: 66:        _delay((unsigned long)((10)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"74
-[; ;pic16f.c: 74:         tempera1 = aht_GetTemperature();
+"67
+[; ;pic16f.c: 67:         tempera1 = aht_GetTemperature();
 [e = _tempera1 ( _aht_GetTemperature ..  ]
-"75
-[; ;pic16f.c: 75:         humeda1 = aht_GetHumidity();
-[e = _humeda1 ( _aht_GetHumidity ..  ]
-"77
-[; ;pic16f.c: 77:        uartTX_Write_Str("T1   H1   \n");
+"69
+[; ;pic16f.c: 69:        uartTX_Write_Str("T1   H1   \n");
 [e ( _uartTX_Write_Str (1 :s 1C ]
-"78
-[; ;pic16f.c: 78:        sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);
-[e ( _sprintf (1 , , (. , &U _datos :s 2C -> _tempera1 `d -> _humeda1 `d ]
-"79
-[; ;pic16f.c: 79:       uartTX_Write(datos);
+"70
+[; ;pic16f.c: 70:        sprintf(datos, "%2.1f   %2.1f ", tempera1);
+[e ( _sprintf (1 , (. , &U _datos :s 2C -> _tempera1 `d ]
+"71
+[; ;pic16f.c: 71:       uartTX_Write(datos);
 [e ( _uartTX_Write (1 -> &U _datos `uc ]
-"80
-[; ;pic16f.c: 80:       uartTX_Write(13);
+"72
+[; ;pic16f.c: 72:       uartTX_Write(13);
 [e ( _uartTX_Write (1 -> -> 13 `i `uc ]
-"81
-[; ;pic16f.c: 81:       uartTX_Write(10);
+"73
+[; ;pic16f.c: 73:       uartTX_Write(10);
 [e ( _uartTX_Write (1 -> -> 10 `i `uc ]
-"82
-[; ;pic16f.c: 82:         _delay((unsigned long)((10)*(4000000/4000.0)));
+"74
+[; ;pic16f.c: 74:         _delay((unsigned long)((10)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"83
-[; ;pic16f.c: 83:     }
+"75
+[; ;pic16f.c: 75:     }
 }
 [e :U 141 ]
 [e $U 142  ]
 [e :U 143 ]
-"84
-[; ;pic16f.c: 84:     return;
+"76
+[; ;pic16f.c: 76:     return;
 [e $UE 140  ]
-"85
-[; ;pic16f.c: 85: }
+"77
+[; ;pic16f.c: 77: }
 [e :UE 140 ]
 }
 [p f _sprintf 8495104 ]

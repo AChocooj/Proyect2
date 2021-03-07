@@ -2838,9 +2838,8 @@ typedef unsigned char Sensor_CMD;
 void configIO(void);
 
 
-
 float tempera1=0;
-float humeda1=0;
+
 char datos[20];
 
 
@@ -2858,12 +2857,6 @@ void configIO(){
 
 }
 
-
-
-
-
-
-
 void main(void) {
     configIO();
     uartRC_init(9600);
@@ -2875,10 +2868,9 @@ void main(void) {
         I2C_Master_Write(0x39);
        _delay((unsigned long)((10)*(4000000/4000.0)));
         tempera1 = aht_GetTemperature();
-        humeda1 = aht_GetHumidity();
 
        uartTX_Write_Str("T1   H1   \n");
-       sprintf(datos, "%2.1f   %2.1f ", tempera1,humeda1);
+       sprintf(datos, "%2.1f   %2.1f ", tempera1);
       uartTX_Write(datos);
       uartTX_Write(13);
       uartTX_Write(10);
