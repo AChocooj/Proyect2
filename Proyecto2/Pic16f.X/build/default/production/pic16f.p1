@@ -422,98 +422,98 @@ Version 4.0 HI-TECH Software Intermediate Code
 "59
 [; ;pic16f.c: 59:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"61
-[; ;pic16f.c: 61:     while(1){
+"60
+[; ;pic16f.c: 60:     while(1){
 [e :U 142 ]
 {
-"63
-[; ;pic16f.c: 63:        I2C_Master_Start();
+"61
+[; ;pic16f.c: 61:        I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"64
-[; ;pic16f.c: 64:         I2C_Master_Write(0x39);
+"62
+[; ;pic16f.c: 62:         I2C_Master_Write(0x39);
 [e ( _I2C_Master_Write (1 -> -> 57 `i `ui ]
-"65
-[; ;pic16f.c: 65:        _delay((unsigned long)((10)*(4000000/4000.0)));
+"63
+[; ;pic16f.c: 63:        _delay((unsigned long)((10)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"66
-[; ;pic16f.c: 66:         tempera1 = aht_GetTemperature();
+"64
+[; ;pic16f.c: 64:         tempera1 = aht_GetTemperature();
 [e = _tempera1 ( _aht_GetTemperature ..  ]
-"68
-[; ;pic16f.c: 68:        uartTX_Write_Str("T1   H1   \n");
+"66
+[; ;pic16f.c: 66:        uartTX_Write_Str("T1   H1   \n");
 [e ( _uartTX_Write_Str (1 :s 1C ]
-"69
-[; ;pic16f.c: 69:        sprintf(datos, "%2.1f   %2.1f ", tempera1);
+"67
+[; ;pic16f.c: 67:        sprintf(datos, "%2.1f   %2.1f ", tempera1);
 [e ( _sprintf (1 , (. , &U _datos :s 2C -> _tempera1 `d ]
-"70
-[; ;pic16f.c: 70:       uartTX_Write(datos);
+"68
+[; ;pic16f.c: 68:       uartTX_Write(datos);
 [e ( _uartTX_Write (1 -> &U _datos `uc ]
-"71
-[; ;pic16f.c: 71:       uartTX_Write(13);
+"69
+[; ;pic16f.c: 69:       uartTX_Write(13);
 [e ( _uartTX_Write (1 -> -> 13 `i `uc ]
-"72
-[; ;pic16f.c: 72:       uartTX_Write(10);
+"70
+[; ;pic16f.c: 70:       uartTX_Write(10);
 [e ( _uartTX_Write (1 -> -> 10 `i `uc ]
-"73
-[; ;pic16f.c: 73:         _delay((unsigned long)((10)*(4000000/4000.0)));
+"71
+[; ;pic16f.c: 71:         _delay((unsigned long)((10)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"74
-[; ;pic16f.c: 74:         caso=uartRC_Read();
+"72
+[; ;pic16f.c: 72:         caso=uartRC_Read();
 [e = _caso -> ( _uartRC_Read ..  `i ]
-"75
-[; ;pic16f.c: 75:         if (caso == 1){
+"73
+[; ;pic16f.c: 73:         if (caso == 1){
 [e $ ! == _caso -> 1 `i 144  ]
 {
-"76
-[; ;pic16f.c: 76:             PORTDbits.RD0=1;
+"74
+[; ;pic16f.c: 74:             PORTDbits.RD0=1;
 [e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
-"77
-[; ;pic16f.c: 77:         }else if (caso == 2){
+"75
+[; ;pic16f.c: 75:         }else if (caso == 2){
 }
 [e $U 145  ]
 [e :U 144 ]
 [e $ ! == _caso -> 2 `i 146  ]
 {
-"78
-[; ;pic16f.c: 78:             PORTDbits.RD1 =1;
+"76
+[; ;pic16f.c: 76:             PORTDbits.RD1 =1;
 [e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
-"79
-[; ;pic16f.c: 79:         }else if (caso == 3){
+"77
+[; ;pic16f.c: 77:         }else if (caso == 3){
 }
 [e $U 147  ]
 [e :U 146 ]
 [e $ ! == _caso -> 3 `i 148  ]
 {
-"80
-[; ;pic16f.c: 80:             PORTDbits.RD0 =0;
+"78
+[; ;pic16f.c: 78:             PORTDbits.RD0 =0;
 [e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
-"81
-[; ;pic16f.c: 81:         }else if (caso == 4){
+"79
+[; ;pic16f.c: 79:         }else if (caso == 4){
 }
 [e $U 149  ]
 [e :U 148 ]
 [e $ ! == _caso -> 4 `i 150  ]
 {
-"82
-[; ;pic16f.c: 82:             PORTDbits.RD1 = 0;
+"80
+[; ;pic16f.c: 80:             PORTDbits.RD1 = 0;
 [e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
-"83
-[; ;pic16f.c: 83:         }
+"81
+[; ;pic16f.c: 81:         }
 }
 [e :U 150 ]
 [e :U 149 ]
 [e :U 147 ]
 [e :U 145 ]
-"88
-[; ;pic16f.c: 88:     }
+"82
+[; ;pic16f.c: 82:     }
 }
 [e :U 141 ]
 [e $U 142  ]
 [e :U 143 ]
-"89
-[; ;pic16f.c: 89:     return;
+"83
+[; ;pic16f.c: 83:     return;
 [e $UE 140  ]
-"90
-[; ;pic16f.c: 90: }
+"84
+[; ;pic16f.c: 84: }
 [e :UE 140 ]
 }
 [p f _sprintf 8495104 ]

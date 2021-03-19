@@ -1,8 +1,8 @@
 /*
  * File:   pic16f.c
  * Author: Allison Chocooj 
- *
  * Created on 25 de febrero de 2021, 05:47 PM
+ * 
  */
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSC oscillator: CLKOUT function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -57,9 +57,7 @@ void main(void) {
     configIO();
     uartRC_init(9600);
     I2C_Master_Init(100000);
-   
     while(1){
-     
        I2C_Master_Start();            // comunicacion con sensor
         I2C_Master_Write(0x39); //direccion de la comunicacion 
        __delay_ms(10);
@@ -81,10 +79,6 @@ void main(void) {
         }else if (caso == 4){
             PORTDbits.RD1 = 0;
         }
-        
-        
-        
-        
     }
     return;
 }

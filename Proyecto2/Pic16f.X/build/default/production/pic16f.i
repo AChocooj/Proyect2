@@ -2860,9 +2860,7 @@ void main(void) {
     configIO();
     uartRC_init(9600);
     I2C_Master_Init(100000);
-
     while(1){
-
        I2C_Master_Start();
         I2C_Master_Write(0x39);
        _delay((unsigned long)((10)*(4000000/4000.0)));
@@ -2884,10 +2882,6 @@ void main(void) {
         }else if (caso == 4){
             PORTDbits.RD1 = 0;
         }
-
-
-
-
     }
     return;
 }

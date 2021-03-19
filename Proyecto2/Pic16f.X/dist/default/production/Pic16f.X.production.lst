@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Sat Mar 06 22:44:16 2021
+                                                                                               Tue Mar 09 23:42:16 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -1560,11 +1560,11 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1546  141E  160A  158A  26F8  160A  118A  	fcall	_I2C_Master_Init
   1547  1423                     l3217:
   1548                           
-  1549                           ;pic16f.c: 63:        I2C_Master_Start();
+  1549                           ;pic16f.c: 61:        I2C_Master_Start();
   1550  1423  160A  158A  25A9  160A  118A  	fcall	_I2C_Master_Start
   1551  1428                     l3219:
   1552                           
-  1553                           ;pic16f.c: 64:         I2C_Master_Write(0x39);
+  1553                           ;pic16f.c: 62:         I2C_Master_Write(0x39);
   1554  1428  3039               	movlw	57
   1555  1429  00F0               	movwf	I2C_Master_Write@d
   1556  142A  3000               	movlw	0
@@ -1572,7 +1572,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1558  142C  160A  158A  25B2  160A  118A  	fcall	_I2C_Master_Write
   1559  1431                     l3221:
   1560                           
-  1561                           ;pic16f.c: 65:        _delay((unsigned long)((10)*(4000000/4000.0)));
+  1561                           ;pic16f.c: 63:        _delay((unsigned long)((10)*(4000000/4000.0)));
   1562  1431  300D               	movlw	13
   1563  1432  1283               	bcf	3,5	;RP0=0, select bank0
   1564  1433  1303               	bcf	3,6	;RP1=0, select bank0
@@ -1586,7 +1586,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1572  143A  2C37               	goto	u4877
   1573  143B                     l3223:
   1574                           
-  1575                           ;pic16f.c: 66:         tempera1 = aht_GetTemperature();
+  1575                           ;pic16f.c: 64:         tempera1 = aht_GetTemperature();
   1576  143B  160A  118A  2133  160A  118A  	fcall	_aht_GetTemperature
   1577  1440  1283               	bcf	3,5	;RP0=0, select bank0
   1578  1441  1303               	bcf	3,6	;RP1=0, select bank0
@@ -1598,12 +1598,12 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1584  1447  00E9               	movwf	_tempera1+2
   1585  1448                     l3225:
   1586                           
-  1587                           ;pic16f.c: 68:        uartTX_Write_Str("T1   H1   \n");
+  1587                           ;pic16f.c: 66:        uartTX_Write_Str("T1   H1   \n");
   1588  1448  3086               	movlw	(low ((STR_1-__stringbase)| (0+32768)))& (0+255)
   1589  1449  160A  158A  2674  160A  118A  	fcall	_uartTX_Write_Str
   1590  144E                     l3227:
   1591                           
-  1592                           ;pic16f.c: 69:        sprintf(datos, "%2.1f   %2.1f ", tempera1);
+  1592                           ;pic16f.c: 67:        sprintf(datos, "%2.1f   %2.1f ", tempera1);
   1593  144E  3077               	movlw	(low ((STR_2-__stringbase)| (0+32768)))& (0+255)
   1594  144F  1283               	bcf	3,5	;RP0=0, select bank0
   1595  1450  1303               	bcf	3,6	;RP1=0, select bank0
@@ -1620,22 +1620,22 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1606  145B  120A  158A  2530  160A  118A  	fcall	_sprintf
   1607  1460                     l3229:
   1608                           
-  1609                           ;pic16f.c: 70:       uartTX_Write(datos);
+  1609                           ;pic16f.c: 68:       uartTX_Write(datos);
   1610  1460  30BB               	movlw	(low _datos)& (0+255)
   1611  1461  160A  158A  25F2  160A  118A  	fcall	_uartTX_Write
   1612  1466                     l3231:
   1613                           
-  1614                           ;pic16f.c: 71:       uartTX_Write(13);
+  1614                           ;pic16f.c: 69:       uartTX_Write(13);
   1615  1466  300D               	movlw	13
   1616  1467  160A  158A  25F2  160A  118A  	fcall	_uartTX_Write
   1617  146C                     l3233:
   1618                           
-  1619                           ;pic16f.c: 72:       uartTX_Write(10);
+  1619                           ;pic16f.c: 70:       uartTX_Write(10);
   1620  146C  300A               	movlw	10
   1621  146D  160A  158A  25F2  160A  118A  	fcall	_uartTX_Write
   1622  1472                     l3235:
   1623                           
-  1624                           ;pic16f.c: 73:         _delay((unsigned long)((10)*(4000000/4000.0)));
+  1624                           ;pic16f.c: 71:         _delay((unsigned long)((10)*(4000000/4000.0)));
   1625  1472  300D               	movlw	13
   1626  1473  1283               	bcf	3,5	;RP0=0, select bank0
   1627  1474  1303               	bcf	3,6	;RP1=0, select bank0
@@ -1649,7 +1649,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1635  147B  2C78               	goto	u4887
   1636  147C                     l3237:
   1637                           
-  1638                           ;pic16f.c: 74:         caso=uartRC_Read();
+  1638                           ;pic16f.c: 72:         caso=uartRC_Read();
   1639  147C  120A  158A  2000  160A  118A  	fcall	_uartRC_Read
   1640  1481  1283               	bcf	3,5	;RP0=0, select bank0
   1641  1482  1303               	bcf	3,6	;RP1=0, select bank0
@@ -1661,7 +1661,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1647  1488  00EB               	movwf	_caso+1
   1648  1489                     l3239:
   1649                           
-  1650                           ;pic16f.c: 75:         if (caso == 1){
+  1650                           ;pic16f.c: 73:         if (caso == 1){
   1651  1489  036A               	decf	_caso,w
   1652  148A  046B               	iorwf	_caso+1,w
   1653  148B  1D03               	btfss	3,2
@@ -1672,10 +1672,10 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1658  148F                     u4820:
   1659  148F                     l3241:
   1660                           
-  1661                           ;pic16f.c: 76:             PORTDbits.RD0=1;
+  1661                           ;pic16f.c: 74:             PORTDbits.RD0=1;
   1662  148F  1408               	bsf	8,0	;volatile
   1663                           
-  1664                           ;pic16f.c: 77:         }else if (caso == 2){
+  1664                           ;pic16f.c: 75:         }else if (caso == 2){
   1665  1490  2C23               	goto	l3217
   1666  1491                     l3243:
   1667  1491  3002               	movlw	2
@@ -1689,10 +1689,10 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1675  1498                     u4830:
   1676  1498                     l3245:
   1677                           
-  1678                           ;pic16f.c: 78:             PORTDbits.RD1 =1;
+  1678                           ;pic16f.c: 76:             PORTDbits.RD1 =1;
   1679  1498  1488               	bsf	8,1	;volatile
   1680                           
-  1681                           ;pic16f.c: 79:         }else if (caso == 3){
+  1681                           ;pic16f.c: 77:         }else if (caso == 3){
   1682  1499  2C23               	goto	l3217
   1683  149A                     l3247:
   1684  149A  3003               	movlw	3
@@ -1706,10 +1706,10 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1692  14A1                     u4840:
   1693  14A1                     l3249:
   1694                           
-  1695                           ;pic16f.c: 80:             PORTDbits.RD0 =0;
+  1695                           ;pic16f.c: 78:             PORTDbits.RD0 =0;
   1696  14A1  1008               	bcf	8,0	;volatile
   1697                           
-  1698                           ;pic16f.c: 81:         }else if (caso == 4){
+  1698                           ;pic16f.c: 79:         }else if (caso == 4){
   1699  14A2  2C23               	goto	l3217
   1700  14A3                     l3251:
   1701  14A3  3004               	movlw	4
@@ -1723,7 +1723,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1709  14AA                     u4850:
   1710  14AA                     l3253:
   1711                           
-  1712                           ;pic16f.c: 82:             PORTDbits.RD1 = 0;
+  1712                           ;pic16f.c: 80:             PORTDbits.RD1 = 0;
   1713  14AA  1088               	bcf	8,1	;volatile
   1714  14AB  2C23               	goto	l3217
   1715  14AC                     l56:
@@ -11123,7 +11123,7 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Sat Mar 06 22:44:16 2021
+Symbol Table                                                                                   Tue Mar 09 23:42:16 2021
 
                           pc 0002               ___bmul@product 0026                           l56 14AC  
                          l49 1E16                           l93 1F2F                           l96 1DC6  

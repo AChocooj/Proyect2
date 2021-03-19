@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\quema\AppData\Local\Temp\sqj0.o
+$C:\Users\quema\AppData\Local\Temp\secg.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\Pic16f.X.production.o
@@ -111,39 +111,39 @@ STRING 1800-1DA0 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Pic16f.X.production.o
-7D4 cinit CODE >1286:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7D4 cinit CODE >1289:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7D4 cinit CODE >1392:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7D5 cinit CODE >1393:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7D6 cinit CODE >1394:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7D7 cinit CODE >1395:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7D8 cinit CODE >1396:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7D9 cinit CODE >1397:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7DA cinit CODE >1398:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7DB cinit CODE >1399:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7DC cinit CODE >1400:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7DD cinit CODE >1401:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7E2 cinit CODE >1405:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7E3 cinit CODE >1406:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7E4 cinit CODE >1407:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7E5 cinit CODE >1408:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7E6 cinit CODE >1409:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7E7 cinit CODE >1410:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7E8 cinit CODE >1411:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7E9 cinit CODE >1412:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7EA cinit CODE >1413:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7EF cinit CODE >1432:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7F0 cinit CODE >1433:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7F1 cinit CODE >1434:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7F2 cinit CODE >1435:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7F7 cinit CODE >1438:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7F8 cinit CODE >1439:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7F9 cinit CODE >1440:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7FA cinit CODE >1441:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7FB cinit CODE >1442:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7FC cinit CODE >1448:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7FC cinit CODE >1450:C:\Users\quema\AppData\Local\Temp\sqj0.s
-7FD cinit CODE >1451:C:\Users\quema\AppData\Local\Temp\sqj0.s
+7D4 cinit CODE >1286:C:\Users\quema\AppData\Local\Temp\secg.s
+7D4 cinit CODE >1289:C:\Users\quema\AppData\Local\Temp\secg.s
+7D4 cinit CODE >1392:C:\Users\quema\AppData\Local\Temp\secg.s
+7D5 cinit CODE >1393:C:\Users\quema\AppData\Local\Temp\secg.s
+7D6 cinit CODE >1394:C:\Users\quema\AppData\Local\Temp\secg.s
+7D7 cinit CODE >1395:C:\Users\quema\AppData\Local\Temp\secg.s
+7D8 cinit CODE >1396:C:\Users\quema\AppData\Local\Temp\secg.s
+7D9 cinit CODE >1397:C:\Users\quema\AppData\Local\Temp\secg.s
+7DA cinit CODE >1398:C:\Users\quema\AppData\Local\Temp\secg.s
+7DB cinit CODE >1399:C:\Users\quema\AppData\Local\Temp\secg.s
+7DC cinit CODE >1400:C:\Users\quema\AppData\Local\Temp\secg.s
+7DD cinit CODE >1401:C:\Users\quema\AppData\Local\Temp\secg.s
+7E2 cinit CODE >1405:C:\Users\quema\AppData\Local\Temp\secg.s
+7E3 cinit CODE >1406:C:\Users\quema\AppData\Local\Temp\secg.s
+7E4 cinit CODE >1407:C:\Users\quema\AppData\Local\Temp\secg.s
+7E5 cinit CODE >1408:C:\Users\quema\AppData\Local\Temp\secg.s
+7E6 cinit CODE >1409:C:\Users\quema\AppData\Local\Temp\secg.s
+7E7 cinit CODE >1410:C:\Users\quema\AppData\Local\Temp\secg.s
+7E8 cinit CODE >1411:C:\Users\quema\AppData\Local\Temp\secg.s
+7E9 cinit CODE >1412:C:\Users\quema\AppData\Local\Temp\secg.s
+7EA cinit CODE >1413:C:\Users\quema\AppData\Local\Temp\secg.s
+7EF cinit CODE >1432:C:\Users\quema\AppData\Local\Temp\secg.s
+7F0 cinit CODE >1433:C:\Users\quema\AppData\Local\Temp\secg.s
+7F1 cinit CODE >1434:C:\Users\quema\AppData\Local\Temp\secg.s
+7F2 cinit CODE >1435:C:\Users\quema\AppData\Local\Temp\secg.s
+7F7 cinit CODE >1438:C:\Users\quema\AppData\Local\Temp\secg.s
+7F8 cinit CODE >1439:C:\Users\quema\AppData\Local\Temp\secg.s
+7F9 cinit CODE >1440:C:\Users\quema\AppData\Local\Temp\secg.s
+7FA cinit CODE >1441:C:\Users\quema\AppData\Local\Temp\secg.s
+7FB cinit CODE >1442:C:\Users\quema\AppData\Local\Temp\secg.s
+7FC cinit CODE >1448:C:\Users\quema\AppData\Local\Temp\secg.s
+7FC cinit CODE >1450:C:\Users\quema\AppData\Local\Temp\secg.s
+7FD cinit CODE >1451:C:\Users\quema\AppData\Local\Temp\secg.s
 290 text6_split_1 CODE >1142:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
 2C7 text6_split_1 CODE >1146:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
 2DE text6_split_1 CODE >1147:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
@@ -757,53 +757,53 @@ FEA text6 CODE >1142:D:\MPLAB XC8 compiler\pic\sources\c90\common\doprnt.c
 1404 maintext CODE >57:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
 1409 maintext CODE >58:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
 1414 maintext CODE >59:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-1423 maintext CODE >63:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-1428 maintext CODE >64:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-1431 maintext CODE >65:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-143B maintext CODE >66:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-1448 maintext CODE >68:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-144E maintext CODE >69:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-1460 maintext CODE >70:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-1466 maintext CODE >71:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-146C maintext CODE >72:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-1472 maintext CODE >73:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-147C maintext CODE >74:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-1489 maintext CODE >75:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-148F maintext CODE >76:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-1490 maintext CODE >77:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-1498 maintext CODE >78:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-1499 maintext CODE >79:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-14A1 maintext CODE >80:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-14A2 maintext CODE >81:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-14AA maintext CODE >82:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-14AC maintext CODE >83:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
-1DA1 clrtext CODE >1419:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1DA1 clrtext CODE >1420:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1DA2 clrtext CODE >1421:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1DA2 clrtext CODE >1422:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1DA3 clrtext CODE >1423:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1DA4 clrtext CODE >1424:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1DA5 clrtext CODE >1425:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1DA6 clrtext CODE >1426:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1DA7 clrtext CODE >1427:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1DA8 clrtext CODE >1428:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E17 inittext CODE >1366:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E17 inittext CODE >1367:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E18 inittext CODE >1368:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E19 inittext CODE >1369:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E1A inittext CODE >1370:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E1B inittext CODE >1377:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E1B inittext CODE >1378:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E20 inittext CODE >1379:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E21 inittext CODE >1380:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E22 inittext CODE >1381:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E23 inittext CODE >1382:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E24 inittext CODE >1383:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E25 inittext CODE >1384:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E26 inittext CODE >1385:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E27 inittext CODE >1386:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E28 inittext CODE >1387:C:\Users\quema\AppData\Local\Temp\sqj0.s
-1E29 inittext CODE >1388:C:\Users\quema\AppData\Local\Temp\sqj0.s
+1423 maintext CODE >61:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1428 maintext CODE >62:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1431 maintext CODE >63:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+143B maintext CODE >64:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1448 maintext CODE >66:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+144E maintext CODE >67:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1460 maintext CODE >68:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1466 maintext CODE >69:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+146C maintext CODE >70:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1472 maintext CODE >71:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+147C maintext CODE >72:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1489 maintext CODE >73:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+148F maintext CODE >74:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1490 maintext CODE >75:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1498 maintext CODE >76:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1499 maintext CODE >77:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+14A1 maintext CODE >78:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+14A2 maintext CODE >79:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+14AA maintext CODE >80:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+14AC maintext CODE >81:D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\pic16f.c
+1DA1 clrtext CODE >1419:C:\Users\quema\AppData\Local\Temp\secg.s
+1DA1 clrtext CODE >1420:C:\Users\quema\AppData\Local\Temp\secg.s
+1DA2 clrtext CODE >1421:C:\Users\quema\AppData\Local\Temp\secg.s
+1DA2 clrtext CODE >1422:C:\Users\quema\AppData\Local\Temp\secg.s
+1DA3 clrtext CODE >1423:C:\Users\quema\AppData\Local\Temp\secg.s
+1DA4 clrtext CODE >1424:C:\Users\quema\AppData\Local\Temp\secg.s
+1DA5 clrtext CODE >1425:C:\Users\quema\AppData\Local\Temp\secg.s
+1DA6 clrtext CODE >1426:C:\Users\quema\AppData\Local\Temp\secg.s
+1DA7 clrtext CODE >1427:C:\Users\quema\AppData\Local\Temp\secg.s
+1DA8 clrtext CODE >1428:C:\Users\quema\AppData\Local\Temp\secg.s
+1E17 inittext CODE >1366:C:\Users\quema\AppData\Local\Temp\secg.s
+1E17 inittext CODE >1367:C:\Users\quema\AppData\Local\Temp\secg.s
+1E18 inittext CODE >1368:C:\Users\quema\AppData\Local\Temp\secg.s
+1E19 inittext CODE >1369:C:\Users\quema\AppData\Local\Temp\secg.s
+1E1A inittext CODE >1370:C:\Users\quema\AppData\Local\Temp\secg.s
+1E1B inittext CODE >1377:C:\Users\quema\AppData\Local\Temp\secg.s
+1E1B inittext CODE >1378:C:\Users\quema\AppData\Local\Temp\secg.s
+1E20 inittext CODE >1379:C:\Users\quema\AppData\Local\Temp\secg.s
+1E21 inittext CODE >1380:C:\Users\quema\AppData\Local\Temp\secg.s
+1E22 inittext CODE >1381:C:\Users\quema\AppData\Local\Temp\secg.s
+1E23 inittext CODE >1382:C:\Users\quema\AppData\Local\Temp\secg.s
+1E24 inittext CODE >1383:C:\Users\quema\AppData\Local\Temp\secg.s
+1E25 inittext CODE >1384:C:\Users\quema\AppData\Local\Temp\secg.s
+1E26 inittext CODE >1385:C:\Users\quema\AppData\Local\Temp\secg.s
+1E27 inittext CODE >1386:C:\Users\quema\AppData\Local\Temp\secg.s
+1E28 inittext CODE >1387:C:\Users\quema\AppData\Local\Temp\secg.s
+1E29 inittext CODE >1388:C:\Users\quema\AppData\Local\Temp\secg.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -834,13 +834,13 @@ I2C_Master_Init@c 20 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.prod
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\sqj0.o
+___sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\secg.o
 _caso 6A 0 BANK0 1 bssBANK0 dist/default/production\Pic16f.X.production.o
 _main 2808 0 CODE 0 maintext dist/default/production\Pic16f.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 ___ftadd@f1 48 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
 ___ftadd@f2 4B 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
-start 0 0 CODE 0 init C:\Users\quema\AppData\Local\Temp\sqj0.o
+start 0 0 CODE 0 init C:\Users\quema\AppData\Local\Temp\secg.o
 __size_of___aldiv 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
@@ -871,12 +871,12 @@ ___ftge@ff1 70 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.producti
 ___ftge@ff2 73 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
 __end_of__npowers_ 20A8 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
 _sprintf$1070 A0 0 BANK1 1 cstackBANK1 dist/default/production\Pic16f.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sqj0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sqj0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sqj0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sqj0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sqj0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\sqj0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\secg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\secg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\secg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\secg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\secg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\quema\AppData\Local\Temp\secg.o
 _eSensorMeasureCmd CF 0 BANK1 1 dataBANK1 dist/default/production\Pic16f.X.production.o
 __size_of__div_to_l_ 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 ___bmul@multiplicand 24 0 BANK0 1 cstackBANK0 dist/default/production\Pic16f.X.production.o
@@ -933,8 +933,8 @@ __end_of___llmod 4000 0 CODE 0 text18 dist/default/production\Pic16f.X.productio
 __end_of___lwdiv 3F58 0 CODE 0 text13 dist/default/production\Pic16f.X.production.o
 __end_of___lwmod 21B4 0 CODE 0 text12 dist/default/production\Pic16f.X.production.o
 __size_of_isdigit 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\sqj0.o
-___stacklo 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\sqj0.o
+___stackhi 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\secg.o
+___stacklo 0 0 ABS 0 - C:\Users\quema\AppData\Local\Temp\secg.o
 _dpowers 20A8 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
 __size_of__tdiv_to_l_ 0 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __end_of_fround 520 0 CODE 0 text11 dist/default/production\Pic16f.X.production.o
@@ -968,7 +968,7 @@ ___ftpack@arg 70 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.produc
 ___ftpack@exp 73 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
 _isdigit$863 70 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
 __end_of_uartTX_Write 3C08 0 CODE 0 text2 dist/default/production\Pic16f.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\sqj0.o
+___int_sp 0 0 STACK 2 stack C:\Users\quema\AppData\Local\Temp\secg.o
 __end_of___ftpack 25B6 0 CODE 0 text35 dist/default/production\Pic16f.X.production.o
 _eSensorCalibrateCmd D5 0 BANK1 1 dataBANK1 dist/default/production\Pic16f.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
@@ -1037,7 +1037,7 @@ _fround 1DE 0 CODE 0 text11 dist/default/production\Pic16f.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
 ___lldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Pic16f.X.production.o
 __stringtab 2000 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\quema\AppData\Local\Temp\sqj0.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\quema\AppData\Local\Temp\secg.o
 pnum$text6_split_1 36 0 ABS 0 - dist/default/production\Pic16f.X.production.o
 __powers_ 200C 0 STRING 0 strings dist/default/production\Pic16f.X.production.o
 __pdataBANK0 6C 0 BANK0 1 dataBANK0 dist/default/production\Pic16f.X.production.o

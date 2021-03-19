@@ -258,7 +258,7 @@
 "56
 [v _main main `(v  1 e 1 0 ]
 {
-"90
+"84
 } 0
 "43 D:\UVG\UVG\4 Año\Digital2\Proyecto2\Proyect2\Proyecto2\Pic16f.X\USART.c
 [v _uartTX_Write_Str uartTX_Write_Str `(v  1 e 1 0 ]
